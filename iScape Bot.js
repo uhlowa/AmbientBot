@@ -3286,7 +3286,8 @@
                     	var link = "http://i.imgur.com/QJNr8sP.jpg"
                     	API.sendChat(subChat(link, {link: link}));
             	}
-            }
+            	}
+            },
 
             whoisCommand: {
                 command: 'whois',
