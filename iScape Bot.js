@@ -2476,7 +2476,13 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-
+			var id = API.getUser().id;
+			var name = 'Sode Summer'
+                        var len = users.length;
+                        for (var i = 0; i < len; ++i){
+                            if (users[i].username.contains(name)){
+                            } else {
+			
                     	
                         var msg = chat.message;
                         if (msg.length <= cmd.length + 1) return API.sendChat('/me MotD: ' + basicBot.settings.motd);
@@ -2487,6 +2493,8 @@
                             basicBot.settings.motd = argument;
                             API.sendChat(subChat(basicBot.chat.motdset, {msg: basicBot.settings.motd}));
                         	}
+                        }
+                            }
                         }
                         else {
                             basicBot.settings.motdInterval = argument;
