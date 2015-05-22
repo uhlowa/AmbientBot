@@ -3285,6 +3285,219 @@
                     	API.sendChat(subChat('http://i.imgur.com/QJNr8sP.jpg', {link: 'http://i.imgur.com/QJNr8sP.jpg'}));
             	}
             },
+            faggot2Command: {
+            	command: 'faggot2',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/9We2dVP.gif', {link: 'http://i.imgur.com/9We2dVP.gif'}));
+            	}
+            },
+            
+                regret1Command: {
+            	command: 'regret1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/WvvxQTk.gif', {link: 'http://i.imgur.com/WvvxQTk.gif'}));
+            	}
+            },
+              fuckyou1Command: {
+            	command: 'fuckyou1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/1eh3dg1.gif', {link: 'http://i.imgur.com/1eh3dg1.gif'}));
+            	}
+            },
+            fuckyou2Command: {
+            	command: 'fuckyou2',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/Oh8h3Pt.gif', {link: 'http://i.imgur.com/Oh8h3Pt.gif'}));
+            	}
+            },
+               refresh1Command: {
+            	command: 'refresh1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/MWnOXM6.gif', {link: 'http://i.imgur.com/MWnOXM6.gif'}));
+            	}
+            },
+               fuckthis1Command: {
+            	command: 'fuckthis1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/GMEMmZj.webm', {link: 'http://i.imgur.com/GMEMmZj.webm'}));
+            	}
+            },
+            shutup1Command: {
+            	command: 'shutup1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/u1dIcAN.webm', {link: 'http://i.imgur.com/u1dIcAN.webm'}));
+            	}
+            },
+            hilarious1Command: {
+            	command: 'hilarious1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/ZgFcDJE.webm', {link: 'http://i.imgur.com/ZgFcDJE.webm'}));
+            	}
+            },
+            gloryhole1Command: {
+            	command: 'gloryhole1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/tdqZwhp.webm', {link: 'http://i.imgur.com/tdqZwhp.webm'}));
+            	}
+            },
+            dance1Command: {
+            	command: 'dance1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/ZDawAwF.webm', {link: 'http://i.imgur.com/ZDawAwF.webm'}));
+            	}
+            },
+                        bad1Command: {
+            	command: 'bad1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/WUOLKkl.webm', {link: 'http://i.imgur.com/WUOLKkl.webm'}));
+            	}
+            },
+            bad2Command: {
+            	command: 'bad2',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/5GG2m93.webm', {link: 'http://i.imgur.com/5GG2m93.webm'}));
+            	}
+            },
+            bad3Command: {
+            	command: 'bad3',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/Tw5MCuB.gif', {link: 'http://i.imgur.com/Tw5MCuB.gif'}));
+            	}
+            },
+            bad4Command: {
+            	command: 'bad4',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/81PvIBS.webm', {link: 'http://i.imgur.com/81PvIBS.webm'}));
+            	}
+            },
+            feelbad1Command: {
+            	command: 'feelbad1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/L8SLyYp.gif', {link: 'http://i.imgur.com/L8SLyYp.gif'}));
+            	}
+            },
+            clap1Command: {
+            	command: 'clap1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/ljp2oIK.webm', {link: 'http://i.imgur.com/ljp2oIK.webm'}));
+            	}
+            },
+            brofist1Command: {
+            	command: 'brofist1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/lIpVeN0.gif', {link: 'http://i.imgur.com/lIpVeN0.gif'}));
+            	}
+            },
+            hangyourself1Command: {
+            	command: 'hangyourself1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/e2KTFEV.jpg', {link: 'http://i.imgur.com/e2KTFEV.jpg'}));
+            	}
+            },
+            laugh1Command: {
+            	command: 'laugh1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/JJXmxnr.jpg', {link: 'http://i.imgur.com/JJXmxnr.jpg'}));
+            	}
+            },
+            sad1Command: {
+            	command: 'sad1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/B9DaCjz.webm', {link: 'http://i.imgur.com/B9DaCjz.webm'}));
+            	}
+            },
+            noregrets1Command: {
+            	command: 'noregrets1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/rbFPzbB.webm', {link: 'http://i.imgur.com/rbFPzbB.webm'}));
+            	}
+            },
+            
+            
 
             whoisCommand: {
                 command: 'whois',
