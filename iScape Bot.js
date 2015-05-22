@@ -2476,6 +2476,10 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
+                    	if (user.username === 'Sode Summer シ') {
+                    	API.sendChat(subChat("Sode Summer is a total faggot.")); return void (0);
+                      } else {
+                    	
                         var msg = chat.message;
                         if (msg.length <= cmd.length + 1) return API.sendChat('/me MotD: ' + basicBot.settings.motd);
                         var argument = msg.substring(cmd.length + 1);
@@ -2484,6 +2488,7 @@
                             basicBot.settings.motd = argument;
                             API.sendChat(subChat(basicBot.chat.motdset, {msg: basicBot.settings.motd}));
                         }
+                      }
                         else {
                             basicBot.settings.motdInterval = argument;
                             API.sendChat(subChat(basicBot.chat.motdintervalset, {interval: basicBot.settings.motdInterval}));
