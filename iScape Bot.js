@@ -3813,7 +3813,6 @@
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
                         var msg = chat.message;
                         var name;
                         if (msg.length === cmd.length) name = chat.un;
@@ -3826,7 +3825,6 @@
                             if (users[i].username == name){
                             	API.sendChat(subChat('/me ' + users[i].username + '\'s opinion no longer means shit.'));
                             }
-                        }
                     }
                 }
               },
@@ -3834,8 +3832,7 @@
             
             
             
-            
-
+         
             whoisCommand: {
                 command: 'whois',
                 rank: 'bouncer',
