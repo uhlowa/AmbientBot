@@ -2476,12 +2476,6 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-			var id = API.getUser().id;
-			var name = 'Sode Summer'
-                        var len = users.length;
-                        for (var i = 0; i < len; ++i){
-                            if (users[i].username.contains(name)){
-                            } else {
 			
                     	
                         var msg = chat.message;
@@ -2489,12 +2483,8 @@
                         var argument = msg.substring(cmd.length + 1);
                         if (!basicBot.settings.motdEnabled) basicBot.settings.motdEnabled = !basicBot.settings.motdEnabled;
                         if (isNaN(argument)) {
-                        	if (!user.username === 'Sode Summer シ') {
                             basicBot.settings.motd = argument;
                             API.sendChat(subChat(basicBot.chat.motdset, {msg: basicBot.settings.motd}));
-                        	}
-                        }
-                            }
                         }
                         else {
                             basicBot.settings.motdInterval = argument;
