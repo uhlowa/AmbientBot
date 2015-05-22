@@ -3272,6 +3272,21 @@
                     }
                 }
             },
+            
+            
+            
+            faggot1Command: {
+            	command: 'faggot1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    	var link = "http://i.imgur.com/QJNr8sP.jpg"
+                    	API.sendChat(subChat(link, {link: link}));
+            	}
+            }
 
             whoisCommand: {
                 command: 'whois',
