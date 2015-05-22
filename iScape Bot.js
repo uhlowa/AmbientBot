@@ -2476,8 +2476,6 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-			
-                    	
                         var msg = chat.message;
                         if (msg.length <= cmd.length + 1) return API.sendChat('/me MotD: ' + basicBot.settings.motd);
                         var argument = msg.substring(cmd.length + 1);
