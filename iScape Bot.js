@@ -3424,6 +3424,105 @@
                     	API.sendChat(subChat('http://i.imgur.com/Oh8h3Pt.gif', {link: 'http://i.imgur.com/Oh8h3Pt.gif'}));
             	}
             },
+            fuckyou3Command: {
+            	command: 'fuckyou3',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/NH7LYM9.gif', {link: 'http://i.imgur.com/NH7LYM9.gif'}));
+            	}
+            },
+            fuckyou4Command: {
+            	command: 'fuckyou4',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/NtdtELQ.gif', {link: 'http://i.imgur.com/NtdtELQ.gif'}));
+            	}
+            },
+            fuckyou5Command: {
+            	command: 'fuckyou5',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/qE3MNo5.gif', {link: 'http://i.imgur.com/qE3MNo5.gif'}));
+            	}
+            },
+            fuckyou6Command: {
+            	command: 'fuckyou6',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/AyObzfk.webm', {link: 'http://i.imgur.com/AyObzfk.webm'}));
+            	}
+            },
+            fuckyou7Command: {
+            	command: 'fuckyou7',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/jCUu9nY.webm', {link: 'http://i.imgur.com/jCUu9nY.webm'}));
+            	}
+            },
+            fuckyou8Command: {
+            	command: 'fuckyou8',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/WR4g4S7.gif', {link: 'http://i.imgur.com/WR4g4S7.gif'}));
+            	}
+            },
+            fuckyou9Command: {
+            	command: 'fuckyou9',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/ntV8Vvg.gif', {link: 'http://i.imgur.com/ntV8Vvg.gif'}));
+            	}
+            },
+            fuckyou10Command: {
+            	command: 'fuckyou10',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/btXKV0w.webm', {link: 'http://i.imgur.com/btXKV0w.webm'}));
+            	}
+            },
+            fuckyou11Command: {
+            	command: 'fuckyou11',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/wlTqw2a.gif', {link: 'http://i.imgur.com/wlTqw2a.gif'}));
+            	}
+            },
+            penisCommand: {
+            	command: 'penis',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/c4BWZyz.webm', {link: 'http://i.imgur.com/c4BWZyz.webm'}));
+            	}
+            },
+           allowitCommand: {
+            	command: 'allowit',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/EI6OEYh.gif', {link: 'http://i.imgur.com/EI6OEYh.gif'}));
+            	}
+            },
                refresh1Command: {
             	command: 'refresh1',
             	rank: 'user',
