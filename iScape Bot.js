@@ -3409,6 +3409,51 @@
                     	API.sendChat(subChat('http://i.imgur.com/9We2dVP.gif', {link: 'http://i.imgur.com/9We2dVP.gif'}));
             	}
             },
+            faggot3Command: {
+            	command: 'faggot3',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/JSZQTpU.gif', {link: 'http://i.imgur.com/JSZQTpU.gif'}));
+            	}
+            },
+            faggot4Command: {
+            	command: 'faggot4',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/HfQ3gRA.gif', {link: 'http://i.imgur.com/HfQ3gRA.gif'}));
+            	}
+            },
+            faggot5Command: {
+            	command: 'faggot5',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/uFLW7YK.gif', {link: 'http://i.imgur.com/uFLW7YK.gif'}));
+            	}
+            },
+            faggot6Command: {
+            	command: 'faggot6',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/hbAtPOA.gif', {link: 'http://i.imgur.com/hbAtPOA.gif'}));
+            	}
+            },
+            faggot7Command: {
+            	command: 'faggot7',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/g9rZoWs.gif', {link: 'http://i.imgur.com/g9rZoWs.gif'}));
+            	}
+            },
             
                 regret1Command: {
             	command: 'regret1',
