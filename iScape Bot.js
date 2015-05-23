@@ -3513,8 +3513,8 @@
                     	API.sendChat(subChat('http://i.imgur.com/wlTqw2a.gif', {link: 'http://i.imgur.com/wlTqw2a.gif'}));
             	}
             },
-            flipperCommand: {
-            	command: 'flipper',
+            daveCommand: {
+            	command: 'dave',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
