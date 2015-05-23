@@ -3444,15 +3444,6 @@
                     	API.sendChat(subChat('http://i.imgur.com/MWnOXM6.gif', {link: 'http://i.imgur.com/MWnOXM6.gif'}));
             	}
             },
-            fridaysCommand: {
-            	command: 'friday',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/7aVyI9J.jpg', {link: 'http://i.imgur.com/7aVyI9J.jpg'}));
-            	}
-            },
                fuckthis1Command: {
             	command: 'fuckthis1',
             	rank: 'user',
