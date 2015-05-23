@@ -2008,7 +2008,7 @@
                             function get_id(api_key, func)
                             {
                                 $.getJSON(
-                                    "https://tv.giphy.com/v1/gifs/random?tag=nsfw", 
+                                    "https://tv.giphy.com/v1/gifs/random?tag=nsfw&", 
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
