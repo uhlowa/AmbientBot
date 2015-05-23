@@ -3697,7 +3697,7 @@
                     	API.sendChat(subChat('http://i.imgur.com/d61Aszu.webm', {link: 'http://i.imgur.com/d61Aszu.webm'}));
             	}
             },
-            
+
 
             whoisCommand: {
                 command: 'whois',
