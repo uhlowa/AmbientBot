@@ -2106,7 +2106,7 @@
                     else {
                         if (basicBot.room.roulette.rouletteStatus && basicBot.room.roulette.participants.indexOf(chat.uid) < 0) {
                             basicBot.room.roulette.participants.push(chat.uid);
-                            API.sendChat(subChat(user.username + ' has joined the Raffle! Type !join to try your luck!'));
+                            API.sendChat(subChat('/me ' + user.username + ' has joined the Raffle! Type !join to try your luck!'));
                         }
                     }
                 }
