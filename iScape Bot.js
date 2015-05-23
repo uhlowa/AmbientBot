@@ -197,7 +197,7 @@
             startupEmoji: false, // true or false
             cmdDeletion: false,
             maximumAfk: 120,
-            afkRemoval:false,
+            afkRemoval: true,
             maximumDc: 60,
             bouncerPlus: true,
             blacklistEnabled: true,
@@ -224,14 +224,14 @@
                 ["nsfw", "The song you contained was NSFW (image or sound). "],
                 ["unavailable", "The song you played was not available for some users. "]
             ],
-            afkpositionCheck: 15,
+            afkpositionCheck: 5,
             afkRankCheck: "ambassador",
-            motdEnabled: false,
-            motdInterval: 20,
+            motdEnabled: true,
+            motdInterval: 30,
             motd: "The Underground focuses on bringing you the best new music around. With a fun community and anti-pop culture music, it is easy to find your place here.",
             filterChat: true,
             etaRestriction: false,
-            welcome: false,
+            welcome: true,
             opLink: null,
             rulesLink: null,
             themeLink: null,
@@ -3227,9 +3227,11 @@
                     else {
                         if (basicBot.settings.welcome) {
                             basicBot.settings.welcome = !basicBot.settings.welcome;
+                            API.sendChat(subChat('/me Welcome Messages disabled.'));
                         }
                         else {
                             basicBot.settings.welcome = !basicBot.settings.welcome;
+                            API.sendChat(subChat('/me Welcome Messages enabled.'));
                         }
                     }
                 }
