@@ -297,14 +297,15 @@
                     basicBot.room.roulette.countdown = setTimeout(function () {
                         basicBot.room.roulette.endRoulette();
                     }, 60 * 1000);
-                    API.sendChat(basicBot.chat.isopen);
+                    API.sendChat('/me The Raffle is now open. Type !join to try your luck!');
                 },
                 endRoulette: function () {
                     basicBot.room.roulette.rouletteStatus = false;
                     var ind = Math.floor(Math.random() * basicBot.room.roulette.participants.length);
                     var winner = basicBot.room.roulette.participants[ind];
                     basicBot.room.roulette.participants = [];
-                    var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
+                    var pos = 2;
+                    //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
                     var user = basicBot.userUtilities.lookupUser(winner);
                     var name = user.username;
                     API.sendChat(subChat(basicBot.chat.winnerpicked, {name: name, position: pos}));
