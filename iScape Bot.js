@@ -243,8 +243,8 @@
             songstats: false,
             commandLiteral: "!",
             blacklists: {
-                NSFW: "https://rawgit.com/Paradox68/iScape-Bot/master/NSFWList.json",
-                OP: "https://rawgit.com/Paradox68/iScape-Bot/master/op.json"
+                NSFW: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
+                OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleOPlist.json"
             }
         },
         room: {
@@ -290,8 +290,6 @@
                 position: []
             },
             blacklists: {
-            	NSFW: "https://rawgit.com/Paradox68/iScape-Bot/master/NSFWList.json",
-            	OP: "https://rawgit.com/Paradox68/iScape-Bot/master/op.json"
 
             },
             newBlacklisted: [],
