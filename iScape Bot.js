@@ -179,7 +179,7 @@
     var botCreatorIDs = ["3851534", "4105209"];
 
     var basicBot = {
-        version: "1.0",
+        version: "1.2",
         status: false,
         name: "Underground Bot",
         loggedInID: null,
@@ -197,9 +197,9 @@
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
-            cmdDeletion: true,
+            cmdDeletion: false,
             maximumAfk: 120,
-            afkRemoval: true,
+            afkRemoval:false,
             maximumDc: 60,
             bouncerPlus: true,
             blacklistEnabled: true,
