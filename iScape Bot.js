@@ -2008,7 +2008,7 @@
                             function get_id(api_key, fixedtag, func)
                             {
                                 $.getJSON(
-                                    "https://tv.giphy.com/v1/gifs/random?", 
+                                    "http://tv.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&rating=r", 
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
@@ -2022,7 +2022,7 @@
                                     )
                             }
                             var api_key = "dc6zaTOxFJmzC"; // public beta key
-                            var rating = "R"; // PG 13 gifs
+                            var rating = "r"; // PG 13 gifs
                             var tag = msg.substr(cmd.length + 1);
                             var fixedtag = tag.replace(/ /g,"+");
                             var commatag = tag.replace(/ /g,", ");
@@ -2038,7 +2038,7 @@
                             function get_random_id(api_key, func)
                             {
                                 $.getJSON(
-                                    "https://tv.giphy.com/v1/gifs/random?", 
+                                    "http://tv.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&rating=r", 
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
@@ -2051,7 +2051,7 @@
                                     )
                             }
                             var api_key = "dc6zaTOxFJmzC"; // public beta key
-                            var rating = "R"; // PG 13 gifs
+                            var rating = "r"; // PG 13 gifs
                             get_random_id(api_key, function(id) {
                                 if (typeof id !== 'undefined') {
                                     API.sendChat(subChat(basicBot.chat.validgifrandom, {name: chat.un, id: id}));
