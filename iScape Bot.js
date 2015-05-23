@@ -839,7 +839,7 @@
                     API.sendChat("/me Last Play: \n" + lastplay.media.author + " - " + lastplay.media.title + ": " + lastplay.score.positive + " woots -" + lastplay.score.grabs + " grabs -" + lastplay.score.negative + " Mehs.")
                 }
                 else {
-                    API.sendChat(subChat(basicBot.chat.songstatistics, {artist: lastplay.media.author, title: lastplay.media.title, woots: lastplay.score.positive, grabs: lastplay.score.grabs, mehs: lastplay.score.negative}))
+                    API.sendChat(subChat("/me Last Play: \n" + lastplay.media.author + " - " + lastplay.media.title + ": " + lastplay.score.positive + " woots -" + lastplay.score.grabs + " grabs -" + lastplay.score.negative + " Mehs."))
                 }
             }
             basicBot.room.roomstats.totalWoots += lastplay.score.positive;
