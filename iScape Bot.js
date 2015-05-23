@@ -3284,7 +3284,7 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                     	API.sendChat(subChat('http://i.imgur.com/ZDawAwF.webm', {link: 'http://i.imgur.com/ZDawAwF.webm'}));
-                    }
+                   
                     }
             	}
             },
