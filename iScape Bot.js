@@ -2899,9 +2899,11 @@
                         var launchT = basicBot.room.roomstats.launchTime;
                         var durationOnline = Date.now() - launchT;
                         var since = basicBot.roomUtilities.msToStr(durationOnline);
-                        msg += subChat(basicBot.chat.activefor, {time: since});
-
+                        var msg2 = '';
+                        msg2 += subChat(basicBot.chat.activefor, {time: since});
+			API.sendchat(msg2);
                         return API.sendChat(msg);
+               
                     }
                 }
             },
