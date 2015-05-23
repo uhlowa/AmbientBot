@@ -244,7 +244,7 @@
             commandLiteral: "!",
             blacklists: {
                 NSFW: "https://rawgit.com/Paradox68/iScape-Bot/master/NSFWList.json",
-                OP: "https://rawgit.com/Paradox68/iScape-Bot/master/OPList.json"
+                OP: "https://rawgit.com/Paradox68/iScape-Bot/master/op.json"
             }
         },
         room: {
@@ -290,6 +290,8 @@
                 position: []
             },
             blacklists: {
+            	NSFW: "https://rawgit.com/Paradox68/iScape-Bot/master/NSFWList.json",
+            	OP: "https://rawgit.com/Paradox68/iScape-Bot/master/op.json"
 
             },
             newBlacklisted: [],
