@@ -242,7 +242,7 @@
             website: null,
             intervalMessages: [],
             messageInterval: 5,
-            songstats: false,
+            songstats: true,
             commandLiteral: "!",
             blacklists: {
                 NSFW: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
@@ -2829,6 +2829,18 @@
                 }
             },
 
+            sourceCommand: {
+                command: 'source',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat('/me This bot was created by ' + botCreator + ', but is now maintained by ' + botMaintainer + ".");
+                    }
+                }
+            },
 
             statusCommand: {
                 command: 'status',
@@ -2955,7 +2967,7 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                         if (typeof basicBot.settings.themeLink === "string")
-                            API.sendChat(subChat('Share your favorite deep, dark, trippy, chill or unknown tracks. Producers are welcome too, and you will find loads of OC being played. If it SOUNDS mainstream, dont play it.');
+                            API.sendChat(subChat(basicBot.chat.genres, {link: basicBot.settings.themeLink}));
                     }
                 }
             },
@@ -3262,7 +3274,8 @@
             },
             
             
-             dance1Command: {
+            
+            dance1Command: {
             	command: 'dance1',
             	rank: 'user',
             	type: 'exact',
@@ -3805,7 +3818,8 @@
             	}
             },
             
-         
+            
+
             whoisCommand: {
                 command: 'whois',
                 rank: 'bouncer',
