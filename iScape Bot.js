@@ -3297,6 +3297,15 @@
                     	API.sendChat(subChat('http://i.imgur.com/XnCeorl.gif', {link: 'http://i.imgur.com/XnCeorl.gif'}));
             	}
             },
+                sourceCommand: {
+            	command: 'source',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('https://github.com/Paradox68/iScape-Bot'));
+            	}
+            },
             dance6Command: {
             	command: 'dance6',
             	rank: 'user',
