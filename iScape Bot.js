@@ -2005,15 +2005,14 @@
                     else {
                         var msg = chat.message;
                         if (msg.length !== cmd.length) {
-                            function get_id(api_key, fixedtag, func)
+                            function get_id(api_key, func)
                             {
                                 $.getJSON(
-                                    "https://tv.giphy.com/v1/gifs/random?", 
+                                    "https://tv.giphy.com/v1/gifs/random?&tag=nsfw", 
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
                                         "rating": rating,
-                                        "tag": fixedtag
                                     },
                                     function(response)
                                     {
@@ -2038,7 +2037,7 @@
                             function get_random_id(api_key, func)
                             {
                                 $.getJSON(
-                                    "https://tv.giphy.com/v1/gifs/random?", 
+                                    "https://tv.giphy.com/v1/gifs/random?&tag=nsfw", 
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
