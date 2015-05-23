@@ -2738,7 +2738,7 @@
             },
 
             rouletteCommand: {
-                command: 'lottery',
+                command: 'raffle',
                 rank: 'mod',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2760,7 +2760,6 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        if (typeof basicBot.settings.rulesLink === "string")
                             return API.sendChat(subChat('Keep it under 7 minutes, if it is over ask for permission. No yellowtext. Only play music that is not mainstream. Trolls will be booted.'));
                     }
                 }
@@ -2949,7 +2948,6 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        if (typeof basicBot.settings.themeLink === "string")
                             API.sendChat(subChat('Theme: \n Share your favorite deep, dark, trippy, chill or unknown tracks. Producers are welcome too, and you will find loads of OC being played. If it SOUNDS mainstream, dont play it.'));
                     }
                 }
@@ -3513,6 +3511,24 @@
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/wlTqw2a.gif', {link: 'http://i.imgur.com/wlTqw2a.gif'}));
+            	}
+            },
+            flipperCommand: {
+            	command: 'flipper',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/BvApgZl.gif', {link: 'http://i.imgur.com/BvApgZl.gif'}));
+            	}
+            },
+            bugdjCommand: {
+            	command: 'bug',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/vYEOrkT.png', {link: 'http://i.imgur.com/vYEOrkT.png'}));
             	}
             },
             penisCommand: {
