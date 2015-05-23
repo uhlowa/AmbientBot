@@ -3838,7 +3838,7 @@
                     }
                 }
                             	
-            }
+            },
             
                         opinionCommand: {
             	command: 'opinion',
@@ -3864,7 +3864,7 @@
                     }
                 }
                             	
-            }
+            },
 
 
             whoisCommand: {
