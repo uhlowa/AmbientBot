@@ -3445,7 +3445,7 @@
             	}
             },
             fridaysCommand: {
-            	command: 'refresh1',
+            	command: 'friday',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
