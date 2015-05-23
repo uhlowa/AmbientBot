@@ -3804,27 +3804,18 @@
                     	API.sendChat(subChat('http://i.imgur.com/yvIbI7U.gif', {link: 'http://i.imgur.com/yvIbI7U.gif'}));
             	}
             },
-            bye1Command: {
-            	command: 'bye1',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/d61Aszu.webm', {link: 'http://i.imgur.com/d61Aszu.webm'}));
-            	}
-            },
             
-            approveCommand: {
+              approveCommand: {
             	command: 'approve',
                 rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     if (!basicBot.commands.executable(this.rank, chat)) { return void (0); }
                         var msg = chat.message;
                         var name;
-                        if (msg.length === cmd.length) name = chat.un;
-                        else {
+                        if (msg.length === cmd.length) {
+                        	name = chat.un;
+                        } else {
                             name = msg.substr(cmd.length + 2);
                         }
                         users = API.getUsers();
@@ -3837,30 +3828,16 @@
                 }
                             	
             },
-            
-                        opinionCommand: {
-            	command: 'opinion',
-                rank: 'bouncer',
-                type: 'startsWith',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    if (!basicBot.commands.executable(this.rank, chat)) { return void (0); }
-                        var msg = chat.message;
-                        var name;
-                        if (msg.length === cmd.length) name = chat.un;
-                        else {
-                            name = msg.substr(cmd.length + 2);
-                        }
-                        users = API.getUsers();
-                        var len = users.length;
-                        for (var i = 0; i < len; ++i){
-                            if (users[i].username == name){
-                            	PI.sendChat(subChat('/me ' + users[i].username + '\'s opinion no longer means shit!'));
-                            }
-                    }
-                }
-                            	
+            bye1Command: {
+            	command: 'bye1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/d61Aszu.webm', {link: 'http://i.imgur.com/d61Aszu.webm'}));
+            	}
             },
+            
 
 
             whoisCommand: {
