@@ -2829,18 +2829,6 @@
                 }
             },
 
-            sourceCommand: {
-                command: 'source',
-                rank: 'user',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        API.sendChat('/me This bot was created by ' + botCreator + ', but is now maintained by ' + botMaintainer + ".");
-                    }
-                }
-            },
 
             statusCommand: {
                 command: 'status',
@@ -2922,7 +2910,7 @@
 
             swapCommand: {
                 command: 'swap',
-                rank: 'mod',
+                rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
