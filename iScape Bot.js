@@ -3262,7 +3262,146 @@
             },
             
             
-            
+             dance1Command: {
+            	command: 'dance1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/ZDawAwF.webm', {link: 'http://i.imgur.com/ZDawAwF.webm'}));
+            	}
+            },
+            dance2Command: {
+            	command: 'dance2',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/H9nADqS.gif', {link: 'http://i.imgur.com/H9nADqS.gif'}));
+            	}
+            },
+            dance3Command: {
+            	command: 'dance3',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/t71qeT1.gif', {link: 'http://i.imgur.com/t71qeT1.gif'}));
+            	}
+            },
+            dance4Command: {
+            	command: 'dance4',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/TqezZCP.gif', {link: 'http://i.imgur.com/TqezZCP.gif'}));
+            	}
+            },
+            dance5Command: {
+            	command: 'dance5',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/XnCeorl.gif', {link: 'http://i.imgur.com/XnCeorl.gif'}));
+            	}
+            },
+            dance6Command: {
+            	command: 'dance6',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/IUoOZDo.gif', {link: 'http://i.imgur.com/IUoOZDo.gif'}));
+            	}
+            },
+            dance7Command: {
+            	command: 'dance7',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/jKfD4m3.gif', {link: 'http://i.imgur.com/jKfD4m3.gif'}));
+            	}
+            },
+            dance8Command: {
+            	command: 'dance8',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/pIxt2H0.gif', {link: 'http://i.imgur.com/pIxt2H0.gif'}));
+            	}
+            },
+            dance9Command: {
+            	command: 'dance9',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/YieC5Ls.gif', {link: 'http://i.imgur.com/YieC5Ls.gif'}));
+            	}
+            },
+            dance10Command: {
+            	command: 'dance10',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/cKT7CNU.gif', {link: 'http://i.imgur.com/cKT7CNU.gif'}));
+            	}
+            },
+            dance11Command: {
+            	command: 'dance11',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/6vfolCh.gif', {link: 'http://i.imgur.com/6vfolCh.gif'}));
+            	}
+            },
+            dance12Command: {
+            	command: 'dance12',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/pQLee14.gif', {link: 'http://i.imgur.com/pQLee14.gif'}));
+            	}
+            },
+            dance13Command: {
+            	command: 'dance13',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/sCGlr4m.gif', {link: 'http://i.imgur.com/sCGlr4m.gif'}));
+            	}
+            },
+            dance14Command: {
+            	command: 'dance14',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    	API.sendChat(subChat('http://i.imgur.com/Q7T2K8o.gif', {link: 'http://i.imgur.com/Q7T2K8o.gif'}));
+            	}
+            },
             faggot1Command: {
             	command: 'faggot1',
             	rank: 'user',
