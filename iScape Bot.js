@@ -2103,7 +2103,7 @@
                     else {
                         if (basicBot.room.roulette.rouletteStatus && basicBot.room.roulette.participants.indexOf(chat.uid) < 0) {
                             basicBot.room.roulette.participants.push(chat.uid);
-                            API.sendChat(subChat('has joined the Raffle! Type !join to try your luck!'));
+                            API.sendChat(subChat(user.username + ' has joined the Raffle! Type !join to try your luck!'));
                         }
                     }
                 }
@@ -3459,15 +3459,6 @@
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/qE3MNo5.gif', {link: 'http://i.imgur.com/qE3MNo5.gif'}));
-            	}
-            },
-               helloCommand: {
-            	command: '['hi', 'hello', 'grettings', 'hey']',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('Hey ' +username + ', what\'s up?'));
             	}
             },
             fuckyou6Command: {
