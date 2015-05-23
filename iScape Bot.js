@@ -3698,7 +3698,7 @@
             	}
             },
             
-            opinionCommand: {
+            opinionatorCommand: {
             	command: 'opiniondontmatta',
             	rank: 'bouncer',
             	type: 'startsWith',
