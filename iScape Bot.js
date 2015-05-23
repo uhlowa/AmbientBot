@@ -3921,7 +3921,7 @@
                         users = API.getUsers();
                         var len = users.length;
                         for (var i = 0; i < len; ++i){
-                            if (basicBot.userUtilities.getPermission(users[i].id) > 0){
+                            if (basicBot.userUtilities.getPermission(users[i].id) > 7){
                                 sOnline += 1;
                             }
                         }
