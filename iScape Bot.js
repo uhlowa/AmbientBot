@@ -3515,8 +3515,8 @@
                     	API.sendChat(subChat('http://i.imgur.com/wlTqw2a.gif', {link: 'http://i.imgur.com/wlTqw2a.gif'}));
             	}
             },
-            daveCommand: {
-            	command: 'dave',
+            jamesCommand: {
+            	command: 'james',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
