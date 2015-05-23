@@ -2042,7 +2042,7 @@
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
-                                        "rating": "r"
+                                        "rating": "r",
                                     },
                                     function(response)
                                     {
