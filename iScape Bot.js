@@ -3757,66 +3757,7 @@ dance1Command: {
                     	API.sendChat(subChat('http://i.imgur.com/d61Aszu.webm', {link: 'http://i.imgur.com/d61Aszu.webm'}));
             	}
             },
-            nope1Command: {
-            	command: 'nope1',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    	API.sendChat(subChat('http://i.imgur.com/o5O8475.webm', {link: 'http://i.imgur.com/o5O8475.webm'}));
-            	}
-            },
-            whocares1Command: {
-            	command: 'whocares1',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    	API.sendChat(subChat('http://i.imgur.com/LHEDd4g.jpg', {link: 'http://i.imgur.com/LHEDd4g.jpg'}));
-            	}
-            },
-            bait1Command: {
-            	command: 'bait1',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    	API.sendChat(subChat('http://i.imgur.com/Ih1MFRG.png', {link: 'http://i.imgur.com/Ih1MFRG.png'}));
-            	}
-            },
-            bait2Command: {
-            	command: 'bait2',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    	API.sendChat(subChat('http://i.imgur.com/5Hw1Gfl.png', {link: 'http://i.imgur.com/5Hw1Gfl.png'}));
-            	}
-            },
-            bait2Command: {
-            	command: 'bait2',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    	API.sendChat(subChat('http://i.imgur.com/xcyKsmd.jpg', {link: 'http://i.imgur.com/xcyKsmd.jpg'}));
-            	}
-            },
-            bait3Command: {
-            	command: 'bait3',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    	API.sendChat(subChat('http://i.imgur.com/9wKujH9.png', {link: 'http://i.imgur.com/9wKujH9.png'}));
-            	}
-            },
+
 
             whoisCommand: {
                 command: 'whois',
