@@ -2737,7 +2737,7 @@
             },
 
             rouletteCommand: {
-                command: 'roulette',
+                command: 'lottery',
                 rank: 'mod',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -3687,7 +3687,7 @@
             	}
             },
             laugh3Command: {
-            	command: 'laugh2',
+            	command: 'laugh3',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
