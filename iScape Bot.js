@@ -2012,7 +2012,7 @@
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
-                                        "rating": "r",
+                                        "rating": rating,
                                         "tag": fixedtag
                                     },
                                     function(response)
@@ -2042,7 +2042,7 @@
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
-                                        "rating": "r",
+                                        "rating": rating,
                                     },
                                     function(response)
                                     {
