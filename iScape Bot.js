@@ -2008,7 +2008,7 @@
                             function get_id(api_key, func)
                             {
                                 $.getJSON(
-                                    "https://tv.giphy.com/v1/gifs/random?tag=nsfw&", 
+                                    "https://tv.giphy.com/v1/gifs/random?", 
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
@@ -2023,14 +2023,11 @@
                             var api_key = "dc6zaTOxFJmzC"; // public beta key
                             var rating = "R"; // PG 13 gifs
                             var tag = msg.substr(cmd.length + 1);
+                            tag = "nsfw";
                             var fixedtag = tag.replace(/ /g,"+");
                             var commatag = tag.replace(/ /g,", ");
                             get_id(api_key, tag, function(id) {
-                                if (typeof id === 'undefined') {
                                     API.sendChat(subChat(basicBot.chat.validgiftags, {name: chat.un, id: id, tags: commatag}));
-                                } else {
-                                    API.sendChat(subChat(basicBot.chat.invalidgiftags, {name: chat.un, tags: commatag}));
-                                }
                             });
                         }
                         else {
@@ -2052,11 +2049,7 @@
                             var api_key = "dc6zaTOxFJmzC"; // public beta key
                             var rating = "R"; // PG 13 gifs
                             get_random_id(api_key, function(id) {
-                                if (typeof id === 'undefined') {
                                     API.sendChat(subChat(basicBot.chat.validgifrandom, {name: chat.un, id: id}));
-                                } else {
-                                    API.sendChat(subChat(basicBot.chat.invalidgifrandom, {name: chat.un}));
-                                }
                             });
                         }
                     }
