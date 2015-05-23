@@ -3444,6 +3444,15 @@
                     	API.sendChat(subChat('http://i.imgur.com/MWnOXM6.gif', {link: 'http://i.imgur.com/MWnOXM6.gif'}));
             	}
             },
+            fridaysCommand: {
+            	command: 'refresh1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/7aVyI9J.jpg', {link: 'http://i.imgur.com/7aVyI9J.jpg'}));
+            	}
+            },
                fuckthis1Command: {
             	command: 'fuckthis1',
             	rank: 'user',
@@ -3696,6 +3705,31 @@
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/d61Aszu.webm', {link: 'http://i.imgur.com/d61Aszu.webm'}));
             	}
+            },
+            opinionCommand: {
+            	command: 'opinion',
+            	rank: 'bouncer',
+            	type: 'startsWith',
+            	functionality: function (chat, cmd) {
+            	if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+            		else {
+                        var msg = chat.message;
+                        var name;
+                        if (msg.length === cmd.length) name = chat.un;
+                        else {
+                            name = msg.substr(cmd.length + 2);
+                        }
+                        users = API.getUsers();
+                        var len = users.length;
+                        for (var i = 0; i < len; ++i){
+                            if (users[i].username == name){
+                            API.sendChat(subChat('/me ' & users[i].username & '\'s opinion no longer means shit.');
+                            }
+                        }
+            		}
+            		
+            }
             },
 
 
