@@ -231,13 +231,13 @@
             motd: "The Underground focuses on bringing you the best new music around. With a fun community and anti-pop culture music, it is easy to find your place here.",
             filterChat: true,
             etaRestriction: false,
-            welcome: true,
+            welcome: false,
             opLink: null,
             rulesLink: null,
             themeLink: null,
             fbLink: null,
             youtubeLink: null,
-            website: null,
+            website: "http://www.the-underground.info/",
             intervalMessages: [],
             messageInterval: 5,
             songstats: false,
@@ -259,12 +259,6 @@
             autoskip: false,
             autoskipTimer: null,
             autodisableInterval: null,
-            autodisableFunc: function () {
-                if (basicBot.status && basicBot.settings.autodisable) {
-                    API.sendChat('!afkdisable');
-                    API.sendChat('!joindisable');
-                }
-            },
             queueing: 0,
             queueable: true,
             currentDJID: null,
@@ -2766,7 +2760,7 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                         if (typeof basicBot.settings.rulesLink === "string")
-                            return API.sendChat(subChat(basicBot.chat.roomrules, {link: basicBot.settings.rulesLink}));
+                            return API.sendChat(subChat('Keep it under 7 minutes, if it is over ask for permission. No yellowtext. Only play music that is not mainstream. Trolls will be booted.'));
                     }
                 }
             },
@@ -2955,7 +2949,7 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                         if (typeof basicBot.settings.themeLink === "string")
-                            API.sendChat(subChat(basicBot.chat.genres, {link: basicBot.settings.themeLink}));
+                            API.sendChat(subChat('Theme: \n Share your favorite deep, dark, trippy, chill or unknown tracks. Producers are welcome too, and you will find loads of OC being played. If it SOUNDS mainstream, dont play it.'));
                     }
                 }
             },
@@ -3216,10 +3210,7 @@
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(basicBot.chat.voteskiplimit, {name: chat.un, limit: basicBot.settings.voteSkipLimit}));
                         var argument = msg.substring(cmd.length + 1);
                         if (!basicBot.settings.voteSkip) basicBot.settings.voteSkip = !basicBot.settings.voteSkip;
-                        if (isNaN(argument)) {
-                            API.sendChat(subChat(basicBot.chat.voteskipinvalidlimit, {name: chat.un}));
-                        }
-                        else {
+                        if (!isNaN(argument)) {
                             basicBot.settings.voteSkipLimit = argument;
                             API.sendChat(subChat(basicBot.chat.voteskipsetlimit, {name: chat.un, limit: basicBot.settings.voteSkipLimit}));
                         }
@@ -3237,11 +3228,9 @@
                     else {
                         if (basicBot.settings.welcome) {
                             basicBot.settings.welcome = !basicBot.settings.welcome;
-                            return API.sendChat(subChat(basicBot.chat.toggleoff, {name: chat.un, 'function': basicBot.chat.welcomemsg}));
                         }
                         else {
                             basicBot.settings.welcome = !basicBot.settings.welcome;
-                            return API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.welcomemsg}));
                         }
                     }
                 }
