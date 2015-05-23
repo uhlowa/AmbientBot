@@ -1995,56 +1995,6 @@
             
             
             
-            lastPlayedCommand: {
-            	command: 'lastplayed',
-            	rank: 'mod',
-            	type: 'exact'
-            	var Lastfm = require('simple-lastfm');
-
-var lastfm = new Lastfm({
-    api_key: '3381fa85e29ba7193512861d7b10e1ac',
-    api_secret: '2686b4ab4715ef0899e408e0aa9478aa',
-    username: 'Paradox6895',
-    password: 'ppaassss'
-});
-
-lastfm.getSessionKey(function(result) {
-    console.log("session key = " + result.session_key);
-    if(result.success) {
-        lastfm.scrobbleNowPlayingTrack({
-            artist: 'Ratatat',
-            track: 'Seventeen Years',
-            callback: function(result) {
-                console.log("in callback, finished: ", result);
-            }
-        });
-        lastfm.scrobbleTrack({
-            artist: 'Bonobo',
-            track: 'Black Sands',
-            callback: function(result) {
-                console.log("in callback, finished: ", result);
-            }
-        });
-        lastfm.loveTrack({
-            artist: 'Electrelane',
-            track: 'Suitcase',
-            callback: function(result) {
-                console.log("in callback, finished: ", result);
-            }
-        });
-        lastfm.unloveTrack({
-            artist: 'something crap',
-            track: 'no thanks',
-            callback: function(result) {
-                console.log("in callback, finished: ", result);
-            }
-        });
-    } else {
-        console.log("Error: " + result.error);
-    }
-});
-            	}
-
             gifCommand: {
                 command: ['gif', 'giphy'],
                 rank: 'user',
