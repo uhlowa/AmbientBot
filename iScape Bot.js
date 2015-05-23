@@ -1009,8 +1009,8 @@
                     return true;
                 }
 
-                var rlJoinChat = "%%NAME%% has joined the raffle!";
-                var rlLeaveChat = "%%NAME%% has left the raffle.";
+                var rlJoinChat = basicBot.chat.roulettejoin;
+                var rlLeaveChat = basicBot.chat.rouletteleave;
 
                 var joinedroulette = rlJoinChat.split('%%NAME%%');
                 if (joinedroulette[1].length > joinedroulette[0].length) joinedroulette = joinedroulette[1];
@@ -2096,7 +2096,7 @@
                 }
             },
 
-            joinCommand: {
+		joinCommand: {
                 command: 'join',
                 rank: 'user',
                 type: 'exact',
@@ -2106,7 +2106,7 @@
                     else {
                         if (basicBot.room.roulette.rouletteStatus && basicBot.room.roulette.participants.indexOf(chat.uid) < 0) {
                             basicBot.room.roulette.participants.push(chat.uid);
-                            API.sendChat(subChat('/me ' + plugUser.username + ' has joined the Raffle! Type !join to try your luck!'));
+                            API.sendChat(subChat(basicBot.chat.roulettejoin, {name: chat.un}));
                         }
                     }
                 }
