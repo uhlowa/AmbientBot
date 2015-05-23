@@ -2008,11 +2008,11 @@
                             function get_id(api_key, fixedtag, func)
                             {
                                 $.getJSON(
-                                    "http://tv.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&rating=r", 
+                                    "http://tv.giphy.com/v1/gifs/random?", 
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
-                                        "rating": rating,
+                                        "rating": "r",
                                         "tag": fixedtag
                                     },
                                     function(response)
@@ -2038,11 +2038,11 @@
                             function get_random_id(api_key, func)
                             {
                                 $.getJSON(
-                                    "http://tv.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&rating=r", 
+                                    "http://tv.giphy.com/v1/gifs/random?", 
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
-                                        "rating": rating
+                                        "rating": "r"
                                     },
                                     function(response)
                                     {
