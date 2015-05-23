@@ -174,7 +174,7 @@
 
     var botCreator = "Connor (Paradox)";
     var botMaintainer = "Underground Bot"
-    var botCreatorIDs = ["3851534", "4105209"];
+    var botCreatorIDs = ["3995934", "4105209"];
 
     var basicBot = {
         version: "1.2",
@@ -3904,6 +3904,30 @@
                                 API.sendChat(subChat('/me ' + name + '\'s opinion value set to: Absolute Fucking 0.'));
                             }
                         }
+                    }
+                }
+            },
+                                    staffonCommand: {
+                command: 'staffon',
+                rank: 'bouncer',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+                var id = chat.uid;
+                var sOnline = 0;
+                        users = API.getUsers();
+                        var len = users.length;
+                        for (var i = 0; i < len; ++i){
+                            if (basicBot.userUtilities.getPermission(users[i].id) > 0){
+                                sOnline += 1;
+                            }
+                        }
+
+
+                                API.sendChat(subChat("/me Currently there are " + sOnline + " staff members online."));
                     }
                 }
             },
