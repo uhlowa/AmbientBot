@@ -3280,12 +3280,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/ZDawAwF.webm', {link: 'http://i.imgur.com/ZDawAwF.webm'}));
-                   
-                    }
             	}
             },
             dance2Command: {
@@ -3293,11 +3289,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                                        else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/H9nADqS.gif', {link: 'http://i.imgur.com/H9nADqS.gif'}));
-                                        }
             	}
             },
             dance3Command: {
@@ -3305,11 +3298,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/t71qeT1.gif', {link: 'http://i.imgur.com/t71qeT1.gif'}));
-                    }
             	}
             },
             dance4Command: {
@@ -3317,11 +3307,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/TqezZCP.gif', {link: 'http://i.imgur.com/TqezZCP.gif'}));
-                    }
             	}
             },
             dance5Command: {
@@ -3329,11 +3316,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/XnCeorl.gif', {link: 'http://i.imgur.com/XnCeorl.gif'}));
-                    }
             	}
             },
             dance6Command: {
@@ -3341,11 +3325,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/IUoOZDo.gif', {link: 'http://i.imgur.com/IUoOZDo.gif'}));
-                    }
             	}
             },
             dance7Command: {
@@ -3353,11 +3334,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/jKfD4m3.gif', {link: 'http://i.imgur.com/jKfD4m3.gif'}));
-                    }
             	}
             },
             dance8Command: {
@@ -3365,11 +3343,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/pIxt2H0.gif', {link: 'http://i.imgur.com/pIxt2H0.gif'}));
-                    }
             	}
             },
             dance9Command: {
@@ -3377,11 +3352,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/YieC5Ls.gif', {link: 'http://i.imgur.com/YieC5Ls.gif'}));
-                    }
             	}
             },
             dance10Command: {
@@ -3389,11 +3361,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/cKT7CNU.gif', {link: 'http://i.imgur.com/cKT7CNU.gif'}));
-                    }
             	}
             },
             dance11Command: {
@@ -3401,11 +3370,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/6vfolCh.gif', {link: 'http://i.imgur.com/6vfolCh.gif'}));
-                    }
             	}
             },
             dance12Command: {
@@ -3413,11 +3379,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/pQLee14.gif', {link: 'http://i.imgur.com/pQLee14.gif'}));
-                    }
             	}
             },
             dance13Command: {
@@ -3425,11 +3388,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/sCGlr4m.gif', {link: 'http://i.imgur.com/sCGlr4m.gif'}));
-                    }
             	}
             },
             dance14Command: {
@@ -3437,11 +3397,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/Q7T2K8o.gif', {link: 'http://i.imgur.com/Q7T2K8o.gif'}));
-                    }
             	}
             },
             faggot1Command: {
@@ -3449,11 +3406,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/QJNr8sP.jpg', {link: 'http://i.imgur.com/QJNr8sP.jpg'}));
-                    }
             	}
             },
             faggot2Command: {
@@ -3461,11 +3415,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/9We2dVP.gif', {link: 'http://i.imgur.com/9We2dVP.gif'}));
-                    }
             	}
             },
             
@@ -3474,11 +3425,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/WvvxQTk.gif', {link: 'http://i.imgur.com/WvvxQTk.gif'}));
-                    }
             	}
             },
               fuckyou1Command: {
@@ -3486,11 +3434,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/1eh3dg1.gif', {link: 'http://i.imgur.com/1eh3dg1.gif'}));
-                    }
             	}
             },
             fuckyou2Command: {
@@ -3498,11 +3443,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/Oh8h3Pt.gif', {link: 'http://i.imgur.com/Oh8h3Pt.gif'}));
-                    }
             	}
             },
                refresh1Command: {
@@ -3510,11 +3452,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/MWnOXM6.gif', {link: 'http://i.imgur.com/MWnOXM6.gif'}));
-                    }
             	}
             },
                fuckthis1Command: {
@@ -3522,11 +3461,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/GMEMmZj.webm', {link: 'http://i.imgur.com/GMEMmZj.webm'}));
-                    }
             	}
             },
             shutup1Command: {
@@ -3534,11 +3470,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/u1dIcAN.webm', {link: 'http://i.imgur.com/u1dIcAN.webm'}));
-                    }
             	}
             },
             hilarious1Command: {
@@ -3546,11 +3479,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/ZgFcDJE.webm', {link: 'http://i.imgur.com/ZgFcDJE.webm'}));
-                    }
             	}
             },
             gloryhole1Command: {
@@ -3558,11 +3488,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/tdqZwhp.webm', {link: 'http://i.imgur.com/tdqZwhp.webm'}));
-                    }
             	}
             },
 
@@ -3571,11 +3498,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/WUOLKkl.webm', {link: 'http://i.imgur.com/WUOLKkl.webm'}));
-                    }
             	}
             },
             bad2Command: {
@@ -3583,11 +3507,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/5GG2m93.webm', {link: 'http://i.imgur.com/5GG2m93.webm'}));
-                    }
             	}
             },
             bad3Command: {
@@ -3595,11 +3516,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/Tw5MCuB.gif', {link: 'http://i.imgur.com/Tw5MCuB.gif'}));
-                    }
             	}
             },
             bad4Command: {
@@ -3607,11 +3525,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/81PvIBS.webm', {link: 'http://i.imgur.com/81PvIBS.webm'}));
-                    }
             	}
             },
             bad5Command: {
@@ -3619,11 +3534,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/New6lgb.gif', {link: 'http://i.imgur.com/New6lgb.gif'}));
-                    }
             	}
             },
             feelbad1Command: {
@@ -3631,11 +3543,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/L8SLyYp.gif', {link: 'http://i.imgur.com/L8SLyYp.gif'}));
-                    }
             	}
             },
             clap1Command: {
@@ -3643,11 +3552,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/ljp2oIK.webm', {link: 'http://i.imgur.com/ljp2oIK.webm'}));
-                    }
             	}
             },
             clap2Command: {
@@ -3655,11 +3561,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/EewRcj5.webm', {link: 'http://i.imgur.com/EewRcj5.webm'}));
-                    }
             	}
             },
             brofist1Command: {
@@ -3667,11 +3570,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/lIpVeN0.gif', {link: 'http://i.imgur.com/lIpVeN0.gif'}));
-                    }
             	}
             },
             hangyourself1Command: {
@@ -3679,11 +3579,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/e2KTFEV.jpg', {link: 'http://i.imgur.com/e2KTFEV.jpg'}));
-                    }
             	}
             },
             laugh1Command: {
@@ -3691,11 +3588,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/JJXmxnr.jpg', {link: 'http://i.imgur.com/JJXmxnr.jpg'}));
-                    }
             	}
             },
             laugh2Command: {
@@ -3703,11 +3597,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/LUU1tI9.jpg', {link: 'http://i.imgur.com/LUU1tI9.jpg'}));
-                    }
             	}
             },
             laugh3Command: {
@@ -3715,11 +3606,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/qwhQw6r.gif', {link: 'http://i.imgur.com/qwhQw6r.gif'}));
-                    }
             	}
             },
             sad1Command: {
@@ -3727,11 +3615,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/B9DaCjz.webm', {link: 'http://i.imgur.com/B9DaCjz.webm'}));
-                    }
             	}
             },
             djdoge1Command: {
@@ -3739,11 +3624,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/N6Mb74t.jpg', {link: 'http://i.imgur.com/N6Mb74t.jpg'}));
-                    }
             	}
             },
             rodge1Command: {
@@ -3751,11 +3633,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/YTThds9.jpg', {link: 'http://i.imgur.com/YTThds9.jpg'}));
-                    }
             	}
             },
             noregrets1Command: {
@@ -3763,11 +3642,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/rbFPzbB.webm', {link: 'http://i.imgur.com/rbFPzbB.webm'}));
-                    }
             	}
             },
             thefuck1Command: {
@@ -3775,11 +3651,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/nIbnCPv.gif', {link: 'http://i.imgur.com/nIbnCPv.gif'}));
-                    }
             	}
             },
             good1Command: {
@@ -3787,11 +3660,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/FhBFNSO.gif', {link: 'http://i.imgur.com/FhBFNSO.gif'}));
-                    }
             	}
             },
             no1Command: {
@@ -3799,11 +3669,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/5dXFx43.gif', {link: 'http://i.imgur.com/5dXFx43.gif'}));
-                    }
             	}
             },
             why1Command: {
@@ -3811,11 +3678,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/w4E0ICB.webm', {link: 'http://i.imgur.com/w4E0ICB.webm'}));
-                    }
             	}
             },
             why2Command: {
@@ -3823,11 +3687,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/vi7Nc9o.webm', {link: 'http://i.imgur.com/vi7Nc9o.webm'}));
-                    }
             	}
             },
             brohug1Command: {
@@ -3835,10 +3696,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/yvIbI7U.gif', {link: 'http://i.imgur.com/yvIbI7U.gif'}));
-            	}
             	}
             },
             bye1Command: {
@@ -3846,11 +3705,8 @@
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/d61Aszu.webm', {link: 'http://i.imgur.com/d61Aszu.webm'}));
-                    }
             	}
             },
 
