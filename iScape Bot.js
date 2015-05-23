@@ -3697,6 +3697,29 @@
                     	API.sendChat(subChat('http://i.imgur.com/d61Aszu.webm', {link: 'http://i.imgur.com/d61Aszu.webm'}));
             	}
             },
+            
+            opinionCommand: {
+            	command: 'opiniondontmatta',
+            	rank: 'bouncer',
+            	type: 'startsWith',
+            	functionality: function (chat, cmd) {
+         		if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    if (!basicBot.commands.executable(this.rank, chat)) { return void (0); }
+                                            var msg = chat.message;
+                        var name;
+                        if (msg.length === cmd.length) name = chat.un;
+                        else {
+                            name = msg.substr(cmd.length + 2);
+                        }
+                        users = API.getUsers();
+                        var len = users.length;
+                        for (var i = 0; i < len; ++i){
+                            if (users[i].username == name){
+                            		API.sendChat(subChat('/me ' & users[i]username & '\'s opinion no longer means shit.'));
+                            }
+                        }
+            	}
+            },
 
 
             whoisCommand: {
