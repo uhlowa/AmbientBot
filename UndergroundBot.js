@@ -194,6 +194,7 @@
             language: "english",
             chatLink: "https://rawgit.com/Paradox68/UndergroundBot/master/lang/en.json",
             startupCap: 1, // 1-200
+            spotLock: "[none]",
             approvedDJ: "[None]",
             startupVolume: 0, // 0-100
             startupEmoji: true, // true or false
@@ -300,19 +301,29 @@
                         underground.room.roulette.endRoulette();
                     }, 60 * 1000);
                     API.sendChat('/me The Raffle is now open. @djs Type !join to try your luck!');
+                    var usr = "[none]";
+                    var name = "undefined";
+                   for (var i = 0; i < underground.room.users.length; i++) {
+                   	if (API.getWaitListPosition(underground.room.users[i].id) == 1) {
+                   	usr = undergound.room.users[i].id;
+                   	}
+                   }
+                   name = underground.userUtilities.lookupUser(usr);
+                    API.sendChat('@' + name + ' lock your spot at position 1 by typing !lock')
                 },
                 endRoulette: function () {
                     underground.room.roulette.rouletteStatus = false;
                     var ind = Math.floor(Math.random() * underground.room.roulette.participants.length);
                     var winner = underground.room.roulette.participants[ind];
                     underground.room.roulette.participants = [];
-                    var pos = API.getWaitListPosition(user.id) - 3;
-                    if (pos < 1) {
-                    	pos = 1;
+                    var pos = 1;
+                    if (underground.settings.spotLock !== "[none]") {
+                    	pos = 2;
                     }
                     //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
                     var user = underground.userUtilities.lookupUser(winner);
                     var name = user.username;
+                    underground.settings.spotLock = "[none]";
                     API.sendChat(subChat(underground.chat.winnerpicked, {name: name, position: pos}));
                     setTimeout(function (winner, pos) {
                         underground.userUtilities.moveUser(winner, pos, false);
@@ -3597,6 +3608,20 @@
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/wlTqw2a.gif'));
+            	}
+            },
+            lockposCommand: {
+            	command: 'lockpos',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+            	if (underground.room.roulette.rouletteStatus) {
+            		if (API.getWaitListPosition(chat.id) == 1) {
+            			API.sendChat('/me ' + chat.un + ' has locked their spot at position 1 in the queue!');
+            			underground.settings.spotLock = chat.id;
+            		}
+            }
             	}
             },
             rollCommand: {
