@@ -1246,6 +1246,11 @@
             underground.room.afkInterval = setInterval(function () {
                 underground.roomUtilities.afkCheck()
             }, 10 * 1000);
+            underground.room.autoRaffle = setInterval(function () {
+                        if (!underground.room.roulette.rouletteStatus) {
+                            underground.room.roulette.startRoulette();
+                        }
+            }, (60 * 1000) * 60);
             underground.room.autodisableInterval = setInterval(function () {
                 underground.room.autodisableFunc();
             }, 60 * 60 * 1000);
