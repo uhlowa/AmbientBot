@@ -3274,6 +3274,33 @@
                     	API.sendChat(subChat('http://i.imgur.com/ZDawAwF.webm'));
             	}
             },
+            drop1Command: {
+            	command: 'drop',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/N7D7OWf.gif'));
+            	}
+            },
+            drop2Command: {
+            	command: 'drop1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/TUUwcEC.gif'));
+            	}
+            },
+            drop3Command: {
+            	command: 'drop2',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/ELEO7nP.gif'));
+            	}
+            },
             dance2Command: {
             	command: 'dance1',
             	rank: 'user',
