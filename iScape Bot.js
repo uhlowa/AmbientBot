@@ -836,7 +836,7 @@
             if (typeof lastplay === 'undefined') return;
             if (basicBot.settings.songstats) {
                 if (typeof basicBot.chat.songstatistics === "undefined") {
-                    API.sendChat("/me Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": \n:thumbsup: " + lastplay.score.positive + " Woots, :heart: " + lastplay.score.grabs + " Grabs, :thumbsdown: " + lastplay.score.negative + " Mehs.")
+                    API.sendChat("/me :sound: Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": \n:thumbsup: " + lastplay.score.positive + " Woots, :heart: " + lastplay.score.grabs + " Grabs, :thumbsdown: " + lastplay.score.negative + " Mehs.")
                 }
                 else {
                     API.sendChat(subChat("/me Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": \n:thumbsup: " + lastplay.score.positive + " Woots, :heart: " + lastplay.score.grabs + " Grabs, :thumbsdown: " + lastplay.score.negative + " Mehs."))
