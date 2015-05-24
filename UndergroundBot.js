@@ -772,11 +772,11 @@
             if (underground.settings.welcome && greet) {
                 welcomeback ?
                     setTimeout(function (user) {
-                        API.sendChat(subChat('Welcome back to The Underground, @' + user.username + '.'));
+                        API.sendChat(subChat('/me Welcome back to The Underground, @' + user.username + '.'));
                     }, 1 * 1000, user)
                     :
                     setTimeout(function (user) {
-                        API.sendChat(subChat('Welcome to The Underground, @' + user.username + '. Enjoy your stay.'));
+                        API.sendChat(subChat('/me Welcome to The Underground, @' + user.username + '. Enjoy your stay.'));
                     }, 1 * 1000, user);
             }
         },
