@@ -192,7 +192,6 @@
             botName: "Underground Bot",
             language: "english",
             chatLink: "https://rawgit.com/Paradox68/iScape-Bot/master/lang/en.json",
-            cmdAnon: false,
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: true, // true or false
@@ -215,7 +214,7 @@
             autodisable: true,
             commandCooldown: 30,
             usercommandsEnabled: true,
-            lockskipPosition: 3,
+            lockskipPosition: 1,
             lockskipReasons: [
                 ["theme", "This song does not fit the room theme. "],
                 ["op", "This song is on the OP list. "],
@@ -1309,17 +1308,6 @@
                         }
                 },
              **/
-             anonCommand: {
-             	command: 'anonymity',
-             	rank: 'mod',
-             	type: 'exact',
-             	          functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    if (!basicBot.commands.executable(this.rank, chat)) { return void (0); }
-                    basicBot.settings.cmdAnon = !basicBot.settings.cmdAnon;
-                    API.sendChat('Reaction gif anonymity set to ' + basicBot.settings.cmdAnon)
-             	          }
-             },
 
             activeCommand: {
                 command: 'active',
@@ -2342,7 +2330,6 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        if (basicBot.room.skippable) {
                             var dj = API.getDJ();
                             var id = dj.id;
                             var name = dj.username;
@@ -2398,7 +2385,6 @@
                                 }, 1000, id);
                                 return void (0);
                             }
-                        }
                     }
                 }
             },
@@ -3274,11 +3260,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-            	    if (basicBot.settings.cmdAnon) {
                     	API.sendChat(subChat(chat.un + ' used ' + cmd + ' \n http://i.imgur.com/ZDawAwF.webm'));
-            	    } else {
-            	    	API.sendChat('http://i.imgur.com/ZDawAwF.webm'));
-            	    }
             	}
             },
             dance2Command: {
@@ -3287,11 +3269,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-            	    if (basicBot.settings.cmdAnon) {
                     	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/H9nADqS.gif'));
-            	} else {
-            	    	API.sendChat('http://i.imgur.com/ZDawAwF.webm'));
-            	    }
             	}
             },
             dance3Command: {
@@ -3300,11 +3278,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-            	    if (basicBot.settings.cmdAnon) {
                     	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/t71qeT1.gif'));
-            	} else {
-            	    	API.sendChat('http://i.imgur.com/ZDawAwF.webm'));
-            	    }
             	}
             },
             dance4Command: {
@@ -3313,11 +3287,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-            	    if (basicBot.settings.cmdAnon) {
                     	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/TqezZCP.gif'));
-            	} else {
-            	    	API.sendChat('http://i.imgur.com/ZDawAwF.webm'));
-            	    }
             	}
             },
             dance5Command: {
