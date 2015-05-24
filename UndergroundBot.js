@@ -194,6 +194,7 @@
             language: "english",
             chatLink: "https://rawgit.com/Paradox68/UndergroundBot/master/lang/en.json",
             startupCap: 1, // 1-200
+            approvedDJ: "[None]",
             startupVolume: 0, // 0-100
             startupEmoji: true, // true or false
             cmdDeletion: false,
@@ -849,6 +850,10 @@
             underground.room.roomstats.songCount++;
             underground.roomUtilities.intervalMessage();
             underground.room.currentDJID = obj.dj.id;
+            if (underground.room.currentDJID === underground.settings.approvedDJ) {
+            	API.sendChat(subChat('/me :arrow_forward: This Track has been approved.'));
+            	underground.settings.approvedDJ = "[none]";
+            }
 
             var mid = obj.media.format + ':' + obj.media.cid;
             for (var bl in underground.room.blacklists) {
@@ -3938,6 +3943,7 @@
 
 
                                 API.sendChat(subChat('/me ' + name + '\'s next Track has been approved!'));
+                                underground.settings.approvedDJ = id;
                             }
                         }
                     }
