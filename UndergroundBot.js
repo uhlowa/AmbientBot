@@ -4073,11 +4073,11 @@
                         var len = users.length;
                         for (var i = 0; i < len; ++i){
                             if (users[i].username == name){
-                                var id = users[i].id;
+                                var otherid = users[i].id;
 
 
                                 API.sendChat(subChat('/me ' + name + '\'s next Track has been approved!'));
-                                underground.settings.approvedDJ = id;
+                                underground.settings.approvedDJ = otherid;
                             }
                         }
                     }
