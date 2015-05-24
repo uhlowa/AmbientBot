@@ -309,7 +309,7 @@
                    	}
                    }
                    name = underground.userUtilities.lookupUser(usr);
-                    API.sendChat('@' + name + ' lock your spot at position 1 by typing !lock')
+                    API.sendChat('@' + name + ' lock your spot at position 1 by typing !lockpos')
                 },
                 endRoulette: function () {
                     underground.room.roulette.rouletteStatus = false;
@@ -3616,10 +3616,10 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-            	if (underground.room.roulette.rouletteStatus) {
-            		if (API.getWaitListPosition(chat.id) == 1) {
+            	if (underground.room.roulette.rouletteStatus = true) {
+            		if (API.getWaitListPosition(id) == 1) {
             			API.sendChat('/me ' + chat.un + ' has locked their spot at position 1 in the queue!');
-            			underground.settings.spotLock = chat.id;
+            			underground.settings.spotLock = id;
             		}
             }
             	}
