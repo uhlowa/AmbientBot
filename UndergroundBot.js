@@ -24,20 +24,6 @@
         underground.status = false;
     };
     
-    var dayTheme = function(day) {
-    	day = new Date().getDay();
-    	if (day === 0) {
-    		return "Chill";
-    	}
-    	if (day === 1) {
-    		return "[none]";
-    	}
-    	if (day === 2) {
-    		return "Hip-hop";
-    	}
-    	return "[none]";
-    	
-    };
 
     var storeToStorage = function () {
         localStorage.setItem("undergroundsettings", JSON.stringify(underground.settings));
@@ -207,7 +193,7 @@
         settings: {
             botName: "Underground Bot",
             language: "english",
-            isTuesday: false;
+            dayTheme: "[none]";
             chatLink: "https://rawgit.com/Paradox68/UndergroundBot/master/lang/en.json",
             startupCap: 1, // 1-200
             approvedDJ: "[None]",
@@ -793,7 +779,11 @@
                     }, 1 * 1000, user)
                     :
                     setTimeout(function (user) {
-                        API.sendChat(subChat('/me Welcome to The Underground, @' + user.username + '. Today\'s theme is:  ' + dayTheme));
+                    	if (underground.settings.dayTheme !== "[none]") {
+                        API.sendChat('/me Welcome to The Underground, @' + user.username + '. Today\'s theme is:  ' + underground.settings.dayTheme);
+                    	} else {
+                    	API.sendChat('/me Welcome to The Underground, @' + user.username + '. Please enjoy your stay.');
+                    	}
                     }, 1 * 1000, user);
             }
         },
@@ -858,7 +848,7 @@
                     API.sendChat("/me :sound: Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": \n:thumbsup: " + lastplay.score.positive + " Woots, :heart: " + lastplay.score.grabs + " Grabs, :thumbsdown: " + lastplay.score.negative + " Mehs.")
                 }
                 else {
-                    API.sendChat(subChat("/me :sound: Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": \n:thumbsup: " + lastplay.score.positive + " Woots, :heart: " + lastplay.score.grabs + " Grabs, :thumbsdown: " + lastplay.score.negative + " Mehs."))
+                    API.sendChat("/me :sound: Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": \n:thumbsup: " + lastplay.score.positive + " Woots, :heart: " + lastplay.score.grabs + " Grabs, :thumbsdown: " + lastplay.score.negative + " Mehs.")
                 }
             }
             underground.room.roomstats.totalWoots += lastplay.score.positive;
