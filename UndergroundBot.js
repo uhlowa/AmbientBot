@@ -2637,7 +2637,7 @@
                 }
             },
 
-            refreshCommand: {
+            /*refreshCommand: {
                 command: 'refresh',
                 rank: 'manager',
                 type: 'exact',
@@ -2653,7 +2653,7 @@
 
                     }
                 }
-            },
+            },*/
 
             reloadCommand: {
                 command: 'reload',
