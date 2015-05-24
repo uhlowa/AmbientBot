@@ -207,7 +207,7 @@
         settings: {
             botName: "Underground Bot",
             language: "english",
-            isTuesday = false;
+            isTuesday: false;
             chatLink: "https://rawgit.com/Paradox68/UndergroundBot/master/lang/en.json",
             startupCap: 1, // 1-200
             approvedDJ: "[None]",
