@@ -194,7 +194,7 @@
             language: "english",
             chatLink: "https://rawgit.com/Paradox68/UndergroundBot/master/lang/en.json",
             startupCap: 1, // 1-200
-            spotLock: "[none]",
+            spotLock: "none",
             approvedDJ: "[None]",
             startupVolume: 0, // 0-100
             startupEmoji: true, // true or false
@@ -317,13 +317,13 @@
                     var winner = underground.room.roulette.participants[ind];
                     underground.room.roulette.participants = [];
                     var pos = 1;
-                    if (underground.settings.spotLock !== "[none]") {
+                    if (underground.settings.spotLock !== "none") {
                     	pos = 2;
                     }
                     //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
                     var user = underground.userUtilities.lookupUser(winner);
                     var name = user.username;
-                    underground.settings.spotLock = "[none]";
+                    underground.settings.spotLock = "none";
                     API.sendChat(subChat(underground.chat.winnerpicked, {name: name, position: pos}));
                     setTimeout(function (winner, pos) {
                         underground.userUtilities.moveUser(winner, pos, false);
@@ -861,7 +861,7 @@
             underground.room.roomstats.songCount++;
             underground.roomUtilities.intervalMessage();
             underground.room.currentDJID = obj.dj.id;
-            underground.settings.spotLock = "[none]";
+            underground.settings.spotLock = "none";
             if (underground.room.currentDJID === underground.settings.approvedDJ) {
             	API.sendChat(subChat('/me :arrow_forward: This Track has been approved.'));
             	underground.settings.approvedDJ = "[none]";
@@ -3618,7 +3618,7 @@
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
             		if (API.getWaitListPosition(id) == 1) {
-            			if (underground.settings.spotLock === "[none]") {
+            			if (underground.settings.spotLock === "none") {
             			API.sendChat('/me ' + chat.un + ' has locked their spot at position 1 in the queue!');
             			underground.settings.spotLock = chat.un;
             			}
