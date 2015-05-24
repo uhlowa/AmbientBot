@@ -3841,6 +3841,15 @@
                     	API.sendChat(subChat('http://i.imgur.com/vi7Nc9o.webm'));
             	}
             },
+            wiggleCommand: {
+            	command: 'wiggle',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/sYDxFZe.gif'));
+            	}
+            },
             brohug1Command: {
             	command: 'brohug1',
             	rank: 'user',
