@@ -886,9 +886,11 @@
             var newMedia = obj.media;
             if (underground.settings.timeGuard && newMedia.duration > underground.settings.maximumSongLength * 60 && !underground.room.roomevent) {
                 var name = obj.dj.username;
+                var id = obj.dj.id;
                 if (obj.dj.id !== underground.settings.approvedDJ) {
-                API.sendChat(subChat(underground.chat.timelimit, {name: name, maxlength: underground.settings.maximumSongLength}));
+                API.sendChat('Sorry, ' + name + ', but your song is too long. You\'ve been placed at position 2 in the queue to try another track.');
                 API.moderateForceSkip();
+                underground.userUtilities.moveUser(id, 2, false);
                 }
             }
             if (user.ownSong) {
