@@ -835,31 +835,11 @@
             var lastplay = obj.lastPlay;
             if (typeof lastplay === 'undefined') return;
             if (basicBot.settings.songstats) {
-            		var link = "[Not found]";
-            	                        var media = API.getMedia();
-                        var from = chat.un;
-                        var user = basicBot.userUtilities.lookupUser(chat.uid);
-                        var perm = basicBot.userUtilities.getPermission(chat.uid);
-                        var dj = API.getDJ().id;
-                        var isDj = false;
-                        if (dj === chat.uid) isDj = true;
-                        if (perm >= 1 || isDj) {
-                            if (media.format === 1) {
-                                link = "http://youtu.be/" + media.cid;
-                                //API.sendChat(subChat(basicBot.chat.songlink, {name: from, link: linkToSong}));
-                            }
-                            if (media.format === 2) {
-                                SC.get('/tracks/' + media.cid, function (sound) {
-                                		link = sound.permalink_url
-                                    //API.sendChat(subChat(basicBot.chat.songlink, {name: from, link: sound.permalink_url}));
-                                });
-                            }
-                        }
                 if (typeof basicBot.chat.songstatistics === "undefined") {
-                    API.sendChat("/me Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": :thumbsup:" + lastplay.score.positive + " Woots, :heart:" + lastplay.score.grabs + " Grabs, :thumbsdown:" + lastplay.score.negative + " Mehs.\n Link: " + link)
+                    API.sendChat("/me Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": :thumbsup: " + lastplay.score.positive + " Woots, :heart: " + lastplay.score.grabs + " Grabs, :thumbsdown: " + lastplay.score.negative + " Mehs.")
                 }
                 else {
-                    API.sendChat(subChat("/me Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": :thumbsup:" + lastplay.score.positive + " Woots, :heart:" + lastplay.score.grabs + " Grabs, :thumbsdown:" + lastplay.score.negative + " Mehs.\n Link: " + link))
+                    API.sendChat(subChat("/me Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": :thumbsup: " + lastplay.score.positive + " Woots, :heart: " + lastplay.score.grabs + " Grabs, :thumbsdown: " + lastplay.score.negative + " Mehs.))
                 }
             }
             basicBot.room.roomstats.totalWoots += lastplay.score.positive;
