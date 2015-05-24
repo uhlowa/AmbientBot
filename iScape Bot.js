@@ -2551,7 +2551,7 @@
                         var permFrom = basicBot.userUtilities.getPermission(chat.uid);
                         var permUser = basicBot.userUtilities.getPermission(user.id);
                         if (permFrom > permUser) {
-                            /*
+                            
                              basicBot.room.mutedUsers.push(user.id);
                              if (time === null) API.sendChat(subChat(basicBot.chat.mutednotime, {name: chat.un, username: name}));
                              else {
@@ -2574,7 +2574,7 @@
                              }
                              }, time * 60 * 1000, user.id);
                              }
-                             */
+                             
                             if (time > 45) {
                                 API.sendChat(subChat(basicBot.chat.mutedmaxtime, {name: chat.un, time: "45"}));
                                 API.moderateMuteUser(user.id, 1, API.MUTE.LONG);
@@ -3096,7 +3096,7 @@
                     else {
                         var msg = chat.message;
                         var permFrom = basicBot.userUtilities.getPermission(chat.uid);
-                        /**
+                        
                          if (msg.indexOf('@') === -1 && msg.indexOf('all') !== -1) {
                             if (permFrom > 2) {
                                 basicBot.room.mutedUsers = [];
@@ -3104,7 +3104,7 @@
                             }
                             else return API.sendChat(subChat(basicBot.chat.unmuteeveryonerank, {name: chat.un}));
                         }
-                         **/
+                         
                         var from = chat.un;
                         var name = msg.substr(cmd.length + 2);
 
@@ -3114,7 +3114,7 @@
 
                         var permUser = basicBot.userUtilities.getPermission(user.id);
                         if (permFrom > permUser) {
-                            /*
+                            
                              var muted = basicBot.room.mutedUsers;
                              var wasMuted = false;
                              var indexMuted = -1;
@@ -3127,7 +3127,7 @@
                              if (!wasMuted) return API.sendChat(subChat(basicBot.chat.notmuted, {name: chat.un}));
                              basicBot.room.mutedUsers.splice(indexMuted);
                              API.sendChat(subChat(basicBot.chat.unmuted, {name: chat.un, username: name}));
-                             */
+                             
                             try {
                                 API.moderateUnmuteUser(user.id);
                                 API.sendChat(subChat(basicBot.chat.unmuted, {name: chat.un, username: name}));
@@ -3262,7 +3262,8 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/ZDawAwF.webm'));
+            	    	var nme = chat.un;
+                    	API.sendChat(subChat(nme + 'http://i.imgur.com/ZDawAwF.webm'));
             	}
             },
             dance2Command: {
