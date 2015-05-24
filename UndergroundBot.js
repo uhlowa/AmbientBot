@@ -3670,6 +3670,15 @@
                     	API.sendChat(subChat('http://i.imgur.com/c4BWZyz.webm'));
             	}
             },
+            idgafCommand: {
+            	command: 'idgaf',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/tZ1Gvzy.gif'));
+            	}
+            },
            allowitCommand: {
             	command: 'allowit',
             	rank: 'user',
