@@ -3255,7 +3255,7 @@
             
             
 	    dance1Command: {
-            	command: 'dance1',
+            	command: 'dance',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3264,7 +3264,7 @@
             	}
             },
             dance2Command: {
-            	command: 'dance2',
+            	command: 'dance1',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3273,7 +3273,7 @@
             	}
             },
             dance3Command: {
-            	command: 'dance3',
+            	command: 'dance2',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3282,7 +3282,7 @@
             	}
             },
             dance4Command: {
-            	command: 'dance4',
+            	command: 'dance3',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3291,7 +3291,7 @@
             	}
             },
             dance5Command: {
-            	command: 'dance5',
+            	command: 'dance4',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3309,7 +3309,7 @@
             	}
             },
             dance6Command: {
-            	command: 'dance6',
+            	command: 'dance5',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3318,7 +3318,7 @@
             	}
             },
             dance7Command: {
-            	command: 'dance7',
+            	command: 'dance6',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3327,7 +3327,7 @@
             	}
             },
             dance8Command: {
-            	command: 'dance8',
+            	command: 'dance7',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3336,7 +3336,7 @@
             	}
             },
             dance9Command: {
-            	command: 'dance9',
+            	command: 'dance8',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3345,7 +3345,7 @@
             	}
             },
             dance10Command: {
-            	command: 'dance10',
+            	command: 'dance9',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3354,7 +3354,7 @@
             	}
             },
             dance11Command: {
-            	command: 'dance11',
+            	command: 'dance10',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3363,7 +3363,7 @@
             	}
             },
             dance12Command: {
-            	command: 'dance12',
+            	command: 'dance11',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3372,7 +3372,7 @@
             	}
             },
             dance13Command: {
-            	command: 'dance13',
+            	command: 'dance12',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3381,7 +3381,7 @@
             	}
             },
             dance14Command: {
-            	command: 'dance14',
+            	command: 'dance13',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3390,7 +3390,7 @@
             	}
             },
             faggot1Command: {
-            	command: 'faggot1',
+            	command: 'faggot',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3399,7 +3399,7 @@
             	}
             },
             faggot2Command: {
-            	command: 'faggot2',
+            	command: 'faggot1',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3408,7 +3408,7 @@
             	}
             },
             faggot3Command: {
-            	command: 'faggot3',
+            	command: 'faggot2',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3417,7 +3417,7 @@
             	}
             },
             faggot4Command: {
-            	command: 'faggot4',
+            	command: 'faggot3',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3426,7 +3426,7 @@
             	}
             },
             faggot5Command: {
-            	command: 'faggot5',
+            	command: 'faggot4',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3435,7 +3435,7 @@
             	}
             },
             faggot6Command: {
-            	command: 'faggot6',
+            	command: 'faggot5',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3444,7 +3444,7 @@
             	}
             },
             faggot7Command: {
-            	command: 'faggot7',
+            	command: 'faggot6',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3454,7 +3454,7 @@
             },
             
                 regret1Command: {
-            	command: 'regret1',
+            	command: 'regret',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3463,7 +3463,7 @@
             	}
             },
               fuckyou1Command: {
-            	command: 'fuckyou1',
+            	command: 'fuckyou',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3472,7 +3472,7 @@
             	}
             },
             fuckyou2Command: {
-            	command: 'fuckyou2',
+            	command: 'fuckyou1',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3481,7 +3481,7 @@
             	}
             },
             fuckyou3Command: {
-            	command: 'fuckyou3',
+            	command: 'fuckyou2',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3490,7 +3490,7 @@
             	}
             },
             fuckyou4Command: {
-            	command: 'fuckyou4',
+            	command: 'fuckyou3',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3499,7 +3499,7 @@
             	}
             },
             fuckyou5Command: {
-            	command: 'fuckyou5',
+            	command: 'fuckyou4',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3508,7 +3508,7 @@
             	}
             },
             fuckyou6Command: {
-            	command: 'fuckyou6',
+            	command: 'fuckyou5',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3517,7 +3517,7 @@
             	}
             },
             fuckyou7Command: {
-            	command: 'fuckyou7',
+            	command: 'fuckyou6',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3526,7 +3526,7 @@
             	}
             },
             fuckyou8Command: {
-            	command: 'fuckyou8',
+            	command: 'fuckyou7',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3535,7 +3535,7 @@
             	}
             },
             fuckyou9Command: {
-            	command: 'fuckyou9',
+            	command: 'fuckyou8',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3544,7 +3544,7 @@
             	}
             },
             fuckyou10Command: {
-            	command: 'fuckyou10',
+            	command: 'fuckyou9',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3553,7 +3553,7 @@
             	}
             },
             fuckyou11Command: {
-            	command: 'fuckyou11',
+            	command: 'fuckyou10',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3598,7 +3598,7 @@
             	}
             },
                refresh1Command: {
-            	command: 'refresh1',
+            	command: 'refresh',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3607,7 +3607,7 @@
             	}
             },
                fuckthis1Command: {
-            	command: 'fuckthis1',
+            	command: 'fuckthis',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3616,7 +3616,7 @@
             	}
             },
             shutup1Command: {
-            	command: 'shutup1',
+            	command: 'shutup',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3625,7 +3625,7 @@
             	}
             },
             hilarious1Command: {
-            	command: 'hilarious1',
+            	command: 'hilarious',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3634,7 +3634,7 @@
             	}
             },
             gloryhole1Command: {
-            	command: 'gloryhole1',
+            	command: 'gloryhole',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3644,7 +3644,7 @@
             },
 
             bad1Command: {
-            	command: 'bad1',
+            	command: 'bad',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3653,7 +3653,7 @@
             	}
             },
             bad2Command: {
-            	command: 'bad2',
+            	command: 'bad1',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3662,7 +3662,7 @@
             	}
             },
             bad3Command: {
-            	command: 'bad3',
+            	command: 'bad2',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3671,7 +3671,7 @@
             	}
             },
             bad4Command: {
-            	command: 'bad4',
+            	command: 'bad3',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3680,7 +3680,7 @@
             	}
             },
             bad5Command: {
-            	command: 'bad5',
+            	command: 'bad4',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3689,7 +3689,7 @@
             	}
             },
             feelbad1Command: {
-            	command: 'feelbad1',
+            	command: 'feelbad',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3698,7 +3698,7 @@
             	}
             },
             clap1Command: {
-            	command: 'clap1',
+            	command: 'clap',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3707,7 +3707,7 @@
             	}
             },
             clap2Command: {
-            	command: 'clap2',
+            	command: 'clap1',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3716,7 +3716,7 @@
             	}
             },
             brofist1Command: {
-            	command: 'brofist1',
+            	command: 'brofist',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3725,7 +3725,7 @@
             	}
             },
             hangyourself1Command: {
-            	command: 'hangyourself1',
+            	command: 'hangyourself',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3734,7 +3734,7 @@
             	}
             },
             laugh1Command: {
-            	command: 'laugh1',
+            	command: 'laugh',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3743,7 +3743,7 @@
             	}
             },
             laugh2Command: {
-            	command: 'laugh2',
+            	command: 'laugh1',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3752,7 +3752,7 @@
             	}
             },
             laugh3Command: {
-            	command: 'laugh3',
+            	command: 'laugh2',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3761,7 +3761,7 @@
             	}
             },
             sad1Command: {
-            	command: 'sad1',
+            	command: 'sad',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3788,7 +3788,7 @@
             	}
             },
             noregrets1Command: {
-            	command: 'noregrets1',
+            	command: 'noregrets',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3797,7 +3797,7 @@
             	}
             },
             thefuck1Command: {
-            	command: 'thefuck1',
+            	command: 'thefuck',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3806,7 +3806,7 @@
             	}
             },
             good1Command: {
-            	command: 'good1',
+            	command: 'good',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3815,7 +3815,7 @@
             	}
             },
             no1Command: {
-            	command: 'no1',
+            	command: 'no',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3824,7 +3824,7 @@
             	}
             },
             why1Command: {
-            	command: 'why1',
+            	command: 'why',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3833,7 +3833,7 @@
             	}
             },
             why2Command: {
-            	command: 'why2',
+            	command: 'why1',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
@@ -3850,8 +3850,35 @@
                     	API.sendChat(subChat('http://i.imgur.com/sYDxFZe.gif'));
             	}
             },
+            wiggle1Command: {
+            	command: 'wiggle1',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/ba2vGxM.gif'));
+            	}
+            },
+            wiggle2Command: {
+            	command: 'wiggle2',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/2QewkCH.gif'));
+            	}
+            },
+            wiggle3Command: {
+            	command: 'wiggle3',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('http://i.imgur.com/OEpvOZg.gif'));
+            	}
+            },
             brohug1Command: {
-            	command: 'brohug1',
+            	command: 'brohug',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
