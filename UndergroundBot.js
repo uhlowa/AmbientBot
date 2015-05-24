@@ -190,6 +190,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
+        	autoraffleT: 60,
             botName: "Underground Bot",
             language: "english",
             chatLink: "https://rawgit.com/Paradox68/UndergroundBot/master/lang/en.json",
@@ -1247,10 +1248,12 @@
                 underground.roomUtilities.afkCheck()
             }, 10 * 1000);
             underground.room.autoRaffle = setInterval(function () {
-                        if (!underground.room.roulette.rouletteStatus) {
+            	underground.settings.autoraffleT--;
+                        if (!underground.room.roulette.rouletteStatus && underground.settingsautoraffleT == 0) {
                             underground.room.roulette.startRoulette();
+                            underground.settings.autoraffleT = 60;
                         }
-            }, (60 * 1000) * 60);
+            }, 60 * 1000);
             underground.room.autodisableInterval = setInterval(function () {
                 underground.room.autodisableFunc();
             }, 60 * 60 * 1000);
@@ -4135,12 +4138,21 @@
                 }
             },
             bye1Command: {
-            	command: 'bye1',
+            	command: 'bye',
             	rank: 'user',
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('http://i.imgur.com/d61Aszu.webm'));
+            	}
+            },
+            nextraffleCommand: {
+            	command: 'nextraffle',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('The next Automatic Raffle will be in ' + underground.settings.autoraffleT + ' minutes.'));
             	}
             },
             
