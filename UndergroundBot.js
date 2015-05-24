@@ -23,6 +23,21 @@
         clearInterval(underground.room.afkInterval);
         underground.status = false;
     };
+    
+    var dayTheme = function(day) {
+    	day = new Date().getDay();
+    	if (day === 0) {
+    		return "Chill";
+    	}
+    	if (day === 1) {
+    		return "[none]";
+    	}
+    	if (day === 2) {
+    		return "Hip-hop";
+    	}
+    	return "[none]";
+    	
+    };
 
     var storeToStorage = function () {
         localStorage.setItem("undergroundsettings", JSON.stringify(underground.settings));
@@ -778,7 +793,7 @@
                     }, 1 * 1000, user)
                     :
                     setTimeout(function (user) {
-                        API.sendChat(subChat('/me Welcome to The Underground, @' + user.username + '. Enjoy your stay.'));
+                        API.sendChat(subChat('/me Welcome to The Underground, @' + user.username + '. Today\'s theme is:  ' + dayTheme));
                     }, 1 * 1000, user);
             }
         },
