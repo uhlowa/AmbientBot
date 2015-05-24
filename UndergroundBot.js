@@ -861,6 +861,7 @@
             underground.room.roomstats.songCount++;
             underground.roomUtilities.intervalMessage();
             underground.room.currentDJID = obj.dj.id;
+            underground.settings.spotLock = "[none]";
             if (underground.room.currentDJID === underground.settings.approvedDJ) {
             	API.sendChat(subChat('/me :arrow_forward: This Track has been approved.'));
             	underground.settings.approvedDJ = "[none]";
