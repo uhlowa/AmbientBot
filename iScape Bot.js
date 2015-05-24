@@ -3262,8 +3262,8 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-            	    	var nme = chat.un;
-                    	API.sendChat(subChat(nme + 'http://i.imgur.com/ZDawAwF.webm'));
+            	    	//var nme = chat.un;
+                    	API.sendChat(subChat(chat.un + 'http://i.imgur.com/ZDawAwF.webm'));
             	}
             },
             dance2Command: {
