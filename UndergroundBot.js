@@ -192,7 +192,6 @@
         settings: {
             botName: "Underground Bot",
             language: "english",
-            isTuesday = false;
             chatLink: "https://rawgit.com/Paradox68/UndergroundBot/master/lang/en.json",
             startupCap: 1, // 1-200
             approvedDJ: "[None]",
@@ -823,7 +822,6 @@
         },
         eventDjadvance: function (obj) {
             $("#woot").click(); // autowoot
-            
 
             var user = underground.userUtilities.lookupUser(obj.dj.id)
             for(var i = 0; i < underground.room.users.length; i++){
@@ -853,7 +851,7 @@
             underground.roomUtilities.intervalMessage();
             underground.room.currentDJID = obj.dj.id;
             if (underground.room.currentDJID === underground.settings.approvedDJ) {
-            	API.sendChat(subChat('/me \n\n :arrow_forward:  Current Track has been approved.'));
+            	API.sendChat(subChat('/me :arrow_forward: This Track has been approved.'));
             	underground.settings.approvedDJ = "[none]";
             }
 
@@ -888,9 +886,8 @@
             var newMedia = obj.media;
             if (underground.settings.timeGuard && newMedia.duration > underground.settings.maximumSongLength * 60 && !underground.room.roomevent) {
                 var name = obj.dj.username;
-                var id = obj.dj.id;
-                if (id !== underground.settings.approvedDJ) {
-                API.sendChat(subChat('Sorry, ' + name + ', but your track is too long. Current max song length is ' + underground.settings.maximumSongLength + ' minutes.'));
+                if (obj.dj.id !== underground.settings.approvedDJ) {
+                API.sendChat(subChat(underground.chat.timelimit, {name: name, maxlength: underground.settings.maximumSongLength}));
                 API.moderateForceSkip();
                 }
             }
