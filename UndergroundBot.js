@@ -3599,6 +3599,20 @@
                     	API.sendChat(subChat('http://i.imgur.com/wlTqw2a.gif'));
             	}
             },
+            rollCommand: {
+            	command: 'roll',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+            	    var num = Math.floor((Math.random() * 99) + 1);
+            	    var nts = num.toString();
+            	    if (num < 10) {
+            	    	nts = "0" + num;
+            	    }
+            	    API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
+            	}
+            	},
             jamesCommand: {
             	command: 'james',
             	rank: 'user',
