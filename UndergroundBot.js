@@ -52,7 +52,8 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://rawgit.com/Paradox68/iScape-Bot/master/lang/langIndex.json", function (json) {
+
+        $.get("https://rawgit.com/Paradox68/UndergroundBot/master/lang/langIndex.json", function (json) {
             var link = underground.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -181,9 +182,9 @@
         status: false,
         name: "Underground Bot",
         loggedInID: null,
-        scriptLink: "https://rawgit.com/Paradox68/iScape-Bot/master/iScape%20Bot.js",
+        scriptLink: "https://rawgit.com/Paradox68/UndergroundBot/master/iScape%20Bot.js",
         cmdLink: "http://git.io/245Ppg",
-        chatLink: "https://rawgit.com/Paradox68/iScape-Bot/master/lang/en.json",
+        chatLink: "https://rawgit.com/Paradox68/UndergroundBot/master/lang/en.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -191,7 +192,7 @@
         settings: {
             botName: "Underground Bot",
             language: "english",
-            chatLink: "https://rawgit.com/Paradox68/iScape-Bot/master/lang/en.json",
+            chatLink: "https://rawgit.com/Paradox68/UndergroundBot/master/lang/en.json",
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: true, // true or false
@@ -243,8 +244,8 @@
             songstats: true,
             commandLiteral: "!",
             blacklists: {
-                NSFW: "https://rawgit.com/Yemasthui/underground-customization/master/blacklists/ExampleNSFWlist.json",
-                OP: "https://rawgit.com/Yemasthui/underground-customization/master/blacklists/ExampleOPlist.json"
+                NSFW: "https://rawgit.com/Paradox68/UndergroundBot/master/nsfw.json",
+                OP: "https://rawgit.com/Paradox68/UndergroundBot/master/op.json"
             }
         },
         room: {
@@ -2208,7 +2209,7 @@
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(underground.chat.currentlang, {language: underground.settings.language}));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://rawgit.com/Paradox68/iScape-Bot/master/lang/langIndex.json", function (json) {
+                        $.get("https://rawgit.com/Paradox68/UndergroundBot/master/lang/langIndex.json", function (json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {
@@ -3305,7 +3306,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('The open source code for Underground Bot is available at: https://github.com/Paradox68/iScape-Bot'));
+                    	API.sendChat(subChat('The open source code for Underground Bot is available at: https://github.com/Paradox68/UndergroundBot'));
             	}
             },
             dance6Command: {
