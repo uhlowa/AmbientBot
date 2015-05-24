@@ -3260,7 +3260,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' used ' + cmd + ' \n http://i.imgur.com/ZDawAwF.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/ZDawAwF.webm'));
             	}
             },
             dance2Command: {
@@ -3269,7 +3269,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/H9nADqS.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/H9nADqS.gif'));
             	}
             },
             dance3Command: {
@@ -3278,7 +3278,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/t71qeT1.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/t71qeT1.gif'));
             	}
             },
             dance4Command: {
@@ -3287,7 +3287,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/TqezZCP.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/TqezZCP.gif'));
             	}
             },
             dance5Command: {
@@ -3296,7 +3296,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/XnCeorl.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/XnCeorl.gif'));
             	}
             },
                 sourceCommand: {
@@ -3314,7 +3314,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/IUoOZDo.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/IUoOZDo.gif'));
             	}
             },
             dance7Command: {
@@ -3323,7 +3323,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/jKfD4m3.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/jKfD4m3.gif'));
             	}
             },
             dance8Command: {
@@ -3332,7 +3332,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/pIxt2H0.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/pIxt2H0.gif'));
             	}
             },
             dance9Command: {
@@ -3341,7 +3341,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/YieC5Ls.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/YieC5Ls.gif'));
             	}
             },
             dance10Command: {
@@ -3350,7 +3350,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/cKT7CNU.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/cKT7CNU.gif'));
             	}
             },
             dance11Command: {
@@ -3359,7 +3359,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/6vfolCh.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/6vfolCh.gif'));
             	}
             },
             dance12Command: {
@@ -3368,7 +3368,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/pQLee14.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/pQLee14.gif'));
             	}
             },
             dance13Command: {
@@ -3377,7 +3377,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/sCGlr4m.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/sCGlr4m.gif'));
             	}
             },
             dance14Command: {
@@ -3386,7 +3386,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/Q7T2K8o.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/Q7T2K8o.gif'));
             	}
             },
             faggot1Command: {
@@ -3395,7 +3395,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/QJNr8sP.jpg'));
+                    	API.sendChat(subChat('http://i.imgur.com/QJNr8sP.jpg'));
             	}
             },
             faggot2Command: {
@@ -3404,7 +3404,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/9We2dVP.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/9We2dVP.gif'));
             	}
             },
             faggot3Command: {
@@ -3413,7 +3413,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/JSZQTpU.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/JSZQTpU.gif'));
             	}
             },
             faggot4Command: {
@@ -3422,7 +3422,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/HfQ3gRA.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/HfQ3gRA.gif'));
             	}
             },
             faggot5Command: {
@@ -3431,7 +3431,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/uFLW7YK.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/uFLW7YK.gif'));
             	}
             },
             faggot6Command: {
@@ -3440,7 +3440,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/hbAtPOA.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/hbAtPOA.gif'));
             	}
             },
             faggot7Command: {
@@ -3449,7 +3449,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/g9rZoWs.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/g9rZoWs.gif'));
             	}
             },
             
@@ -3459,7 +3459,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/WvvxQTk.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/WvvxQTk.gif'));
             	}
             },
               fuckyou1Command: {
@@ -3468,7 +3468,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/1eh3dg1.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/1eh3dg1.gif'));
             	}
             },
             fuckyou2Command: {
@@ -3477,7 +3477,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/Oh8h3Pt.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/Oh8h3Pt.gif'));
             	}
             },
             fuckyou3Command: {
@@ -3486,7 +3486,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/NH7LYM9.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/NH7LYM9.gif'));
             	}
             },
             fuckyou4Command: {
@@ -3495,7 +3495,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/NtdtELQ.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/NtdtELQ.gif'));
             	}
             },
             fuckyou5Command: {
@@ -3504,7 +3504,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/qE3MNo5.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/qE3MNo5.gif'));
             	}
             },
             fuckyou6Command: {
@@ -3513,7 +3513,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/AyObzfk.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/AyObzfk.webm'));
             	}
             },
             fuckyou7Command: {
@@ -3522,7 +3522,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/jCUu9nY.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/jCUu9nY.webm'));
             	}
             },
             fuckyou8Command: {
@@ -3531,7 +3531,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/WR4g4S7.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/WR4g4S7.gif'));
             	}
             },
             fuckyou9Command: {
@@ -3540,7 +3540,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/ntV8Vvg.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/ntV8Vvg.gif'));
             	}
             },
             fuckyou10Command: {
@@ -3549,7 +3549,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/btXKV0w.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/btXKV0w.webm'));
             	}
             },
             fuckyou11Command: {
@@ -3558,7 +3558,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/wlTqw2a.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/wlTqw2a.gif'));
             	}
             },
             jamesCommand: {
@@ -3567,7 +3567,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/BvApgZl.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/BvApgZl.gif'));
             	}
             },
             bugdjCommand: {
@@ -3576,7 +3576,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/vYEOrkT.png'));
+                    	API.sendChat(subChat('http://i.imgur.com/vYEOrkT.png'));
             	}
             },
             penisCommand: {
@@ -3585,7 +3585,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/c4BWZyz.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/c4BWZyz.webm'));
             	}
             },
            allowitCommand: {
@@ -3594,7 +3594,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/EI6OEYh.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/EI6OEYh.gif'));
             	}
             },
                refresh1Command: {
@@ -3603,7 +3603,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/MWnOXM6.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/MWnOXM6.gif'));
             	}
             },
                fuckthis1Command: {
@@ -3612,7 +3612,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/GMEMmZj.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/GMEMmZj.webm'));
             	}
             },
             shutup1Command: {
@@ -3621,7 +3621,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/u1dIcAN.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/u1dIcAN.webm'));
             	}
             },
             hilarious1Command: {
@@ -3630,7 +3630,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/ZgFcDJE.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/ZgFcDJE.webm'));
             	}
             },
             gloryhole1Command: {
@@ -3639,7 +3639,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/tdqZwhp.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/tdqZwhp.webm'));
             	}
             },
 
@@ -3649,7 +3649,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/WUOLKkl.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/WUOLKkl.webm'));
             	}
             },
             bad2Command: {
@@ -3658,7 +3658,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/5GG2m93.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/5GG2m93.webm'));
             	}
             },
             bad3Command: {
@@ -3667,7 +3667,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/Tw5MCuB.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/Tw5MCuB.gif'));
             	}
             },
             bad4Command: {
@@ -3676,7 +3676,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/81PvIBS.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/81PvIBS.webm'));
             	}
             },
             bad5Command: {
@@ -3685,7 +3685,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/New6lgb.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/New6lgb.gif'));
             	}
             },
             feelbad1Command: {
@@ -3694,7 +3694,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/L8SLyYp.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/L8SLyYp.gif'));
             	}
             },
             clap1Command: {
@@ -3703,7 +3703,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/ljp2oIK.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/ljp2oIK.webm'));
             	}
             },
             clap2Command: {
@@ -3712,7 +3712,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/EewRcj5.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/EewRcj5.webm'));
             	}
             },
             brofist1Command: {
@@ -3721,7 +3721,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/lIpVeN0.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/lIpVeN0.gif'));
             	}
             },
             hangyourself1Command: {
@@ -3730,7 +3730,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/e2KTFEV.jpg'));
+                    	API.sendChat(subChat('http://i.imgur.com/e2KTFEV.jpg'));
             	}
             },
             laugh1Command: {
@@ -3739,7 +3739,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/JJXmxnr.jpg'));
+                    	API.sendChat(subChat('http://i.imgur.com/JJXmxnr.jpg'));
             	}
             },
             laugh2Command: {
@@ -3748,7 +3748,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/LUU1tI9.jpg'));
+                    	API.sendChat(subChat('http://i.imgur.com/LUU1tI9.jpg'));
             	}
             },
             laugh3Command: {
@@ -3757,7 +3757,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/qwhQw6r.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/qwhQw6r.gif'));
             	}
             },
             sad1Command: {
@@ -3766,7 +3766,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/B9DaCjz.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/B9DaCjz.webm'));
             	}
             },
             djdoge1Command: {
@@ -3775,7 +3775,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/N6Mb74t.jpg'));
+                    	API.sendChat(subChat('http://i.imgur.com/N6Mb74t.jpg'));
             	}
             },
             rodge1Command: {
@@ -3784,7 +3784,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/YTThds9.jpg'));
+                    	API.sendChat(subChat('http://i.imgur.com/YTThds9.jpg'));
             	}
             },
             noregrets1Command: {
@@ -3793,7 +3793,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/rbFPzbB.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/rbFPzbB.webm'));
             	}
             },
             thefuck1Command: {
@@ -3802,7 +3802,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/nIbnCPv.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/nIbnCPv.gif'));
             	}
             },
             good1Command: {
@@ -3811,7 +3811,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/FhBFNSO.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/FhBFNSO.gif'));
             	}
             },
             no1Command: {
@@ -3820,7 +3820,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/5dXFx43.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/5dXFx43.gif'));
             	}
             },
             why1Command: {
@@ -3829,7 +3829,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/w4E0ICB.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/w4E0ICB.webm'));
             	}
             },
             why2Command: {
@@ -3838,7 +3838,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/vi7Nc9o.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/vi7Nc9o.webm'));
             	}
             },
             brohug1Command: {
@@ -3847,7 +3847,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/yvIbI7U.gif'));
+                    	API.sendChat(subChat('http://i.imgur.com/yvIbI7U.gif'));
             	}
             },
             
@@ -3935,7 +3935,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat(chat.un + ' uses ' + cmd + ' \n http://i.imgur.com/d61Aszu.webm'));
+                    	API.sendChat(subChat('http://i.imgur.com/d61Aszu.webm'));
             	}
             },
             
