@@ -771,11 +771,11 @@
             if (basicBot.settings.welcome && greet) {
                 welcomeback ?
                     setTimeout(function (user) {
-                        API.sendChat(subChat(basicBot.chat.welcomeback, {name: user.username}));
+                        API.sendChat(subChat('Welcome back to The Underground, @' + user.username + '.'));
                     }, 1 * 1000, user)
                     :
                     setTimeout(function (user) {
-                        API.sendChat(subChat(basicBot.chat.welcome, {name: user.username}));
+                        API.sendChat(subChat('Welcome to The Underground, @' + user.username + '. Enjoy your stay.'));
                     }, 1 * 1000, user);
             }
         },
