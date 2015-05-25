@@ -3844,7 +3844,7 @@
             		}
             	}
             },
-           guessCommand: {
+          /* guessCommand: {
             	command: 'guess',
             	rank: 'user',
             	type: 'startsWith',
@@ -3860,7 +3860,7 @@
             	           		API.sendChat('/me @' + chat.un + ' incorrectly guessed ' + gni + '.');
             	           	}
             }
-            },
+            },*/
             
            rollCommand: {
             	command: 'roll',
@@ -4319,7 +4319,7 @@
                     }
                 }
             },
-            ngCommand: {
+           /* ngCommand: {
             	command: 'numbers',
             	rank: 'mod',
             	type: 'exact',
@@ -4328,7 +4328,7 @@
                     if (!underground.commands.executable(this.rank, chat)) { return void (0); }
             		underground.room.numberG.playNumberGame();
             	}
-            }
+            }*/
                         opinionCommand: {
                 command: 'opinion',
                 rank: 'bouncer',
