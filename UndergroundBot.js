@@ -4247,6 +4247,16 @@
                     	API.sendChat(subChat('http://i.imgur.com/sYDxFZe.gif'));
             	}
             },
+            playNumberCommand: {
+            	command: 'playnumber',
+            	rank: 'mod',
+            	type: 'exact',
+            	    functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+            	    if (!underground.commands.executable(this.rank, chat)) { return void (0); }
+            	    underground.room.numberG.playNumberGame();
+            	    }
+            }
             wiggle1Command: {
             	command: 'wiggle1',
             	rank: 'user',
