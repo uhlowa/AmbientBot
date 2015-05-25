@@ -1250,9 +1250,9 @@
             underground.room.autoRaffle = setInterval(function () {
             	var mins = Date.getMinutes();
             	if (mins > 30) {
-            		underground.settings.autoraffleT = (30 + (60 - mins));
+            		underground.settings.autoraffleT = (30 + (29 - mins));
             	} else {
-            		underground.settings.autoraffleT = (30 - mins);
+            		underground.settings.autoraffleT = (29 - mins);
             	}
                         if (!underground.room.roulette.rouletteStatus && mins == 30) {
                             underground.room.roulette.startRoulette();
