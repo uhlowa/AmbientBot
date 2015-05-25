@@ -364,7 +364,7 @@
                     	underground.room.numberG.currentNumber = Math.floor((Math.random() * 49) + 1);
                     	underground.room.numberG.max = 50;
                     }
-                    API.sendChat('/me I am thinking of a number between 1 and ' + underground.room.numberG.max + '. Type !guess # to guess what it is!');
+                    API.sendChat('/me I am thinking of a number between 1 and ' + underground.room.numberG.max + '. @everyone Type !guess # to guess what it is!');
             	},
             	endNumberGameTime: function() {
             		if (underground.room.numberG.active) {
@@ -409,7 +409,7 @@
                     underground.room.dicegame.countdown = setTimeout(function () {
                         underground.room.dicegame.endDiceGame();
                     }, 60 * 1000);
-                    API.sendChat('/me The Dice Game is now active. Type !roll and whoever rolls the highest will win!');
+                    API.sendChat('/me The Dice Game is now active. @everyone Type !roll and whoever rolls the highest will win!');
                 },
                                 endDiceGame: function () {
                     underground.room.dicegame.dgStatus = false;
@@ -449,7 +449,7 @@
                     underground.room.roulette.countdown = setTimeout(function () {
                         underground.room.roulette.endRoulette();
                     }, 60 * 1000);
-                    API.sendChat('/me The Raffle is now open. Type !join to try your luck!');
+                    API.sendChat('/me The Raffle is now open. @everyone Type !join to try your luck!');
                     var usr = "[none]";
                     var name = "undefined";
                    for (var i = 0; i < underground.room.users.length; i++) {
