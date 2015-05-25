@@ -191,7 +191,7 @@
         retrieveFromStorage: retrieveFromStorage,
         settings: {
         	highestRoll: 0,
-        	highestRollerID: null,
+        	highestRollerID: "undefined",
         	autoraffleT: 60,
             botName: "Underground Bot",
             language: "english",
@@ -3712,9 +3712,10 @@
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
             	    if (!underground.room.dicegame.dgStatus) { return void (0); }
+            	    if (underground.room.dicegame.participants.indexOf(chat.uid) >= 0) { return void (0); }
             	    var num = Math.floor((Math.random() * 99) + 1);
             	    var nts = num.toString();
-            	    if (underground.room.dicegame.participants.indexOf(chat.uid) < 0) {
+ 
                             underground.room.dicegame.participants.push(chat.uid);
             	    	if (num > underground.room.settings.highestRoll) {
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + ' and is now winning the Dice Game');
@@ -3723,7 +3724,6 @@
             	    	} else {
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
             	    	}
-            	    }
             	}
             	},
 
