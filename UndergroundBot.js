@@ -294,7 +294,7 @@
 
             },
             
-              /*                                  russiangame: {
+            russiangame: {
                 RRStatus: false,
                 started: false,
                 participants: [],
@@ -308,7 +308,7 @@
                     underground.room.russiangame.players = 0;
                     underground.room.russiangame.gun = 0;
                     underground.room.russiangame.countdown = setTimeout(function () {
-                        underground.room.dicegame.endRussianGame();
+                        underground.room.russiangame.endRussianGame();
                     }, 300 * 1000);
                     API.sendChat('/me Russian Roulette is now active. Type !sit to claim your seat!');
                 },
@@ -325,10 +325,11 @@
                  if (underground.room.russiangame.RRStatus) {
                  var ind = underground.room.roulette.participants[underground.room.russiangame.gun]);
                     var next = underground.room.russiangame.participants[ind];
+                    underground.room.russiangame.started = true;
                     underground.room.russiangame.gun++;
                     if (underground.room.russiangame.gun == underground.room.russiangame.chamber) {
-                    API.sendChat('/me ' + next.un + ' has shot himself dead. :gun: :skull:');
-                    API.moderateRemoveDJ(next.id);
+                    API.sendChat('/me ' + underground.room.russiangame.participants[ind].un + ' has shot himself dead. :gun: :skull:');
+                    API.moderateRemoveDJ(underground.room.russiangame.participants[ind].id);
                     underground.room.russiangame.participants = [];
                     underground.room.russiangame.RRStatus = false;
                     			underground.room.russiangame.players = 0;
@@ -344,7 +345,7 @@
                  	}
                 }
 
-            }, */
+            },
             
 
                           dicegame: {
