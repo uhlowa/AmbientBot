@@ -132,6 +132,7 @@ User
 
 Images
 ----
+|:------:|
 | Command |
 |!hello, !hi, !hey |
 |!dance - !dance13 |
