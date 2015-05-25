@@ -359,10 +359,12 @@
                     API.sendChat('/me I am thinking of a number between 1 and ' + underground.room.numberG.max + '. Type !guess # to guess what it is!');
             	},
             	endNumberGameTime: function() {
+            		if (underground.room.numberG.active) {
             		underground.room.numberG.active = false;
             		underground.room.numberG.max = 0;
             		API.sendChat('/me Nobody has guessed the number I was thinking of correctly. :sleeping: Game over. The number was ' + underground.room.numberG.currentNumber + '.');
             		underground.room.numberG.currentNumber = 0;
+            		}
             	},
             	endNumberGame: function(winnerID) {
             	
@@ -446,7 +448,7 @@
                     underground.room.roulette.countdown = setTimeout(function () {
                         underground.room.roulette.endRoulette();
                     }, 60 * 1000);
-                    API.sendChat('/me The Raffle is now open. @djs Type !join to try your luck!');
+                    API.sendChat('/me The Raffle is now open. Type !join to try your luck!');
                     var usr = "[none]";
                     var name = "undefined";
                    for (var i = 0; i < underground.room.users.length; i++) {
@@ -3859,6 +3861,30 @@
                         		API.moderateDeleteChat(id);
                     			}, 2 * 1000, chat.cid);
             	           	}
+            }
+            },
+            
+            diffCommand: {
+            	command: 'diff',
+            	rank: 'mod',
+            	type: 'startsWith',
+            	           functionality: function (chat, cmd) {
+            	           	if (!underground.commands.executable(this.rank, chat)) { return void (0); }
+            	           	if (chat.message.length < 6) { return void (0); }
+            	           	var gn = chat.message.substring(cmd.length + 1);
+            	           	var gni = parseInt(gn);
+            	           		underground.room.numberG.difficulty = gni;
+            	           		var tos = "undefined";
+            	           		if (gni === 1) {
+            	           			tos = "easy";
+            	           		}
+            	           		if (gni === 2) {
+            	           			tos = "medium";
+            	           		}
+            	           		if (gni === 3) {
+            	           			tos = "hard";
+            	           		}
+            	           		API.sendChat('/me Number Game Difficulty set to: ' + tos + '.'); 
             }
             },
 
