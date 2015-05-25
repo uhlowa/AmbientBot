@@ -2288,8 +2288,8 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!underground.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        if (!underground.room.rrgame.rusStatus) {
-                            underground.room.rrgame.startRusGame();
+                        if (!underground.room.russiangame.RRStatus) {
+                            underground.room.russiangame.startRusGame();
                         }
                     }
                 }
@@ -2304,12 +2304,12 @@
                     if (!underground.commands.executable(this.rank, chat)) { return void (0); }
                     if (underground.room.russiangame.players >= 6) { return void (0); }
                     if (underground.room.russiangame.started) { return void (0); }
-                        if (underground.room.rrgame.rusStatus && underground.room.rrgame.participants.indexOf(chat.uid) < 0) {
-                            underground.room.rrgame.participants.push(chat.uid);
+                        if (underground.room.russiangame.rusStatus && underground.room.russiangame.participants.indexOf(chat.uid) < 0) {
+                            underground.room.russiangame.participants.push(chat.uid);
                             API.sendChat('/me ' + chat.un + ' has claimed his seat in Russian Roulette');
-                            underground.room.rrgame.players += 1;
-                            if (underground.room.rrgame.players == 6) {
-                            	underground.room.rrgame.started = true;
+                            underground.room.russiangame.players += 1;
+                            if (underground.room.russiangame.players == 6) {
+                            	underground.room.russiangame.started = true;
                             }
                         }
                 }
