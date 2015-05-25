@@ -318,7 +318,7 @@
                     var winner = "undefined";
                     var ind = 0;
                     for (var i = 0; i < underground.room.dicegame.participants.length; i++) {
-                    	if (underground.room.dicegame.participants[i] === underground.room.settings.highestRollerID) {
+                    	if (underground.room.dicegame.participants[i] === underground.settings.highestRollerID) {
                     		ind = i;
                     	}
                     }
@@ -332,9 +332,9 @@
                     var user = underground.userUtilities.lookupUser(winner);
                     var name = user.username;
                     underground.settings.spotLock = "none";
-                    API.sendChat('/me ' + name + ' has won the Dice Game with a ' + underground.room.settings.highestRoll + '. Moving to spot ' + pos + '.');
-                    underground.room.settings.highestRoll = 0;
-                    underground.room.settings.highestRollerID = "undefined";
+                    API.sendChat('/me ' + name + ' has won the Dice Game with a ' + underground.settings.highestRoll + '. Moving to spot ' + pos + '.');
+                    underground.settings.highestRoll = 0;
+                    underground.settings.highestRollerID = "undefined";
                     setTimeout(function (winner, pos) {
                         underground.userUtilities.moveUser(winner, pos, false);
                     }, 1 * 1000, winner, pos);
@@ -3717,10 +3717,10 @@
             	    var nts = num.toString();
  
                             underground.room.dicegame.participants.push(chat.uid);
-            	    	if (num > underground.room.settings.highestRoll) {
+            	    	if (num > underground.settings.highestRoll) {
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + ' and is now winning the Dice Game');
-            	    		underground.room.settings.highestRoll = num;
-            	    		underground.room.settings.highestRollerID = chat.uid;
+            	    		underground.settings.highestRoll = num;
+            	    		underground.settings.highestRollerID = chat.uid;
             	    	} else {
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
             	    	}
