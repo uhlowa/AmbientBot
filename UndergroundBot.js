@@ -3844,7 +3844,7 @@
             	           functionality: function (chat, cmd) {
             	           	if (chat.message.length < 7) { return void (0); }
             	           	if (!underground.room.numberG.active) { return void (0); }
-            	           	var gn = msg.substring(cmd.length + 1);
+            	           	var gn = chat.message.substring(cmd.length + 1);
             	           	var gni = parseInt(gn);
             	           	if (gni == underground.room.numberG.currentNumber) {
             	           		underground.room.numberG.winnerID = chat.uid;
