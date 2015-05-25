@@ -3842,7 +3842,7 @@
             	rank: 'user',
             	type: 'startsWith',
             	           functionality: function (chat, cmd) {
-            	           	if (cmd.length < 7) { return void (0); }
+            	           	if (chat.message.length < 7) { return void (0); }
             	           	if (!underground.room.numberG.active) { return void (0); }
             	           	var gn = msg.substring(cmd.length + 1);
             	           	var gni = parseInt(gn);
@@ -4322,16 +4322,7 @@
                     }
                 }
             },
-           /* ngCommand: {
-            	command: 'numbers',
-            	rank: 'mod',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    if (!underground.commands.executable(this.rank, chat)) { return void (0); }
-            		underground.room.numberG.playNumberGame();
-            	}
-            }*/
+
                         opinionCommand: {
                 command: 'opinion',
                 rank: 'bouncer',
