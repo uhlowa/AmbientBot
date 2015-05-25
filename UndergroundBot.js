@@ -190,8 +190,6 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-        	highestRoll: 0,
-        	highestRollerID: "undefined",
         	autoraffleT: 60,
         	autonumberG: 60,
             botName: "Underground Bot",
@@ -390,6 +388,8 @@
             },
             
                           dicegame: {
+                highestRoll: 0,
+        	highestRollerID: "undefined",
                 dgStatus: false,
                 participants: [],
                 countdown: null,
@@ -414,7 +414,7 @@
                     var winner = "undefined";
                     var ind = 0;
                     for (var i = 0; i < underground.room.dicegame.participants.length; i++) {
-                    	if (underground.room.dicegame.participants[i].id === underground.settings.highestRollerID) {
+                    	if (underground.room.dicegame.participants[i].id === underground.room.dicegame.highestRollerID) {
                     		ind = i;
                     	}
                     }
@@ -428,9 +428,9 @@
                     var user = underground.userUtilities.lookupUser(winner);
                     var name = user.username;
                     underground.settings.spotLock = "none";
-                    API.sendChat('/me ' + name + ' has won the Dice Game with a ' + underground.settings.highestRoll + '. Moving to spot ' + pos + '.');
-                    underground.settings.highestRoll = 0;
-                    underground.settings.highestRollerID = "undefined";
+                    API.sendChat('/me ' + name + ' has won the Dice Game with a ' + underground.room.dicegame.highestRoll + '. Moving to spot ' + pos + '.');
+                    underground.room.dicegame.highestRoll = 0;
+                    underground.room.dicegame.highestRollerID = "undefined";
                     setTimeout(function (winner, pos) {
                         underground.userUtilities.moveUser(winner, pos, false);
                     }, 1 * 1000, winner, pos);
@@ -1253,7 +1253,7 @@
                     underground.room.allcommand = false;
                     setTimeout(function () {
                         underground.room.allcommand = true;
-                    }, 5 * 1000);
+                    }, 1 * 1000);
                 }
                 return executed;
             },
@@ -2985,8 +2985,8 @@
                     if (!underground.commands.executable(this.rank, chat)) return void (0);
                     else {
                         if (!underground.room.dicegame.dgStatus) {
-                        	underground.settings.highestRoll = 0;
-                        	underground.settings.highestRollerID = null;
+                        	underground.room.dicegame.highestRoll = 0;
+                        	underground.room.dicegame.highestRollerID = null;
                         	underground.room.dicegame.participants = [];
                             underground.room.dicegame.startDiceGame();
                         }
@@ -3857,8 +3857,8 @@
             	           		underground.room.numberG.endNumberGame(chat.uid);
             	           	} else {
             	           		API.sendChat('/me @' + chat.un + ' incorrectly guessed ' + gni + '.');
-            	           		setTimeout(function (id) {
-                        		API.moderateDeleteChat(id);
+            	           		setTimeout(function () {
+                        		API.moderateDeleteChat(chat.cid);
                     			}, 2 * 1000, chat.cid);
             	           	}
             }
@@ -3901,7 +3901,11 @@
             	    var nts = num.toString();
  
                             underground.room.dicegame.participants.push(chat.uid);
-            	    	if (num > underground.settings.highestRoll) {
+            	    	if (num > underground.room.dicegame.highestRoll) {
+            	    		for (var i = 0; i < underground.room.dicegame.participants.length; i++) {
+            	    			underground.room.dicegame.highestRollerID = "undefined";
+            	    			underground.room.dicegame.highestRoll = 0;
+            	    		}
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + ' and is now winning the Dice Game');
             	    		underground.settings.highestRoll = num;
             	    		underground.settings.highestRollerID = chat.uid;
