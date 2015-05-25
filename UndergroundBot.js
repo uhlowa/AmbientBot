@@ -2251,26 +2251,7 @@
                 }
             },
             
-            		sitCommand: {
-                command: 'sit',
-                rank: 'user',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    if (!underground.commands.executable(this.rank, chat)) { return void (0); }
-                    if (underground.room.russiangame.players >= 6) { return void (0); }
-                    if (underground.room.russiangame.started) { return void (0); }
-                        if (underground.room.russiangame.RRStatus && underground.room.russiangame.participants.indexOf(chat.uid) < 0) {
-                            underground.room.russiangame.participants.push(chat.uid);
-                            API.sendChat('/me ' + chat.un + ' has claimed his seat in Russian Roulette');
-                            underground.room.russiangame.players += 1;
-                            if (underground.room.russiangame.players == 6) {
-                            	underground.room.russiangame.started = true;
-                            	underground.room.russiangame.shoot();
-                            }
-                        }
-                }
-            },
+
 
             jointimeCommand: {
                 command: 'jointime',
