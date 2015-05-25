@@ -219,7 +219,7 @@
             timeGuard: true,
             maximumSongLength: 10,
             autodisable: true,
-            commandCooldown: 30,
+            commandCooldown: 1,
             usercommandsEnabled: true,
             lockskipPosition: 1,
             lockskipReasons: [
@@ -3862,6 +3862,7 @@
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
             	    if (!underground.room.dicegame.dgStatus) { return void (0); }
             	    if (underground.room.dicegame.participants.indexOf(chat.uid) >= 0) { return void (0); }
+            	    if (obj.dj.id === chat.uid) { return void (0); }
             	    var num = Math.floor((Math.random() * 99) + 1);
             	    var nts = num.toString();
  
