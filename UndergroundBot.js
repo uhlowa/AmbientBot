@@ -2237,7 +2237,7 @@
                 }
             },
             
-                                    russianCommand: {
+                  /*                  russianCommand: {
                 command: 'roulette',
                 rank: 'mod',
                 type: 'exact',
