@@ -406,7 +406,7 @@
                     var winner = "undefined";
                     var ind = 0;
                     for (var i = 0; i < underground.room.users.length; i++) {
-                    	if (underground.room.users[i].username === underground.room.dicegame.winning) {
+                    	if (underground.room.users[i].username.toLower().contains(underground.room.dicegame.winning.toLower())) {
                     		ind = i;
                     	}
                     }
