@@ -2267,7 +2267,7 @@
             },
             
                                  russianCommand: {
-                command: 'roulette',
+                command: 'russian',
                 rank: 'mod',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2281,7 +2281,7 @@
                 }
             },
             
-                  /*      		sitCommand: {
+                sitCommand: {
                 command: 'sit',
                 rank: 'user',
                 type: 'exact',
@@ -2290,17 +2290,17 @@
                     if (!underground.commands.executable(this.rank, chat)) { return void (0); }
                     if (underground.room.russiangame.players >= 6) { return void (0); }
                     if (underground.room.russiangame.started) { return void (0); }
-                        if (underground.room.russiangame.RRStatus && underground.room.russiangame.participants.indexOf(chat.uid) < 0) {
-                            underground.room.russiangame.participants.push(chat.uid);
+                        if (underground.room.rrgame.rusStatus && underground.room.rrgame.participants.indexOf(chat.uid) < 0) {
+                            underground.room.rrgame.participants.push(chat.uid);
                             API.sendChat('/me ' + chat.un + ' has claimed his seat in Russian Roulette');
-                            underground.room.russiangame.players += 1;
-                            if (underground.room.russiangame.players == 6) {
-                            	underground.room.russiangame.started = true;
-                            	underground.room.russiangame.shoot();
+                            underground.room.rrgame.players += 1;
+                            if (underground.room.rrgame.players == 6) {
+                            	underground.room.rrgame.started = true;
+                            	underground.room.rrgame.shoot();
                             }
                         }
                 }
-            },*/
+            },
 
 		joinCommand: {
                 command: 'join',
