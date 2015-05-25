@@ -294,7 +294,7 @@
 
             },
             
-           russiangame: {
+           /*russiangame: {
                 RRStatus: false,
                 started: false,
                 participants: [],
@@ -340,7 +340,7 @@
 		}
                 }
             },
-            
+            */
             numberG: {
             	currentNumber: 0,
             	difficulty: 1,
