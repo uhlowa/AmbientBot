@@ -1249,7 +1249,7 @@
             }, 10 * 1000);
             underground.room.autoRaffle = setInterval(function () {
             	var mins = Date.getMinutes();
-            	if (mins > 30) {
+            	if (mins >= 30) {
             		underground.settings.autoraffleT = (30 + (29 - mins));
             	} else {
             		underground.settings.autoraffleT = (29 - mins);
