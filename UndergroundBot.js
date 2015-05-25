@@ -346,16 +346,16 @@
                         underground.room.numberG.endNumberGameTime();
                     }, 90 * 1000);
                     if (underground.room.numberG.difficulty == 1) {
-                    	underground.room.numberG.currentNumber = Math.floor((Math.random() * 49) + 2);
-                    	underground.room.numberG.max = 50;
+                    	underground.room.numberG.currentNumber = Math.floor((Math.random() * 9) + 1);
+                    	underground.room.numberG.max = 10;
                     }
                     if (underground.room.numberG.difficulty == 2) {
-                    	underground.room.numberG.currentNumber = Math.floor((Math.random() * 99) + 2);
-                    	underground.room.numberG.max = 100;
+                    	underground.room.numberG.currentNumber = Math.floor((Math.random() * 24) + 1);
+                    	underground.room.numberG.max = 25;
                     }
                     if (underground.room.numberG.difficulty == 3) {
-                    	underground.room.numberG.currentNumber = Math.floor((Math.random() * 199) + 2);
-                    	underground.room.numberG.max = 100;
+                    	underground.room.numberG.currentNumber = Math.floor((Math.random() * 49) + 1);
+                    	underground.room.numberG.max = 50;
                     }
                     API.sendChat('/me I am thinking of a number between 1 and ' + underground.room.numberG.max + '. Type !guess # to guess what it is!');
             	},
@@ -3851,6 +3851,29 @@
             	           		underground.room.numberG.endGame(chat.uid);
             	           	} else {
             	           		API.sendChat('/me @' + chat.un + ' incorrectly guessed ' + gni + '.');
+            	           	}
+            }
+            },
+            difficultychCommand: {
+            	command: 'numdif',
+            	rank: 'mod',
+            	type: 'startsWith',
+            	           functionality: function (chat, cmd) {
+            	           	if (chat.message.length < 8) { return void (0); }
+            	           	var gn = msg.substring(cmd.length + 1);
+            	           	var gni = parseInt(gn);
+            	           	var tos = "error";
+            	           	if (gni == 1) {
+            	           		tos = "easy";
+            	           	}
+            	           	if (gni == 2) {
+            	           		tos = "medium";
+            	           	}
+            	           	if (gni == 3) {
+            	           		tos = "hard";
+            	           	}
+            	           		API.sendChat('/me Number Guess difficulty set to ' + tos + '.');
+            	           		underground.room.numberG.difficulty = gni;
             	           	}
             }
             },
