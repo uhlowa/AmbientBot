@@ -302,6 +302,7 @@
                 players: 0,
                 chamber: 0,
                 gun: 0,
+                guncd: null,
                 startRussianGame: function () {
                     underground.room.russiangame.RRStatus = true;
                     underground.room.russiangame.chamber = Math.floor(Math.random() * 6 + 1);
@@ -310,6 +311,9 @@
                     underground.room.russiangame.countdown = setTimeout(function () {
                         underground.room.russiangame.endRussianGame();
                     }, 300 * 1000);
+                    underground.room.russiangame.guncd = setInterval(function () {
+                        underground.room.russiangame.shoot();
+                    }, 5 * 1000);
                     API.sendChat('/me Russian Roulette is now active. Type !sit to claim your seat!');
                 },
                 endRussianGame: function () {
@@ -322,12 +326,18 @@
                  	}
                 },
                 shoot: function () {
-                 if (underground.room.russiangame.RRStatus) {
+                 if (underground.room.russiangame.RRStatus && underground.room.russiangame.players >= 6) {
                  var ind = underground.room.roulette.participants[underground.room.russiangame.gun]);
                     var next = underground.room.russiangame.participants[ind];
                     underground.room.russiangame.started = true;
                     underground.room.russiangame.gun++;
 		API.sendChat('/me Testing russian roulette.. shot = ' + underground.room.russiangame.gun + ', chamber = ' + underground.room.russiangame.chamber + '.');
+		if (ind == underground.room.chamber) {
+			API.sendChat('ded call');
+			clearInterval(underground.room.russiangame.guncd);
+		}
+			
+		}
                 }
             },
             
@@ -2270,7 +2280,7 @@
                 }
             },
             
-              /*                   russianCommand: {
+                                russianCommand: {
                 command: 'russian',
                 rank: 'mod',
                 type: 'exact',
@@ -2300,11 +2310,10 @@
                             underground.room.rrgame.players += 1;
                             if (underground.room.rrgame.players == 6) {
                             	underground.room.rrgame.started = true;
-                            	underground.room.rrgame.shoot();
                             }
                         }
                 }
-            },*/
+            },
 
 		joinCommand: {
                 command: 'join',
