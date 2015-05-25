@@ -3719,7 +3719,7 @@
             	    	if (num > underground.room.settings.highestRoll) {
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + ' and is now winning the Dice Game');
             	    		underground.room.settings.highestRoll = num;
-            	    		underground.room.settings.highestRollerID = id;
+            	    		underground.room.settings.highestRollerID = chat.uid;
             	    	} else {
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
             	    	}
