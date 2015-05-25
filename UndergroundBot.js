@@ -3893,6 +3893,7 @@
             	command: 'roll',
             	rank: 'user',
             	type: 'exact',
+            	countdown: null,
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
             	    if (!underground.room.dicegame.dgStatus) { return void (0); }
@@ -3902,13 +3903,14 @@
  
                             underground.room.dicegame.participants.push(chat.uid);
             	    	if (num > underground.room.dicegame.highestRoll) {
-            	    		for (var i = 0; i < underground.room.dicegame.participants.length; i++) {
             	    			underground.room.dicegame.highestRollerID = "undefined";
             	    			underground.room.dicegame.highestRoll = 0;
-            	    		}
+            	    			this.countdown = setTimeout(function () {
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + ' and is now winning the Dice Game');
             	    		underground.room.dicegame.highestRoll = num;
             	    		underground.room.dicegame.highestRollerID = chat.uid;
+                    }, 300);
+
             	    	} else {
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
             	    	}
