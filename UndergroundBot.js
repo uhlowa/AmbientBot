@@ -333,7 +333,7 @@
                         underground.userUtilities.moveUser(winner, pos, false);
                     }, 1 * 1000, winner, pos);
                 }
-            }
+            },
               dicegame: {
                 dgStatus: false,
                 participants: [],
