@@ -293,8 +293,7 @@
             blacklists: {
 
             },
-            
-                        russiangame: {
+                                    russiangame: {
                 RRStatus: false,
                 started: false,
                 participants: [],
@@ -345,8 +344,6 @@
                 }
 
             },
-
-            
                           dicegame: {
                 dgStatus: false,
                 participants: [],
@@ -2252,7 +2249,6 @@
                     }
                 }
             },
-
 
             jointimeCommand: {
                 command: 'jointime',
