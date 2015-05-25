@@ -190,6 +190,8 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
+        	highestRoll: 0,
+        	highestRollerID: "undefined",
         	autoraffleT: 60,
             botName: "Underground Bot",
             language: "english",
@@ -327,6 +329,53 @@
                     var name = user.username;
                     underground.settings.spotLock = "none";
                     API.sendChat(subChat(underground.chat.winnerpicked, {name: name, position: pos}));
+                    setTimeout(function (winner, pos) {
+                        underground.userUtilities.moveUser(winner, pos, false);
+                    }, 1 * 1000, winner, pos);
+                }
+            }
+              dicegame: {
+                dgStatus: false,
+                participants: [],
+                countdown: null,
+                startDiceGame: function () {
+                    underground.room.dicegame.dgStatus = true;
+                    underground.room.dicegame.countdown = setTimeout(function () {
+                        underground.room.roulette.endDiceGame();
+                    }, 60 * 1000);
+                    API.sendChat('/me The Dice Game is now active. Type !roll and whoever rolls the highest will win!');
+                    var usr = "[none]";
+                    var name = "undefined";
+                   for (var i = 0; i < underground.room.users.length; i++) {
+                   	if (API.getWaitListPosition(underground.room.users[i].id) == 1) {
+                   	usr = undergound.room.users[i].id;
+                   	}
+                   }
+                   name = underground.userUtilities.lookupUser(usr);
+                    API.sendChat('@' + name + ' lock your spot at position 1 by typing !lockpos');
+                },
+                endDiceGame: function () {
+                    underground.room.dicegame.dgStatus = false;
+                    var winner = "undefined";
+                    var ind = 0;
+                    for (var i = 0; i < underground.room.dicegame.participants.length; i++) {
+                    	if (underground.room.dicegame.participants[i] === underground.room.settings.highestRollerID) {
+                    		ind = i;
+                    	}
+                    }
+                    winner = underground.room.dicegame.participants[ind];
+                    underground.room.dicegame.participants = [];
+                    var pos = 1;
+                    if (underground.settings.spotLock !== "none") {
+                    	pos = 2;
+                    }
+                    //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
+                    var user = underground.userUtilities.lookupUser(winner);
+                    var name = user.username;
+                    underground.settings.spotLock = "none";
+                    API.sendChat('/me ' + name + ' has won the Dice Game with a ' + underground.room.settings.highestRoll + '. Moving to spot ' + pos + '.');
+                    underground.room.settings.highestRoll = 0;
+                    underground.room.settings.highestRollerID = "undefined";
                     setTimeout(function (winner, pos) {
                         underground.userUtilities.moveUser(winner, pos, false);
                     }, 1 * 1000, winner, pos);
@@ -3648,8 +3697,18 @@
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
             	    var num = Math.floor((Math.random() * 99) + 1);
             	    var nts = num.toString();
+
             	    if (num < 10) {
             	    	nts = "0" + num;
+            	    }
+            	    if (underground.room.dicegame.dgStatus = true) {
+            	    	if (num > underground.room.settings.highestRoll) {
+            	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + ' and is now winning the Dice Game');
+            	    		underground.room.settings.highestRoll = num;
+            	    		underground.room.settings.highestRollerID = id;
+            	    	} else {
+            	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
+            	    	}
             	    }
             	    if (nts === '11' || nts === '22' || nts === '33' || nts === '44' || nts === '55' || nts === '66' || nts === '77' || nts === '88' || nts === '99') {
             	    API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '. \n http://i.imgur.com/6LWy390.png');
