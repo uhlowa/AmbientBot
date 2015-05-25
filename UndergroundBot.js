@@ -313,32 +313,7 @@
                    name = underground.userUtilities.lookupUser(usr);
                     API.sendChat('@' + name + ' lock your spot at position 1 by typing !lockpos');
                 },
-                endDiceGame: function () {
-                    underground.room.dicegame.dgStatus = false;
-                    var winner = "undefined";
-                    var ind = 0;
-                    for (var i = 0; i < underground.room.dicegame.participants.length; i++) {
-                    	if (underground.room.dicegame.participants[i] === underground.room.settings.highestRollerID) {
-                    		ind = i;
-                    	}
-                    }
-                    winner = underground.room.dicegame.participants[ind];
-                    underground.room.dicegame.participants = [];
-                    var pos = 1;
-                    if (underground.settings.spotLock !== "none") {
-                    	pos = 2;
-                    }
-                    //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
-                    var user = underground.userUtilities.lookupUser(winner);
-                    var name = user.username;
-                    underground.settings.spotLock = "none";
-                    API.sendChat('/me ' + name + ' has won the Dice Game with a ' + underground.room.settings.highestRoll + '. Moving to spot ' + pos + '.');
-                    underground.room.settings.highestRoll = 0;
-                    underground.room.settings.highestRollerID = "undefined";
-                    setTimeout(function (winner, pos) {
-                        underground.userUtilities.moveUser(winner, pos, false);
-                    }, 1 * 1000, winner, pos);
-                }
+
             },
             newBlacklisted: [],
             newBlacklistedSongFunction: null,
