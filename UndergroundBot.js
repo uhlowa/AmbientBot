@@ -3854,28 +3854,7 @@
             	           	}
             }
             },
-            difficultychCommand: {
-            	command: 'numdif',
-            	rank: 'mod',
-            	type: 'startsWith',
-            	           functionality: function (chat, cmd) {
-            	           	if (chat.message.length < 8) { return void (0); }
-            	           	var gn = msg.substring(cmd.length + 1);
-            	           	var gni = parseInt(gn);
-            	           	var tos = "error";
-            	           	if (gni == 1) {
-            	           		tos = "easy";
-            	           	}
-            	           	if (gni == 2) {
-            	           		tos = "medium";
-            	           	}
-            	           	if (gni == 3) {
-            	           		tos = "hard";
-            	           	}
-            	           		API.sendChat('/me Number Guess difficulty set to ' + tos + '.');
-            	           		underground.room.numberG.difficulty = gni;
-            	           	}
-            },
+
             
            rollCommand: {
             	command: 'roll',
