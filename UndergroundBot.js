@@ -2266,7 +2266,7 @@
                 }
             },
             
-                  /*                  russianCommand: {
+                                 russianCommand: {
                 command: 'roulette',
                 rank: 'mod',
                 type: 'exact',
@@ -2274,8 +2274,8 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!underground.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        if (!underground.room.russiangame.RRStatus) {
-                            underground.room.russiangame.startRussianGame();
+                        if (!underground.room.rrgame.rusStatus) {
+                            underground.room.rrgame.startRusGame();
                         }
                     }
                 }
