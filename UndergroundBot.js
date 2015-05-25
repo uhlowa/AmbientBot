@@ -4256,7 +4256,7 @@
             	    if (!underground.commands.executable(this.rank, chat)) { return void (0); }
             	    underground.room.numberG.playNumberGame();
             	    }
-            }
+            },
             wiggle1Command: {
             	command: 'wiggle1',
             	rank: 'user',
