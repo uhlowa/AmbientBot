@@ -293,48 +293,7 @@
             blacklists: {
 
             },
-            newBlacklisted: [],
-            newBlacklistedSongFunction: null,
-            roulette: {
-                rouletteStatus: false,
-                participants: [],
-                countdown: null,
-                startRoulette: function () {
-                    underground.room.roulette.rouletteStatus = true;
-                    underground.room.roulette.countdown = setTimeout(function () {
-                        underground.room.roulette.endRoulette();
-                    }, 60 * 1000);
-                    API.sendChat('/me The Raffle is now open. @djs Type !join to try your luck!');
-                    var usr = "[none]";
-                    var name = "undefined";
-                   for (var i = 0; i < underground.room.users.length; i++) {
-                   	if (API.getWaitListPosition(underground.room.users[i].id) == 1) {
-                   	usr = undergound.room.users[i].id;
-                   	}
-                   }
-                   name = underground.userUtilities.lookupUser(usr);
-                    API.sendChat('@' + name + ' lock your spot at position 1 by typing !lockpos');
-                },
-                endRoulette: function () {
-                    underground.room.roulette.rouletteStatus = false;
-                    var ind = Math.floor(Math.random() * underground.room.roulette.participants.length);
-                    var winner = underground.room.roulette.participants[ind];
-                    underground.room.roulette.participants = [];
-                    var pos = 1;
-                    if (underground.settings.spotLock !== "none") {
-                    	pos = 2;
-                    }
-                    //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
-                    var user = underground.userUtilities.lookupUser(winner);
-                    var name = user.username;
-                    underground.settings.spotLock = "none";
-                    API.sendChat(subChat(underground.chat.winnerpicked, {name: name, position: pos}));
-                    setTimeout(function (winner, pos) {
-                        underground.userUtilities.moveUser(winner, pos, false);
-                    }, 1 * 1000, winner, pos);
-                }
-            }//,
-            /*  dicegame: {
+                          dicegame: {
                 dgStatus: false,
                 participants: [],
                 countdown: null,
@@ -380,7 +339,48 @@
                         underground.userUtilities.moveUser(winner, pos, false);
                     }, 1 * 1000, winner, pos);
                 }
-            }*/
+            },
+            newBlacklisted: [],
+            newBlacklistedSongFunction: null,
+            roulette: {
+                rouletteStatus: false,
+                participants: [],
+                countdown: null,
+                startRoulette: function () {
+                    underground.room.roulette.rouletteStatus = true;
+                    underground.room.roulette.countdown = setTimeout(function () {
+                        underground.room.roulette.endRoulette();
+                    }, 60 * 1000);
+                    API.sendChat('/me The Raffle is now open. @djs Type !join to try your luck!');
+                    var usr = "[none]";
+                    var name = "undefined";
+                   for (var i = 0; i < underground.room.users.length; i++) {
+                   	if (API.getWaitListPosition(underground.room.users[i].id) == 1) {
+                   	usr = undergound.room.users[i].id;
+                   	}
+                   }
+                   name = underground.userUtilities.lookupUser(usr);
+                    API.sendChat('@' + name + ' lock your spot at position 1 by typing !lockpos');
+                },
+                endRoulette: function () {
+                    underground.room.roulette.rouletteStatus = false;
+                    var ind = Math.floor(Math.random() * underground.room.roulette.participants.length);
+                    var winner = underground.room.roulette.participants[ind];
+                    underground.room.roulette.participants = [];
+                    var pos = 1;
+                    if (underground.settings.spotLock !== "none") {
+                    	pos = 2;
+                    }
+                    //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
+                    var user = underground.userUtilities.lookupUser(winner);
+                    var name = user.username;
+                    underground.settings.spotLock = "none";
+                    API.sendChat(subChat(underground.chat.winnerpicked, {name: name, position: pos}));
+                    setTimeout(function (winner, pos) {
+                        underground.userUtilities.moveUser(winner, pos, false);
+                    }, 1 * 1000, winner, pos);
+                }
+            }
         },
         User: function (id, name) {
             this.id = id;
