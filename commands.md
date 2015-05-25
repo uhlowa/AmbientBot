@@ -132,8 +132,8 @@ User
 
 Images
 ----
-|:------:|:---------:|:--------------------------------------:|
-| Command |
+|Command |
+|:------:|
 |!hello, !hi, !hey |
 |!dance - !dance13 |
 |!faggot - !faggot6 |
