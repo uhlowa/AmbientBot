@@ -301,7 +301,7 @@
                     underground.room.dicegame.dgStatus = true;
                     underground.room.dicegame.countdown = setTimeout(function () {
                         underground.room.dicegame.endDiceGame();
-                    }, 60 * 1000);
+                    }, 30 * 1000);
                     API.sendChat('/me The Dice Game is now active. Type !roll and whoever rolls the highest will win!');
                     var usr = "[none]";
                     var name = "undefined";
