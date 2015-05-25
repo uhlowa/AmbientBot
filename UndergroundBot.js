@@ -1245,7 +1245,7 @@
                     underground.room.allcommand = false;
                     setTimeout(function () {
                         underground.room.allcommand = true;
-                    }, 1 * 1000);
+                    }, 600);
                 }
                 return executed;
             },
