@@ -3837,7 +3837,7 @@
             		}
             	}
             },
-          /* guessCommand: {
+          guessCommand: {
             	command: 'guess',
             	rank: 'user',
             	type: 'startsWith',
@@ -3853,7 +3853,7 @@
             	           		API.sendChat('/me @' + chat.un + ' incorrectly guessed ' + gni + '.');
             	           	}
             }
-            },*/
+            },
             
            rollCommand: {
             	command: 'roll',
