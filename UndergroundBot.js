@@ -338,7 +338,7 @@
             	active: false,
             	countdown: null,
             	max: 50,
-            	winnerID: "undefined",
+            	winnerID: null,
             	playNumberGame: function() {
             		underground.room.numberG.active = true;
             		underground.room.numberG.countdown = setTimeout(function () {
@@ -364,15 +364,19 @@
             		API.sendChat('/me Nobody has guessed the number I was thinking of correctly. :sleeping: Game over. The number was ' + underground.room.numberG.currentNumber + '.');
             		underground.room.numberG.currentNumber = 0;
             	},
-            	endNumberGame: function(wid) {
-            		var user = underground.userUtilities.lookupUser(wid);
+            	endNumberGame: function() {
+            		var user = underground.userUtilities.lookupUser(winnerID);
             		var name = user.username;
             		underground.room.numberG.active = false;
             		underground.room.numberG.max = 0;
             		API.sendChat('/me ' + name + ' has won the Number Game. The number was ' + underground.room.numberG.currentNumber + '.');
             		underground.room.numberG.currentNumber = 0;
             		                    setTimeout(function () {
-                        underground.userUtilities.moveUser(wid, API.getWaitListPosition(wid), false);
+            		                    	if (API.getWaitListPosition(winnerID) > 3) {
+                        underground.userUtilities.moveUser(winnerID, 3, false);
+            		                    	} else {
+            		underground.userUtilities.moveUser(winnerID, 1, false);
+            		                    	}
                     }, 1 * 1000);
             	}
             },
@@ -3840,7 +3844,7 @@
             		}
             	}
             },
-           /* guessCommand: {
+           guessCommand: {
             	command: 'guess',
             	rank: 'user',
             	type: 'startsWith',
@@ -3850,12 +3854,13 @@
             	           	var gn = msg.substring(cmd.length + 1);
             	           	var gni = parseInt(gn);
             	           	if (gni == underground.room.numberG.currentNumber) {
+            	           		underground.room.numberG.winnerID = chat.uid;
             	           		underground.room.numberG.endGame(chat.uid);
             	           	} else {
             	           		API.sendChat('/me @' + chat.un + ' incorrectly guessed ' + gni + '.');
             	           	}
             }
-            },*/
+            },
             
            rollCommand: {
             	command: 'roll',
