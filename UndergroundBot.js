@@ -312,7 +312,7 @@
                    }
                    name = underground.userUtilities.lookupUser(usr);
                     API.sendChat('@' + name + ' lock your spot at position 1 by typing !lockpos');
-                },
+                }
 
             },
             newBlacklisted: [],
