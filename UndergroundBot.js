@@ -2838,6 +2838,21 @@
                     }
                 }
             },
+            
+            dicegameCommand: {
+                command: 'dicegame',
+                rank: 'mod',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!underground.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if (!underground.room.dicegame.dgStatus) {
+                            underground.room.dicegame.startDiceGame();
+                        }
+                    }
+                }
+            },
 
             rulesCommand: {
                 command: 'rules',
