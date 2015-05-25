@@ -293,6 +293,57 @@
             blacklists: {
 
             },
+            russiangame: {
+                RRStatus: false,
+                started: false,
+                participants: [],
+                countdown: null,
+                players: 0,
+                chamber: 0,
+                gun: 0,
+                startRussianGame: function () {
+                    underground.room.russiangame.RRStatus = true;
+                    underground.room.russiangame.chamber = Math.floor(Math.random() * 6 + 1);
+                    underground.room.russiangame.players = 0;
+                    underground.room.russiangame.gun = 0;
+                    underground.room.russiangame.countdown = setTimeout(function () {
+                        underground.room.dicegame.endRussianGame();
+                    }, 300 * 1000);
+                    API.sendChat('/me Russian Roulette is now active. Type !sit to claim your seat!');
+                },
+                endRussianGame: function () {
+                 	if (underground.room.russiangame.RRStatus) {
+                    underground.room.russiangame.RRStatus = false;
+			underground.room.russiangame.players = 0;
+			underground.room.russiangame.chamber = 0;
+                    API.sendChat('/me Russian Roulette seating was not filled and the game has timed out.');
+                 	}
+                },
+                shoot: function () {
+                 if (underground.room.russiangame.RRStatus) {
+                 var ind = underground.room.roulette.participants[underground.room.russiangame.gun]);
+                    var next = underground.room.russiangame.participants[ind];
+                    underground.room.russiangame.gun++;
+                    if (underground.room.russiangame.gun == underground.room.russiangame.chamber) {
+                    API.sendChat('/me ' + next.un + ' has shot himself dead. :gun: :skull:');
+                    API.moderateRemoveDJ(next.id);
+                    underground.room.russiangame.participants = [];
+                    underground.room.russiangame.RRStatus = false;
+                    } else {
+                    	underground.userUtilities.moveUser(next.id, (API.getWaitListPosition(next.id) + 1), false);
+                    	API.sendChat('/me ' + next.un + ' pulls the trigger... *click*');
+                    underground.room.russiangame.countdown = setTimeout(function () {
+                        underground.room.russiangame.shoot();
+                    }, 5 * 1000);
+                    	
+                    }
+                 	}
+                }
+
+            },
+            
+            
+            
                           dicegame: {
                 dgStatus: false,
                 participants: [],
@@ -2194,6 +2245,24 @@
                         if (underground.room.roulette.rouletteStatus && underground.room.roulette.participants.indexOf(chat.uid) < 0) {
                             underground.room.roulette.participants.push(chat.uid);
                             API.sendChat(subChat(underground.chat.roulettejoin, {name: chat.un}));
+                        }
+                    }
+                }
+            },
+            	sitCommand: {
+                command: 'sit',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!underground.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if (underground.room.russiangame.RRStatus && underground.room.russiangame.participants.indexOf(chat.uid) < 0) {
+                        	if (underground.room.russiangame.players < 6) {
+                            underground.room.russiangame.participants.push(chat.uid);
+                            underground.room.russiangame.players++;
+                            API.sendChat('/me' + chat.un + ' has claimed a seat in Russian Roulette. ' + (6 - underground.room.russiangame.players) + ' seats remaining.');
+                        	}
                         }
                     }
                 }
