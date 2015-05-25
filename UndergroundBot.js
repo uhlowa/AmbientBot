@@ -294,7 +294,7 @@
 
             },
             
-           /* russiangame: {
+           russiangame: {
                 RRStatus: false,
                 started: false,
                 participants: [],
@@ -327,26 +327,10 @@
                     var next = underground.room.russiangame.participants[ind];
                     underground.room.russiangame.started = true;
                     underground.room.russiangame.gun++;
-                    if (underground.room.russiangame.gun == underground.room.russiangame.chamber) {
-                    API.sendChat('/me ' + underground.room.russiangame.participants[ind].un + ' has shot himself dead. :gun: :skull:');
-                    API.moderateRemoveDJ(underground.room.russiangame.participants[ind].id);
-                    underground.room.russiangame.participants = [];
-                    underground.room.russiangame.RRStatus = false;
-                    			underground.room.russiangame.players = 0;
-			underground.room.russiangame.chamber = 0;
-                    } else {
-                    	underground.userUtilities.moveUser(next.id, (API.getWaitListPosition(next.id) + 1), false);
-                    	API.sendChat('/me ' + next.un + ' pulls the trigger... *click*');
-                    underground.room.russiangame.countdown = setTimeout(function () {
-                        underground.room.russiangame.shoot();
-                    }, 5 * 1000);
-                    	
-                    }
-                 	}
-                }
+		API.sendChat('/me Testing russian roulette.. shot = ' + underground.room.russiangame.gun + ', chamber = ' + underground.room.russiangame.chamber + '.');
                 }
 
-            }, */
+            },
             
 
                           dicegame: {
