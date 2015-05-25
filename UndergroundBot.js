@@ -294,7 +294,7 @@
 
             },
             
-            russiangame: {
+           /* russiangame: {
                 RRStatus: false,
                 started: false,
                 participants: [],
@@ -346,7 +346,7 @@
                 }
                 }
 
-            },
+            },*/
             
 
                           dicegame: {
