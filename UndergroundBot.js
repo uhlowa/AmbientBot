@@ -2280,7 +2280,7 @@
                 }
             },
             
-                                russianCommand: {
+              /*                  russianCommand: {
                 command: 'russian',
                 rank: 'mod',
                 type: 'exact',
@@ -2294,7 +2294,7 @@
                     }
                 }
             },
-            
+            /*
                 sitCommand: {
                 command: 'sit',
                 rank: 'user',
@@ -2313,7 +2313,7 @@
                             }
                         }
                 }
-            },
+            },*/
 
 		joinCommand: {
                 command: 'join',
