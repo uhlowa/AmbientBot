@@ -406,26 +406,23 @@
                     var winner = "undefined";
                     var ind = 0;
                     for (var i = 0; i < underground.room.users.length; i++) {
-                    	if (underground.room.users[i].username.toLower().contains(underground.room.dicegame.winning.toLower())) {
+                    	if (underground.room.users[i].id === underground.room.dicegame.highestRollerID) {
                     		ind = i;
-                    	}
-                    }
-                    winner = underground.room.users[ind];
+
                     underground.room.dicegame.participants = [];
                     var pos = 1;
                     if (underground.settings.spotLock !== "none") {
                     	pos = 2;
                     }
                     //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
-                    var user = underground.userUtilities.lookupUser(winner);
-                    var name = user.username;
+                    var name = underground.room.users[ind].username;
                     underground.settings.spotLock = "none";
                     API.sendChat('/me ' + name + ' has won the Dice Game with a ' + underground.room.dicegame.highestRoll + '. Moving to spot ' + pos + '.');
                     underground.room.dicegame.highestRoll = 0;
                     underground.room.dicegame.highestRollerID = "undefined";
                     setTimeout(function (winner, pos) {
-                        underground.userUtilities.moveUser(winner, pos, false);
-                    }, 1 * 1000, winner, pos);
+                        underground.userUtilities.moveUser(underground.room.users[ind].id, pos, false);
+                    }, 1 * 1000, underground.room.users[ind].id, pos);
                 }
 
             },
