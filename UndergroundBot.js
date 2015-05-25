@@ -311,15 +311,6 @@
                         underground.room.russiangame.endRussianGame();
                     }, 300 * 1000);
                     API.sendChat('/me Russian Roulette is now active. Type !sit to claim your seat!');
-                },
-                endRussianGame: function () {
-                 	if (underground.room.russiangame.RRStatus) {
-                 underground.room.russiangame.participants = [];
-                    underground.room.russiangame.RRStatus = false;
-			underground.room.russiangame.players = 0;
-			underground.room.russiangame.chamber = 0;
-                    API.sendChat('/me Russian Roulette seating was not filled and the game has timed out.');
-                 	}
                 }
 
             },
