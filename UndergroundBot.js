@@ -300,7 +300,7 @@
                 startDiceGame: function () {
                     underground.room.dicegame.dgStatus = true;
                     underground.room.dicegame.countdown = setTimeout(function () {
-                        underground.room.roulette.endDiceGame();
+                        underground.room.dicegame.endDiceGame();
                     }, 30 * 1000);
                     API.sendChat('/me The Dice Game is now active. Type !roll and whoever rolls the highest will win!');
                     var usr = "[none]";
@@ -2849,6 +2849,8 @@
                     if (!underground.commands.executable(this.rank, chat)) return void (0);
                     else {
                         if (!underground.room.dicegame.dgStatus) {
+                        	underground.settings.highestRoll = 0;
+                        	underground.settings.highestRollerID = null;
                             underground.room.dicegame.startDiceGame();
                         }
                     }
