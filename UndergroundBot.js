@@ -260,6 +260,7 @@
             usercommand: true,
             allcommand: true,
             afkInterval: null,
+            autoraffleInterval: null,
             autoskip: false,
             autoskipTimer: null,
             autodisableInterval: null,
@@ -1247,14 +1248,15 @@
             underground.room.afkInterval = setInterval(function () {
                 underground.roomUtilities.afkCheck()
             }, 10 * 1000);
-            underground.room.autoRaffle = setInterval(function () {
-            	var mins = Date.getMinutes();
-            	if (mins >= 30) {
-            		underground.settings.autoraffleT = (30 + (29 - mins));
+            underground.room.autoraffleInterval = setInterval(function () {
+            	var d = new Date();
+		var n = d.getMinutes();
+            	if (n >= 30) {
+            		underground.settings.autoraffleT = (30 + (29 - n));
             	} else {
-            		underground.settings.autoraffleT = (29 - mins);
+            		underground.settings.autoraffleT = (29 - n);
             	}
-                        if (!underground.room.roulette.rouletteStatus && mins == 30) {
+                        if (!underground.room.roulette.rouletteStatus && n == 30) {
                             underground.room.roulette.startRoulette();
                         }
             }, 60 * 1000);
