@@ -3846,11 +3846,14 @@
             	           	if (!underground.room.numberG.active) { return void (0); }
             	           	var gn = chat.message.substring(cmd.length + 1);
             	           	var gni = parseInt(gn);
-            	           	if (gni == underground.room.numberG.currentNumber) {
+            	           	if (gni === underground.room.numberG.currentNumber || gn === underground.room.numberG.currentNumber.toString()) {
             	           		underground.room.numberG.winnerID = chat.uid;
             	           		underground.room.numberG.endNumberGame();
             	           	} else {
             	           		API.sendChat('/me @' + chat.un + ' incorrectly guessed ' + gni + '.');
+            	           		setTimeout(function (id) {
+                        		API.moderateDeleteChat(id);
+                    			}, 2 * 1000, chat.cid);
             	           	}
             }
             },
