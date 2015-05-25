@@ -262,6 +262,7 @@
             usercommand: true,
             allcommand: true,
             afkInterval: null,
+            numbergameInterval: null,
             autoraffleInterval: null,
             autoskip: false,
             autoskipTimer: null,
@@ -330,6 +331,51 @@
 		API.sendChat('/me Testing russian roulette.. shot = ' + underground.room.russiangame.gun + ', chamber = ' + underground.room.russiangame.chamber + '.');
                 }
             },*/
+            
+            numberG: {
+            	currentNumber: 0,
+            	difficulty: 1,
+            	active: false,
+            	countdown: null,
+            	max: 50,
+            	winnerID: "undefined",
+            	playNumberGame: function() {
+            		underground.room.numberG.active = true;
+            		underground.room.numberG.countdown = setTimeout(function () {
+                        underground.room.numberG.endNumberGameTime();
+                    }, 90 * 1000);
+                    if (underground.room.numberG.difficulty == 1) {
+                    	underground.room.numberG.currentNumber = Math.floor((Math.random() * 49) + 2);
+                    	underground.room.numberG.max = 50;
+                    }
+                    if (underground.room.numberG.difficulty == 2) {
+                    	underground.room.numberG.currentNumber = Math.floor((Math.random() * 99) + 2);
+                    	underground.room.numberG.max = 100;
+                    }
+                    if (underground.room.numberG.difficulty == 3) {
+                    	underground.room.numberG.currentNumber = Math.floor((Math.random() * 199) + 2);
+                    	underground.room.numberG.max = 100;
+                    }
+                    API.sendChat('/me I am thinking of a number between 1 and ' + underground.room.numberG.max + '. Type !guess # to guess what it is!');
+            	},
+            	endNumberGameTime: function() {
+            		underground.room.numberG.active = false;
+            		underground.room.numberG.max = 0;
+            		API.sendChat('/me Nobody has guessed the number I was thinking of correctly. :sleeping: Game over. The number was ' + underground.room.numberG.currentNumber + '.');
+            		underground.room.numberG.currentNumber = 0;
+            	},
+            	endNumberGame: function(wid) {
+            		var user = underground.userUtilities.lookupUser(wid);
+            		var name = user.username;
+            		underground.room.numberG.active = false;
+            		underground.room.numberG.max = 0;
+            		API.sendChat('/me ' + name + ' has won the Number Game. The number was ' + underground.room.numberG.currentNumber + '.');
+            		underground.room.numberG.currentNumber = 0;
+            		                    setTimeout(function () {
+                        underground.userUtilities.moveUser(wid, API.getWaitListPosition(wid), false);
+                    }, 1 * 1000);
+            	}
+            },
             
                           dicegame: {
                 dgStatus: false,
@@ -1336,6 +1382,15 @@
             underground.room.afkInterval = setInterval(function () {
                 underground.roomUtilities.afkCheck()
             }, 10 * 1000);
+           underground.room.numbergameInterval = setInterval(function () {
+           	var d = new Date();
+		var n = d.getMinutes();
+		var mins = parseInt(n);
+            		underground.settings.autonumberG = (59 - mins));
+            	if (!underground.room.roulette.rouletteStatus && mins == 0) {
+                underground.room.numberG.playNumberGame();
+            	}
+            }, 60 * 1000);
             underground.room.autoraffleInterval = setInterval(function () {
             	var d = new Date();
 		var n = d.getMinutes();
@@ -3785,6 +3840,23 @@
             		}
             	}
             },
+            guessCommand: {
+            	command: 'guess',
+            	rank: 'user',
+            	type: 'startsWith',
+            	           functionality: function (chat, cmd) {
+            	           	if (cmd.length < 7) { return void (0); }
+            	           	if (!underground.room.numberG.active) { return void (0); }
+            	           	var gn = msg.substring(cmd.length + 1);
+            	           	var gni = parseInt(gn);
+            	           	if (gni == underground.room.numberG.currentNumber) {
+            	           		underground.room.numberG.endGame(chat.uid);
+            	           	} else {
+            	           		API.sendChat('/me @' + chat.un + ' incorrectly guessed ' + gni + '.');
+            	           	}
+            }
+            },
+            
            rollCommand: {
             	command: 'roll',
             	rank: 'user',
@@ -4242,6 +4314,16 @@
                     }
                 }
             },
+            ngCommand: {
+            	command: 'numbers',
+            	rank: 'mod',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    if (!underground.commands.executable(this.rank, chat)) { return void (0); }
+            		underground.room.numberG.playNumberGame();
+            	}
+            }
                         opinionCommand: {
                 command: 'opinion',
                 rank: 'bouncer',
