@@ -3907,8 +3907,8 @@
             	    			underground.room.dicegame.highestRoll = 0;
             	    		}
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + ' and is now winning the Dice Game');
-            	    		underground.settings.highestRoll = num;
-            	    		underground.settings.highestRollerID = chat.uid;
+            	    		underground.room.dicegame.highestRoll = num;
+            	    		underground.room.dicegame.highestRollerID = chat.uid;
             	    	} else {
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
             	    	}
