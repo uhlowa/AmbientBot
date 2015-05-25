@@ -1865,7 +1865,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!underground.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        API.sendChat(subChat(underground.chat.commandslink, {botname: underground.settings.botName, link: underground.cmdLink}));
+                        API.sendChat('/me A list of all available commands can be found here: https://github.com/Paradox68/UndergroundBot/blob/master/commands.md');
                     }
                 }
             },
