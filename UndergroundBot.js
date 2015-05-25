@@ -1249,14 +1249,15 @@
                 underground.roomUtilities.afkCheck()
             }, 10 * 1000);
             underground.room.autoraffleInterval = setInterval(function () {
-            	var d = new Date(Date.now());
+            	var d = new Date();
 		var n = d.getMinutes();
-            	if (n >= 30) {
-            		underground.settings.autoraffleT = (30 + (29 - n));
+		var mins = parseInt(n);
+            	if (mins >= 30) {
+            		underground.settings.autoraffleT = (30 + (29 - mins));
             	} else {
-            		underground.settings.autoraffleT = (29 - n);
+            		underground.settings.autoraffleT = (29 - mins);
             	}
-                        if (!underground.room.roulette.rouletteStatus && n == 30) {
+                        if (!underground.room.roulette.rouletteStatus && mins == 30) {
                             underground.room.roulette.startRoulette();
                         }
             }, 60 * 1000);
