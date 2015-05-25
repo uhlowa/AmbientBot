@@ -3717,7 +3717,7 @@
             	    if (num < 10) {
             	    	nts = "0" + num;
             	    }
-            	    if (underground.room.dicegame.dgStatus = true) {
+            	    if (underground.room.dicegame.dgStatus) {
             	    	if (num > underground.room.settings.highestRoll) {
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + ' and is now winning the Dice Game');
             	    		underground.room.settings.highestRoll = num;
@@ -3726,11 +3726,12 @@
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
             	    	}
             	    	return void (0);
-            	    }
+            	    } else {
             	    if (nts === '11' || nts === '22' || nts === '33' || nts === '44' || nts === '55' || nts === '66' || nts === '77' || nts === '88' || nts === '99') {
             	    API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '. \n http://i.imgur.com/6LWy390.png');
             	    } else {
             	    	API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
+            	    }
             	    }
             	}
             	},
