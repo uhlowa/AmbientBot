@@ -318,7 +318,7 @@
                     var winner = "undefined";
                     var ind = 0;
                     for (var i = 0; i < underground.room.dicegame.participants.length; i++) {
-                    	if (underground.room.dicegame.participants[i] === underground.settings.highestRollerID) {
+                    	if (underground.room.dicegame.participants[i].id === underground.settings.highestRollerID) {
                     		ind = i;
                     	}
                     }
