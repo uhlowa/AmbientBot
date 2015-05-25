@@ -390,6 +390,7 @@
                           dicegame: {
                 highestRoll: 0,
         	highestRollerID: "undefined",
+        	winning: "nobody",
                 dgStatus: false,
                 participants: [],
                 countdown: null,
@@ -399,26 +400,17 @@
                         underground.room.dicegame.endDiceGame();
                     }, 60 * 1000);
                     API.sendChat('/me The Dice Game is now active. Type !roll and whoever rolls the highest will win!');
-                    var usr = "[none]";
-                    var name = "undefined";
-                   for (var i = 0; i < underground.room.users.length; i++) {
-                   	if (API.getWaitListPosition(underground.room.users[i].id) == 1) {
-                   	usr = undergound.room.users[i].id;
-                   	}
-                   }
-                   name = underground.userUtilities.lookupUser(usr);
-                    API.sendChat('@' + name + ' lock your spot at position 1 by typing !lockpos');
                 },
                                 endDiceGame: function () {
                     underground.room.dicegame.dgStatus = false;
                     var winner = "undefined";
                     var ind = 0;
-                    for (var i = 0; i < underground.room.dicegame.participants.length; i++) {
-                    	if (underground.room.dicegame.participants[i].id === underground.room.dicegame.highestRollerID) {
+                    for (var i = 0; i < underground.room.users.length; i++) {
+                    	if (underground.room.users[i].username === underground.room.dicegame.winning) {
                     		ind = i;
                     	}
                     }
-                    winner = underground.room.dicegame.participants[ind];
+                    winner = underground.room.users[ind];
                     underground.room.dicegame.participants = [];
                     var pos = 1;
                     if (underground.settings.spotLock !== "none") {
@@ -3905,9 +3897,11 @@
             	    	if (num > underground.room.dicegame.highestRoll) {
             	    			underground.room.dicegame.highestRollerID = "undefined";
             	    			underground.room.dicegame.highestRoll = 0;
+            	    			underground.room.dicegame.winning = "nobody";
             	    			this.countdown = setTimeout(function () {
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + ' and is now winning the Dice Game');
             	    		underground.room.dicegame.highestRoll = num;
+            	    		underground.room.dicegame.winning = chat.un;
             	    		underground.room.dicegame.highestRollerID = chat.uid;
                     }, 300);
 
