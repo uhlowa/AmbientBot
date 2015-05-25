@@ -2261,7 +2261,7 @@
                         	if (underground.room.russiangame.players < 6) {
                             underground.room.russiangame.participants.push(chat.uid);
                             underground.room.russiangame.players++;
-                            API.sendChat('/me' + chat.un + ' has claimed a seat in Russian Roulette. ' + (6 - underground.room.russiangame.players) + ' seats remaining.');
+                            API.sendChat('/me' + chat.un + ' has claimed a seat in Russian Roulette.');
                         	}
                         }
                     }
