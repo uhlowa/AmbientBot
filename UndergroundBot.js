@@ -1387,15 +1387,6 @@
             underground.room.afkInterval = setInterval(function () {
                 underground.roomUtilities.afkCheck()
             }, 10 * 1000);
-           underground.room.numbergameInterval = setInterval(function () {
-           	var d = new Date();
-		var n = d.getMinutes();
-		var mins = parseInt(n);
-            		underground.settings.autonumberG = (59 - mins));
-            	if (!underground.room.numberG.active && mins == 0) {
-                underground.room.numberG.playNumberGame();
-            	}
-            }, 60 * 1000);
             underground.room.autoraffleInterval = setInterval(function () {
             	var d = new Date();
 		var n = d.getMinutes();
@@ -4397,15 +4388,6 @@
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('The next Automatic Raffle will be in ' + underground.settings.autoraffleT + ' minutes.'));
-            	}
-            },
-            nextnumberCommand: {
-            	command: 'nextng',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('The next Automatic Number Game will be in ' + underground.settings.autonumberG + ' minutes.'));
             	}
             },
             
