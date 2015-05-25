@@ -2289,7 +2289,7 @@
                     if (!underground.commands.executable(this.rank, chat)) return void (0);
                     else {
                         if (!underground.room.russiangame.RRStatus) {
-                            underground.room.russiangame.startRusGame();
+                            underground.room.russiangame.startRussianGame();
                         }
                     }
                 }
