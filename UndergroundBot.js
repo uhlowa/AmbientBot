@@ -3848,7 +3848,7 @@
             	           	var gni = parseInt(gn);
             	           	if (gni == underground.room.numberG.currentNumber) {
             	           		underground.room.numberG.winnerID = chat.uid;
-            	           		underground.room.numberG.endGame(chat.uid);
+            	           		underground.room.numberG.endNumberGame();
             	           	} else {
             	           		API.sendChat('/me @' + chat.un + ' incorrectly guessed ' + gni + '.');
             	           	}
