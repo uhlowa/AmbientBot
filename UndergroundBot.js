@@ -1249,7 +1249,7 @@
                 underground.roomUtilities.afkCheck()
             }, 10 * 1000);
             underground.room.autoraffleInterval = setInterval(function () {
-            	var d = new Date();
+            	var d = new Date(Date.now());
 		var n = d.getMinutes();
             	if (n >= 30) {
             		underground.settings.autoraffleT = (30 + (29 - n));
