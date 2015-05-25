@@ -331,51 +331,6 @@
                 }
             },*/
             
-               rrgame: {
-                rusStatus: false,
-                participants: [],
-                countdown: null,
-                startRusGame: function () {
-                    underground.room.rrgame.rusStatus = true;
-                    underground.room.rrgame.countdown = setTimeout(function () {
-                        underground.room.rrgame.endRusGame();
-                    }, 300 * 1000);
-                    API.sendChat('/me Russian Roulette is now active. Type !sit to claim your seat at the table');
-                    var usr = "[none]";
-                    var name = "undefined";
-                   for (var i = 0; i < underground.room.users.length; i++) {
-                   	if (API.getWaitListPosition(underground.room.users[i].id) == 1) {
-                   	usr = undergound.room.users[i].id;
-                   	}
-                   }
-                   name = underground.userUtilities.lookupUser(usr);
-                    API.sendChat('@' + name + ' lock your spot at position 1 by typing !lockpos');
-                },
-                                endRusGame: function () {
-                    underground.room.rrgame.rusStatus = false;
-                    var winner = "undefined";
-                    var ind = 0;
-                    for (var i = 0; i < underground.room.dicegame.participants.length; i++) {
-                    	if (underground.room.rrgame.participants[i].id === underground.settings.highestRollerID) {
-                    		ind = i;
-                    	}
-                    }
-                    winner = underground.room.rrgame.participants[ind];
-                    underground.room.dicegame.participants = [];
-                    var pos = 1;
-                    //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
-                    var user = underground.userUtilities.lookupUser(winner);
-                    var name = user.username;
-                    underground.settings.spotLock = "none";
-                    API.sendChat('/me ' + name + ' has won Russian Roulette');
-                    setTimeout(function (winner, pos) {
-                        underground.userUtilities.moveUser(winner, pos, false);
-                    }, 1 * 1000, winner, pos);
-                }
-
-            },
-            
-
                           dicegame: {
                 dgStatus: false,
                 participants: [],
@@ -2266,7 +2221,7 @@
                 }
             },
             
-                                 russianCommand: {
+              /*                   russianCommand: {
                 command: 'russian',
                 rank: 'mod',
                 type: 'exact',
@@ -2300,7 +2255,7 @@
                             }
                         }
                 }
-            },
+            },*/
 
 		joinCommand: {
                 command: 'join',
