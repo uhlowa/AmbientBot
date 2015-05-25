@@ -3725,7 +3725,6 @@
             	    	} else {
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
             	    	}
-            	    	return void (0);
             	    } else {
             	    if (nts === '11' || nts === '22' || nts === '33' || nts === '44' || nts === '55' || nts === '66' || nts === '77' || nts === '88' || nts === '99') {
             	    API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '. \n http://i.imgur.com/6LWy390.png');
