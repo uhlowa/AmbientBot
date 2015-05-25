@@ -191,7 +191,7 @@
         retrieveFromStorage: retrieveFromStorage,
         settings: {
         	highestRoll: 0,
-        	highestRollerID: "undefined",
+        	highestRollerID: null,
         	autoraffleT: 60,
             botName: "Underground Bot",
             language: "english",
@@ -301,7 +301,7 @@
                     underground.room.dicegame.dgStatus = true;
                     underground.room.dicegame.countdown = setTimeout(function () {
                         underground.room.roulette.endDiceGame();
-                    }, 60 * 1000);
+                    }, 30 * 1000);
                     API.sendChat('/me The Dice Game is now active. Type !roll and whoever rolls the highest will win!');
                     var usr = "[none]";
                     var name = "undefined";
@@ -3711,13 +3711,11 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+            	    if (!underground.room.dicegame.dgStatus) { return void (0); }
             	    var num = Math.floor((Math.random() * 99) + 1);
             	    var nts = num.toString();
-
-            	    if (num < 10) {
-            	    	nts = "0" + num;
-            	    }
-            	    if (underground.room.dicegame.dgStatus) {
+            	    if (underground.room.dicegame.participants.indexOf(chat.uid) < 0) {
+                            underground.room.dicegame.participants.push(chat.uid);
             	    	if (num > underground.room.settings.highestRoll) {
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + ' and is now winning the Dice Game');
             	    		underground.room.settings.highestRoll = num;
@@ -3725,12 +3723,6 @@
             	    	} else {
             	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
             	    	}
-            	    } else {
-            	    if (nts === '11' || nts === '22' || nts === '33' || nts === '44' || nts === '55' || nts === '66' || nts === '77' || nts === '88' || nts === '99') {
-            	    API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '. \n http://i.imgur.com/6LWy390.png');
-            	    } else {
-            	    	API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
-            	    }
             	    }
             	}
             	},
