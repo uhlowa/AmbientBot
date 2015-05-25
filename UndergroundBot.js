@@ -320,14 +320,6 @@
 			underground.room.russiangame.chamber = 0;
                     API.sendChat('/me Russian Roulette seating was not filled and the game has timed out.');
                  	}
-                },
-                shoot: function () {
-                 if (underground.room.russiangame.RRStatus) {
-                 var ind = underground.room.roulette.participants[underground.room.russiangame.gun]);
-                    var next = underground.room.russiangame.participants[ind];
-                    underground.room.russiangame.started = true;
-                    underground.room.russiangame.gun++;
-		API.sendChat('/me Testing russian roulette.. shot = ' + underground.room.russiangame.gun + ', chamber = ' + underground.room.russiangame.chamber + '.');
                 }
 
             },
