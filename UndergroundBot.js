@@ -333,7 +333,7 @@
                 }
             },*/
             
-            /*numberG: {
+            numberG: {
             	currentNumber: 0,
             	difficulty: 1,
             	active: false,
@@ -380,7 +380,7 @@
             		                    	}
                     }, 1 * 1000);
             	}
-            },*/
+            },
             
                           dicegame: {
                 dgStatus: false,
