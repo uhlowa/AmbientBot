@@ -294,7 +294,7 @@
 
             },
             
-           russiangame: {
+           /*russiangame: {
                 RRStatus: false,
                 started: false,
                 participants: [],
@@ -302,7 +302,25 @@
                 players: 0,
                 chamber: 0,
                 gun: 0,
-
+                startRussianGame: function () {
+                    underground.room.russiangame.RRStatus = true;
+                    underground.room.russiangame.chamber = Math.floor(Math.random() * 6 + 1);
+                    underground.room.russiangame.players = 0;
+                    underground.room.russiangame.gun = 0;
+                    underground.room.russiangame.countdown = setTimeout(function () {
+                        underground.room.russiangame.endRussianGame();
+                    }, 300 * 1000);
+                    API.sendChat('/me Russian Roulette is now active. Type !sit to claim your seat!');
+                },
+                endRussianGame: function () {
+                 	if (underground.room.russiangame.RRStatus) {
+                 underground.room.russiangame.participants = [];
+                    underground.room.russiangame.RRStatus = false;
+			underground.room.russiangame.players = 0;
+			underground.room.russiangame.chamber = 0;
+                    API.sendChat('/me Russian Roulette seating was not filled and the game has timed out.');
+                 	}
+                },
                 shoot: function () {
                  if (underground.room.russiangame.RRStatus) {
                  var ind = underground.room.roulette.participants[underground.room.russiangame.gun]);
@@ -310,6 +328,49 @@
                     underground.room.russiangame.started = true;
                     underground.room.russiangame.gun++;
 		API.sendChat('/me Testing russian roulette.. shot = ' + underground.room.russiangame.gun + ', chamber = ' + underground.room.russiangame.chamber + '.');
+                }
+            },*/
+            
+               rrgame: {
+                rusStatus: false,
+                participants: [],
+                countdown: null,
+                startRusGame: function () {
+                    underground.room.rrgame.rusStatus = true;
+                    underground.room.rrgame.countdown = setTimeout(function () {
+                        underground.room.rrgame.endRusGame();
+                    }, 300 * 1000);
+                    API.sendChat('/me Russian Roulette is now active. Type !sit to claim your seat at the table');
+                    var usr = "[none]";
+                    var name = "undefined";
+                   for (var i = 0; i < underground.room.users.length; i++) {
+                   	if (API.getWaitListPosition(underground.room.users[i].id) == 1) {
+                   	usr = undergound.room.users[i].id;
+                   	}
+                   }
+                   name = underground.userUtilities.lookupUser(usr);
+                    API.sendChat('@' + name + ' lock your spot at position 1 by typing !lockpos');
+                },
+                                endRusGame: function () {
+                    underground.room.rrgame.rusStatus = false;
+                    var winner = "undefined";
+                    var ind = 0;
+                    for (var i = 0; i < underground.room.dicegame.participants.length; i++) {
+                    	if (underground.room.rrgame.participants[i].id === underground.settings.highestRollerID) {
+                    		ind = i;
+                    	}
+                    }
+                    winner = underground.room.rrgame.participants[ind];
+                    underground.room.dicegame.participants = [];
+                    var pos = 1;
+                    //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
+                    var user = underground.userUtilities.lookupUser(winner);
+                    var name = user.username;
+                    underground.settings.spotLock = "none";
+                    API.sendChat('/me ' + name + ' has won Russian Roulette');
+                    setTimeout(function (winner, pos) {
+                        underground.userUtilities.moveUser(winner, pos, false);
+                    }, 1 * 1000, winner, pos);
                 }
 
             },
@@ -323,7 +384,7 @@
                     underground.room.dicegame.dgStatus = true;
                     underground.room.dicegame.countdown = setTimeout(function () {
                         underground.room.dicegame.endDiceGame();
-                    }, 30 * 1000);
+                    }, 60 * 1000);
                     API.sendChat('/me The Dice Game is now active. Type !roll and whoever rolls the highest will win!');
                     var usr = "[none]";
                     var name = "undefined";
