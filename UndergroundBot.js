@@ -2980,6 +2980,7 @@
                         if (!underground.room.dicegame.dgStatus) {
                         	underground.settings.highestRoll = 0;
                         	underground.settings.highestRollerID = null;
+                        	underground.room.dicegame.participants = [];
                             underground.room.dicegame.startDiceGame();
                         }
                     }
@@ -3862,7 +3863,7 @@
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
             	    if (!underground.room.dicegame.dgStatus) { return void (0); }
             	    if (underground.room.dicegame.participants.indexOf(chat.uid) >= 0) { return void (0); }
-            	    var num = Math.floor((Math.random() * 99) + 1);
+            	    var num = Math.floor((Math.random() * 999) + 1);
             	    var nts = num.toString();
  
                             underground.room.dicegame.participants.push(chat.uid);
