@@ -1,5 +1,5 @@
 /**
- *Copyright 2015 Paradox
+ *Copyright 2015 Paradox VII
  */
 
 
