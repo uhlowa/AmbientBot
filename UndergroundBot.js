@@ -424,6 +424,8 @@
                         underground.userUtilities.moveUser(underground.room.users[ind].id, pos, false);
                     }, 1 * 1000, underground.room.users[ind].id, pos);
                 }
+                    }
+                                }
 
             },
             newBlacklisted: [],
