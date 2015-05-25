@@ -339,7 +339,6 @@
             	active: false,
             	countdown: null,
             	max: 50,
-            	winnerID: null,
             	playNumberGame: function() {
             		underground.room.numberG.active = true;
             		underground.room.numberG.countdown = setTimeout(function () {
@@ -365,9 +364,13 @@
             		API.sendChat('/me Nobody has guessed the number I was thinking of correctly. :sleeping: Game over. The number was ' + underground.room.numberG.currentNumber + '.');
             		underground.room.numberG.currentNumber = 0;
             	},
-            	endNumberGame: function() {
-            		var user = underground.userUtilities.lookupUser(winnerID);
-            		var name = user.username;
+            	endNumberGame: function(winnerID) {
+            	
+            		var name = "undefined";
+            		for (var i = 0; i < underground.room.users.length; i++) {
+                if (underground.room.users[i].id === winnerID) {
+                	name = underground.room.users[i].username;
+
             		underground.room.numberG.active = false;
             		underground.room.numberG.max = 0;
             		API.sendChat('/me ' + name + ' has won the Number Game. The number was ' + underground.room.numberG.currentNumber + '.');
@@ -379,6 +382,8 @@
             		underground.userUtilities.moveUser(winnerID, 1, false);
             		                    	}
                     }, 1 * 1000);
+                }
+            		}
             	}
             },
             
@@ -3847,8 +3852,7 @@
             	           	var gn = chat.message.substring(cmd.length + 1);
             	           	var gni = parseInt(gn);
             	           	if (gni === underground.room.numberG.currentNumber || gn === underground.room.numberG.currentNumber.toString()) {
-            	           		underground.room.numberG.winnerID = chat.uid;
-            	           		underground.room.numberG.endNumberGame();
+            	           		underground.room.numberG.endNumberGame(chat.uid);
             	           	} else {
             	           		API.sendChat('/me @' + chat.un + ' incorrectly guessed ' + gni + '.');
             	           		setTimeout(function (id) {
