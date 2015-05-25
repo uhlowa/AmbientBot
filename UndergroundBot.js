@@ -311,7 +311,7 @@
                    	}
                    }
                    name = underground.userUtilities.lookupUser(usr);
-                    API.sendChat('@' + name + ' lock your spot at position 1 by typing !lockpos')
+                    API.sendChat('@' + name + ' lock your spot at position 1 by typing !lockpos');
                 },
                 endRoulette: function () {
                     underground.room.roulette.rouletteStatus = false;
@@ -1253,7 +1253,7 @@
 		var n = d.getMinutes();
 		var mins = parseInt(n);
             	if (mins >= 30) {
-            		underground.settings.autoraffleT = (30 + (29 - mins));
+            		underground.settings.autoraffleT = (30 + (59 - mins));
             	} else {
             		underground.settings.autoraffleT = (29 - mins);
             	}
