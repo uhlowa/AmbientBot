@@ -294,7 +294,7 @@
 
             },
             
-           /*russiangame: {
+           russiangame: {
                 RRStatus: false,
                 started: false,
                 participants: [],
@@ -329,7 +329,7 @@
                     underground.room.russiangame.gun++;
 		API.sendChat('/me Testing russian roulette.. shot = ' + underground.room.russiangame.gun + ', chamber = ' + underground.room.russiangame.chamber + '.');
                 }
-            },*/
+            },
             
             numberG: {
             	currentNumber: 0,
