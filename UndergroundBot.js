@@ -3875,7 +3875,6 @@
             	           		API.sendChat('/me Number Guess difficulty set to ' + tos + '.');
             	           		underground.room.numberG.difficulty = gni;
             	           	}
-            }
             },
             
            rollCommand: {
