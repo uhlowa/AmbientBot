@@ -193,6 +193,7 @@
         	highestRoll: 0,
         	highestRollerID: "undefined",
         	autoraffleT: 60,
+        	autonumberG: 60,
             botName: "Underground Bot",
             language: "english",
             chatLink: "https://rawgit.com/Paradox68/UndergroundBot/master/lang/en.json",
@@ -1391,7 +1392,7 @@
 		var n = d.getMinutes();
 		var mins = parseInt(n);
             		underground.settings.autonumberG = (59 - mins));
-            	if (!underground.room.roulette.rouletteStatus && mins == 0) {
+            	if (!underground.room.numberG.active && mins == 0) {
                 underground.room.numberG.playNumberGame();
             	}
             }, 60 * 1000);
@@ -4396,6 +4397,15 @@
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                     	API.sendChat(subChat('The next Automatic Raffle will be in ' + underground.settings.autoraffleT + ' minutes.'));
+            	}
+            },
+            nextnumberCommand: {
+            	command: 'nextng',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    	API.sendChat(subChat('The next Automatic Number Game will be in ' + underground.settings.autonumberG + ' minutes.'));
             	}
             },
             
