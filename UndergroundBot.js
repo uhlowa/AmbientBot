@@ -333,8 +333,8 @@
                         underground.userUtilities.moveUser(winner, pos, false);
                     }, 1 * 1000, winner, pos);
                 }
-            },
-              dicegame: {
+            }//,
+            /*  dicegame: {
                 dgStatus: false,
                 participants: [],
                 countdown: null,
@@ -380,7 +380,7 @@
                         underground.userUtilities.moveUser(winner, pos, false);
                     }, 1 * 1000, winner, pos);
                 }
-            }
+            }*/
         },
         User: function (id, name) {
             this.id = id;
@@ -3704,6 +3704,34 @@
             		}
             	}
             },
+           rollCommand: {
+            	command: 'roll',
+            	rank: 'user',
+            	type: 'exact',
+            	functionality: function (chat, cmd) {
+            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+            	    var num = Math.floor((Math.random() * 99) + 1);
+            	    var nts = num.toString();
+
+            	    if (num < 10) {
+            	    	nts = "0" + num;
+            	    }
+            	    if (underground.room.dicegame.dgStatus = true) {
+            	    	if (num > underground.room.settings.highestRoll) {
+            	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + ' and is now winning the Dice Game');
+            	    		underground.room.settings.highestRoll = num;
+            	    		underground.room.settings.highestRollerID = id;
+            	    	} else {
+            	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
+            	    	}
+            	    }
+            	    if (nts === '11' || nts === '22' || nts === '33' || nts === '44' || nts === '55' || nts === '66' || nts === '77' || nts === '88' || nts === '99') {
+            	    API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '. \n http://i.imgur.com/6LWy390.png');
+            	    } else {
+            	    	API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
+            	    }
+            	}
+            	},
 
             jamesCommand: {
             	command: 'james',
