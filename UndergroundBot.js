@@ -1248,10 +1248,14 @@
                 underground.roomUtilities.afkCheck()
             }, 10 * 1000);
             underground.room.autoRaffle = setInterval(function () {
-            	underground.settings.autoraffleT--;
-                        if (!underground.room.roulette.rouletteStatus && underground.settingsautoraffleT == 0) {
+            	var mins = Date.getMinutes();
+            	if (mins > 30) {
+            		underground.settings.autoraffleT = (30 + (60 - mins));
+            	} else {
+            		underground.settings.autoraffleT = (30 - mins);
+            	}
+                        if (!underground.room.roulette.rouletteStatus && mins == 30) {
                             underground.room.roulette.startRoulette();
-                            underground.settings.autoraffleT = 60;
                         }
             }, 60 * 1000);
             underground.room.autodisableInterval = setInterval(function () {
