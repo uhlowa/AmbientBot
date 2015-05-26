@@ -194,7 +194,7 @@
         	autoraffleT: 60,
         	autonumberG: 60,
             botName: "Underground Bot",
-            monies:, " ",
+            monies: " ",
             language: "english",
             chatLink: "https://rawgit.com/Paradox68/UndergroundBot/master/lang/en.json",
             startupCap: 1, // 1-200
@@ -303,9 +303,9 @@
     		var found = false;
     		var sToR = " ";
     		for (var i = 0; i < args.length; i++) {
-    			if (args[i] === usid) {
+    			if (args(i) === usid) {
     				found = true;
-    				sToR = args[i] + ' ' + args[i+1];
+    				sToR = args(i) + ' ' + args(i+1);
     			}
     		}
     		if (found && sToR.length > 2) {
