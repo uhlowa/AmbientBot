@@ -345,18 +345,18 @@
                 }
             },
             */
-          /*  currencies: {
+            currencies: {
             	uid: null,
             	amt: 0,
             	updateUserCurrency: function() {
 	 	var found = false;
 	 	var oldMonies = 0;
-	 	String args[] = underground.room.monies.split(' ');
+	 	String args[] = underground.room.usrMonies.split(' ');
 	 	for (var i = 0; i < args.length; i++) {
 	 		if (args[i] === uid) {
 	 			found = true;
 	 			oldMonies = args[i] + ' ' + parseInt(args[i + 1]);
-	 			underground.room.monies.replaceAll(oldMonies, amt);
+	 			underground.room.usrMonies.replaceAll(oldMonies, amt);
 	 			API.chatLog('User currency updated. New: ' + amt)
 	 		}
 	 	}
@@ -369,7 +369,7 @@
 	 getUserCurrency: function() {
 	 	var found = false;
 	 	var oldMonies = 0;
-	 	var args = underground.room.monies.split(' ');
+	 	var args = underground.room.usrMonies.split(' ');
 	 	for (var i = 0; i < args.length; i++) {
 	 		if (args[i] === uid) {
 	 			found = true;
