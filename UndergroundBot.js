@@ -303,9 +303,9 @@
     		var found = false;
     		var sToR = " ";
     		for (var i = 0; i < args.length; i++) {
-    			if (args(i) === usid) {
+    			if (args[i] === usid) {
     				found = true;
-    				sToR = args(i) + ' ' + args(i+1);
+    				sToR = args[i] + ' ' + args[i+1];
     			}
     		}
     		if (found && sToR.length > 2) {
