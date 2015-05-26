@@ -35,16 +35,6 @@
         localStorage.setItem("undergroundStorageInfo", JSON.stringify(undergroundStorageInfo));
 
     };
-    
-
-
- 
-        // Try to complete OAuth flow.
-        client.authenticate({ interactive: false }, function (error, client) {
-            if (error) {
-                alert('Error: ' + error);
-            }
-        });
 
     var subChat = function (chat, obj) {
         if (typeof chat === "undefined") {
