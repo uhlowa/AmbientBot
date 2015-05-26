@@ -17,6 +17,25 @@
         }
         return -1;
     };
+    var monies = "";
+    var updateUserCurrency = function (usid, amttoadd) {
+    	var args = monies.split(' ');
+    	var found = false;
+    	var sToR = " ";
+    	for (var i = 0; i < args.length; i++) {
+    		if (args[i] === usid) {
+    			found = true;
+    			sToR = args[i] + ' ' + args[i+1];
+    		}
+    	}
+    	if (found && sToR.length > 2) {
+    		monies.replace(sToR, usid + " " + amttoadd)
+    		API.chatLog('User in monies.string changed. Has ' + amttoadd + ' UG Creds');
+    	} else {
+    		monies = monies + " " + usid + " " + amttoadd;
+    		API.chatLog('New user added to monies.string');
+    	}
+    };
 
     var kill = function () {
         clearInterval(underground.room.autodisableInterval);
