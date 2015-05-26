@@ -89,7 +89,7 @@
     	 var updateUserCurrency = function (uid, amt) {
 	 	var found = false;
 	 	var oldMonies = 0;
-	 	var args = localstorage.monies.split(' ');
+	 	String args[] = localstorage.monies.split(' ');
 	 	for (var i = 0; i < args.length; i++) {
 	 		if (args[i] === uid) {
 	 			found = true;
