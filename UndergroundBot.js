@@ -35,8 +35,6 @@
         localStorage.setItem("undergroundStorageInfo", JSON.stringify(undergroundStorageInfo));
 
     };
-    
-
 
     var subChat = function (chat, obj) {
         if (typeof chat === "undefined") {
@@ -3890,7 +3888,6 @@
             }
             },
 
-
             
            rollCommand: {
             	command: 'roll',
@@ -4419,7 +4416,6 @@
                     }
                 }
             },
-            
             bye1Command: {
             	command: 'bye',
             	rank: 'user',
