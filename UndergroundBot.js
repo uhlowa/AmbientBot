@@ -86,41 +86,7 @@
         });
     };
     
-    	 var updateUserCurrency = function (uid, amt) {
-	 	var found = false;
-	 	var oldMonies = 0;
-	 	String args[] = underground.room.monies.split(' ');
-	 	for (var i = 0; i < args.length; i++) {
-	 		if (args[i] === uid) {
-	 			found = true;
-	 			oldMonies = args[i] + ' ' + parseInt(args[i + 1]);
-	 			underground.room.monies.replaceAll(oldMonies, amt);
-	 			API.chatLog('User currency updated. New: ' + amt)
-	 		}
-	 	}
-	 	if (!found) {
-	 		underground.room.monies += " " + uid + " " amt;
-	 		API.chatLog('User not found. Currency line created.');
-	 	}
-	 };
-	 
-	 var getUserCurrency = function (uid) {
-	 	var found = false;
-	 	var oldMonies = 0;
-	 	var args = underground.room.monies.split(' ');
-	 	for (var i = 0; i < args.length; i++) {
-	 		if (args[i] === uid) {
-	 			found = true;
-	 			oldMonies = parseInt(args[i + 1]);
-	 			API.chatLog('User currency updated. New: ' + amt)
-	 			return oldMonies;
-	 		}
-	 	}
-	 	if (!found) {
-	 		API.chatLog('User not found. Return value 0.');
-	 		return 0;
-	 	}
-	 };
+
 
     var retrieveSettings = function () {
         var settings = JSON.parse(localStorage.getItem("undergroundsettings"));
@@ -379,6 +345,46 @@
                 }
             },
             */
+            currencies: {
+            	    	 updateUserCurrency: function(uid, amt) {
+	 	var found = false;
+	 	var oldMonies = 0;
+	 	String args[] = underground.room.monies.split(' ');
+	 	for (var i = 0; i < args.length; i++) {
+	 		if (args[i] === uid) {
+	 			found = true;
+	 			oldMonies = args[i] + ' ' + parseInt(args[i + 1]);
+	 			underground.room.monies.replaceAll(oldMonies, amt);
+	 			API.chatLog('User currency updated. New: ' + amt)
+	 		}
+	 	}
+	 	if (!found) {
+	 		underground.room.monies += " " + uid + " " amt;
+	 		API.chatLog('User not found. Currency line created.');
+	 	}
+	 },
+	 
+	 getUserCurrency: function(uid) {
+	 	var found = false;
+	 	var oldMonies = 0;
+	 	var args = underground.room.monies.split(' ');
+	 	for (var i = 0; i < args.length; i++) {
+	 		if (args[i] === uid) {
+	 			found = true;
+	 			oldMonies = parseInt(args[i + 1]);
+	 			API.chatLog('User currency updated. New: ' + amt)
+	 			return oldMonies;
+	 		}
+	 	}
+	 	if (!found) {
+	 		API.chatLog('User not found. Return value 0.');
+	 		return 0;
+	 	}
+	 }
+            },
+            
+            
+            
             numberG: {
             	currentNumber: 0,
             	difficulty: 1,
@@ -3934,7 +3940,7 @@
             	           	if (!underground.commands.executable(this.rank, chat)) { return void (0); }
             	           	var gn = chat.message.substring(cmd.length + 1);
             	           	var gni = parseInt(gn);
-            	           		updateUserCurrency(chat.uid, gni);
+            	           		underground.room.currencies.updateUserCurrency(chat.uid, gni);
             }
             },
 
