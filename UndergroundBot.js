@@ -3932,7 +3932,7 @@
             }
             },
             
-                        gibCommand: {
+             /*           gibCommand: {
             	command: 'gib',
             	rank: 'mod',
             	type: 'startsWith',
@@ -3942,7 +3942,7 @@
             	           	var gni = parseInt(gn);
             	           		underground.room.currencies.updateUserCurrency(chat.uid, gni);
             }
-            },
+            },*/
 
             
            rollCommand: {
