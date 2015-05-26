@@ -296,7 +296,9 @@
 
             },
             cash: {
-                updateUserCurrency: function(usid, amttoadd) {
+            	usid: null,
+            	amttoadd: 0,
+                updateUserCurrency: function() {
     		var args = underground.settings.monies.split(' ');
     		var found = false;
     		var sToR = " ";
@@ -307,10 +309,10 @@
     			}
     		}
     		if (found && sToR.length > 2) {
-    			underground.settings.monies.replace(sToR, usid + " " + amttoadd)
-    			API.chatLog('User in monies.string changed. Has ' + amttoadd + ' UG Creds');
+    			underground.settings.monies.replace(sToR, underground.room.cash.usid + " " + underground.room.cash.amttoadd)
+    			API.chatLog('User in monies.string changed. Has ' + underground.room.cash.amttoadd + ' UG Creds');
     		} else {
-    			underground.settings.monies = underground.settings.monies + " " + usid + " " + amttoadd;
+    			underground.settings.monies = underground.settings.monies + " " + underground.room.cash.usid + " " + underground.room.cash.amttoadd;
     			API.chatLog('New user added to monies.string');
     		}
     		}
@@ -3919,7 +3921,9 @@
             	           	if (!underground.commands.executable(this.rank, chat)) { return void (0); }
             	           	var gn = chat.message.substring(cmd.length + 1);
             	           	var gni = parseInt(gn);
-            	           		underground.room.cash.updateUserCurrency(chat.uid, gni)
+            	           		underground.room.cash.usid = chat.uid;
+            	           		underground.room.cash.amttoadd = gni;
+            	           		underground.room.cash.updateUserCurrency();
             }
             },
 
