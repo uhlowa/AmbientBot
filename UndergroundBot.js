@@ -310,10 +310,10 @@
     		}
     		if (found && sToR.length > 2) {
     			underground.settings.monies.replace(sToR, underground.room.cash.usid + " " + underground.room.cash.amttoadd)
-    			API.chatLog('User in monies.string changed. Has ' + underground.room.cash.amttoadd + ' UG Creds');
+    			API.sendChat('User in monies.string changed. Has ' + underground.room.cash.amttoadd + ' UG Creds');
     		} else {
     			underground.settings.monies = underground.settings.monies + " " + underground.room.cash.usid + " " + underground.room.cash.amttoadd;
-    			API.chatLog('New user added to monies.string');
+    			API.sendChat('New user added to monies.string');
     		}
     		}
             },
