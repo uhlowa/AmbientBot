@@ -89,17 +89,17 @@
     	 var updateUserCurrency = function (uid, amt) {
 	 	var found = false;
 	 	var oldMonies = 0;
-	 	String args[] = localstorage.monies.split(' ');
+	 	String args[] = underground.room.monies.split(' ');
 	 	for (var i = 0; i < args.length; i++) {
 	 		if (args[i] === uid) {
 	 			found = true;
 	 			oldMonies = args[i] + ' ' + parseInt(args[i + 1]);
-	 			localStorage.monies.replaceAll(oldMonies, amt);
+	 			underground.room.monies.replaceAll(oldMonies, amt);
 	 			API.chatLog('User currency updated. New: ' + amt)
 	 		}
 	 	}
 	 	if (!found) {
-	 		localStorage.monies += " " + uid + " " amt;
+	 		underground.room.monies += " " + uid + " " amt;
 	 		API.chatLog('User not found. Currency line created.');
 	 	}
 	 };
@@ -107,7 +107,7 @@
 	 var getUserCurrency = function (uid) {
 	 	var found = false;
 	 	var oldMonies = 0;
-	 	var args = localstorage.monies.split(' ');
+	 	var args = underground.room.monies.split(' ');
 	 	for (var i = 0; i < args.length; i++) {
 	 		if (args[i] === uid) {
 	 			found = true;
@@ -152,6 +152,7 @@
                 underground.room.messages = room.messages;
                 underground.room.queue = room.queue;
                 underground.room.newBlacklisted = room.newBlacklisted;
+                underground.room.usrMonies = room.usrMonies;
                 API.chatLog(underground.chat.datarestored);
             }
         }
@@ -291,6 +292,7 @@
         room: {
             users: [],
             afkList: [],
+            usrMonies: "",
             mutedUsers: [],
             bannedUsers: [],
             skippable: true,
