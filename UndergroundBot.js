@@ -3924,7 +3924,7 @@
             }
             },
             
-                        diffCommand: {
+                        gibCommand: {
             	command: 'gib',
             	rank: 'mod',
             	type: 'startsWith',
