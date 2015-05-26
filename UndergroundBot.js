@@ -37,7 +37,6 @@
     };
     
 
-	 
 
     var subChat = function (chat, obj) {
         if (typeof chat === "undefined") {
