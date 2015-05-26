@@ -345,8 +345,10 @@
                 }
             },
             */
-            currencies: {
-            	    	 updateUserCurrency: function(uid, amt) {
+          /*  currencies: {
+            	uid: null,
+            	amt: 0,
+            	updateUserCurrency: function() {
 	 	var found = false;
 	 	var oldMonies = 0;
 	 	String args[] = underground.room.monies.split(' ');
@@ -364,7 +366,7 @@
 	 	}
 	 },
 	 
-	 getUserCurrency: function(uid) {
+	 getUserCurrency: function() {
 	 	var found = false;
 	 	var oldMonies = 0;
 	 	var args = underground.room.monies.split(' ');
@@ -379,7 +381,7 @@
 	 		API.chatLog('User not found. Return value 0.');
 	 	}
 	 }
-            },
+            },*/
             
             
             
