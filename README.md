@@ -14,11 +14,11 @@ Usage
 
 Bookmark the following code. To run the bot, run the bookmark.
 
-`javascript:(function(){$.getScript('https://rawgit.com/Paradox68/iScape-Bot/master/iScape%20Bot.js');})();`
+`javascript:(function(){$.getScript('https://rawgit.com/Paradox68/UndergroundBot/master/UndergroundBot.js');})();`
 
 ###Commands###
 
-A Commands list is currently being compiled and will be available soon.
+Found under Commands.md in the GitHub directory.
 
 ###Blacklists###
 A Blacklist is currently being compiled and will be available soon.
