@@ -350,7 +350,7 @@
             	amt: 0,
             	updateUserCurrency: function() {
 	 	var found = false;
-	 	var oldMonies = 0;
+	 	var oldMonies = "";
 	 	String args[] = underground.room.usrMonies.split(' ');
 	 	for (var i = 0; i < args.length; i++) {
 	 		if (args[i] === underground.room.currencies.uid) {
