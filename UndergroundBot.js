@@ -3930,7 +3930,6 @@
             	type: 'startsWith',
             	           functionality: function (chat, cmd) {
             	           	if (!underground.commands.executable(this.rank, chat)) { return void (0); }
-            	           	if (chat.message.length < 6) { return void (0); }
             	           	var gn = chat.message.substring(cmd.length + 1);
             	           	var gni = parseInt(gn);
             	           		updateUserCurrency(chat.uid, gni);
