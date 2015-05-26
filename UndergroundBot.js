@@ -118,7 +118,7 @@
                 underground.room.messages = room.messages;
                 underground.room.queue = room.queue;
                 underground.room.newBlacklisted = room.newBlacklisted;
-                underground.room.usrMonies = room.usrMonies;
+                //underground.room.usrMonies = room.usrMonies;
                 API.chatLog(underground.chat.datarestored);
             }
         }
