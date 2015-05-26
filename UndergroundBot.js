@@ -35,6 +35,29 @@
         localStorage.setItem("undergroundStorageInfo", JSON.stringify(undergroundStorageInfo));
 
     };
+    
+	var dbclient = new Dropbox.Client({
+    	key: "eakrfysg5nz9tzd",
+    	secret: "your-secret-here"
+});
+
+	var getDB = function () {
+		dbclient.authDriver(new Dropbox.AuthDriver.NodeServer(8191));
+		dbclient.authenticate(function(error, client) {
+  if (error) {
+    API.sendChat('Error getting DB');
+  }
+
+  API.sendChat('DB successfully connected');
+});
+	}
+ 
+        // Try to complete OAuth flow.
+        client.authenticate({ interactive: false }, function (error, client) {
+            if (error) {
+                alert('Error: ' + error);
+            }
+        });
 
     var subChat = function (chat, obj) {
         if (typeof chat === "undefined") {
@@ -1433,6 +1456,7 @@
             API.chatLog('Avatars capped at ' + underground.settings.startupCap);
             API.chatLog('Volume set to ' + underground.settings.startupVolume);
             loadChat(API.sendChat(subChat(underground.chat.online, {botname: underground.settings.botName, version: underground.version})));
+            getDB();
         },
         commands: {
             executable: function (minRank, chat) {
