@@ -361,7 +361,7 @@
 	 		}
 	 	}
 	 	if (!found) {
-	 		underground.room.monies += " " + uid + " " amt;
+	 		underground.room.usrMonies += " " + uid + " " amt;
 	 		API.chatLog('User not found. Currency line created.');
 	 	}
 	 },
@@ -381,7 +381,7 @@
 	 		API.chatLog('User not found. Return value 0.');
 	 	}
 	 }
-            },*/
+            },
             
             
             
