@@ -345,7 +345,7 @@
                 }
             },
             */
-          /*  currencies: {
+            currencies: {
             	    	 updateUserCurrency: function(uid, amt) {
 	 	var found = false;
 	 	var oldMonies = 0;
@@ -379,7 +379,7 @@
 	 		API.chatLog('User not found. Return value 0.');
 	 	}
 	 }
-            },*/
+            },
             
             
             
