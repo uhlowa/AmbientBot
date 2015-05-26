@@ -36,41 +36,8 @@
 
     };
     
-	 var updateUserCurrency = function (uid, amt) {
-	 	var found = false;
-	 	var oldMonies = 0;
-	 	var args = localstorage.monies.split(' ');
-	 	for (var i = 0; i < args.length; i++) {
-	 		if (args[i] === uid) {
-	 			found = true;
-	 			oldMonies = args[i] + ' ' + parseInt(args[i + 1]);
-	 			localStorage.monies.replaceAll(oldMonies, amt);
-	 			API.chatLog('User currency updated. New: ' + amt)
-	 		}
-	 	}
-	 	if (!found) {
-	 		localStorage.monies += " " + uid + " " amt;
-	 		API.chatLog('User not found. Currency line created.');
-	 	}
-	 };
+
 	 
-	 var getUserCurrency = function (uid) {
-	 	var found = false;
-	 	var oldMonies = 0;
-	 	var args = localstorage.monies.split(' ');
-	 	for (var i = 0; i < args.length; i++) {
-	 		if (args[i] === uid) {
-	 			found = true;
-	 			oldMonies = parseInt(args[i + 1]);
-	 			API.chatLog('User currency updated. New: ' + amt)
-	 			return oldMonies;
-	 		}
-	 	}
-	 	if (!found) {
-	 		API.chatLog('User not found. Return value 0.');
-	 		return 0;
-	 	}
-	 };
 
     var subChat = function (chat, obj) {
         if (typeof chat === "undefined") {
