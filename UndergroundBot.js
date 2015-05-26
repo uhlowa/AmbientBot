@@ -36,12 +36,12 @@
 
     };
     
-	var dbclient = new Dropbox.Client({
-    	key: "eakrfysg5nz9tzd",
-    	secret: "your-secret-here"
-});
 
 	var getDB = function () {
+			var dbclient = new Dropbox.Client({
+    	key: "eakrfysg5nz9tzd",
+    	secret: "your-secret-here"
+	});
 		dbclient.authDriver(new Dropbox.AuthDriver.NodeServer(8191));
 		dbclient.authenticate(function(error, client) {
   if (error) {
