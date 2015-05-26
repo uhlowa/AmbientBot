@@ -353,15 +353,15 @@
 	 	var oldMonies = 0;
 	 	String args[] = underground.room.usrMonies.split(' ');
 	 	for (var i = 0; i < args.length; i++) {
-	 		if (args[i] === uid) {
+	 		if (args[i] === underground.room.currencies.uid) {
 	 			found = true;
 	 			oldMonies = args[i] + ' ' + parseInt(args[i + 1]);
-	 			underground.room.usrMonies.replaceAll(oldMonies, amt);
-	 			API.chatLog('User currency updated. New: ' + amt)
+	 			underground.room.usrMonies.replaceAll(oldMonies, underground.room.currencies.amt);
+	 			API.chatLog('User currency updated. New: ' + underground.room.currencies.amt)
 	 		}
 	 	}
 	 	if (!found) {
-	 		underground.room.usrMonies += " " + uid + " " amt;
+	 		underground.room.usrMonies += " " + underground.room.currencies.uid + " " underground.room.currencies.amt;
 	 		API.chatLog('User not found. Currency line created.');
 	 	}
 	 },
@@ -371,7 +371,7 @@
 	 	var oldMonies = 0;
 	 	var args = underground.room.usrMonies.split(' ');
 	 	for (var i = 0; i < args.length; i++) {
-	 		if (args[i] === uid) {
+	 		if (args[i] === underground.room.currencies.uid) {
 	 			found = true;
 	 			oldMonies = parseInt(args[i + 1]);
 	 			API.chatLog('User currency: ' + oldMonies)
