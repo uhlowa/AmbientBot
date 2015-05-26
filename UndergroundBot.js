@@ -17,24 +17,6 @@
         }
         return -1;
     };
-    var updateUserCurrency = function (usid, amttoadd) {
-    	var args = underground.settings.monies.split(' ');
-    	var found = false;
-    	var sToR = " ";
-    	for (var i = 0; i < args.length; i++) {
-    		if (args[i] === usid) {
-    			found = true;
-    			sToR = args[i] + ' ' + args[i+1];
-    		}
-    	}
-    	if (found && sToR.length > 2) {
-    		underground.settings.monies.replace(sToR, usid + " " + amttoadd)
-    		API.chatLog('User in monies.string changed. Has ' + amttoadd + ' UG Creds');
-    	} else {
-    		underground.settings.monies = underground.settings.monies + " " + usid + " " + amttoadd;
-    		API.chatLog('New user added to monies.string');
-    	}
-    };
 
     var kill = function () {
         clearInterval(underground.room.autodisableInterval);
@@ -312,6 +294,26 @@
             },
             blacklists: {
 
+            },
+            cash: {
+                updateUserCurrency: function(usid, amttoadd) {
+    		var args = underground.settings.monies.split(' ');
+    		var found = false;
+    		var sToR = " ";
+    		for (var i = 0; i < args.length; i++) {
+    			if (args[i] === usid) {
+    				found = true;
+    				sToR = args[i] + ' ' + args[i+1];
+    			}
+    		}
+    		if (found && sToR.length > 2) {
+    			underground.settings.monies.replace(sToR, usid + " " + amttoadd)
+    			API.chatLog('User in monies.string changed. Has ' + amttoadd + ' UG Creds');
+    		} else {
+    			underground.settings.monies = underground.settings.monies + " " + usid + " " + amttoadd;
+    			API.chatLog('New user added to monies.string');
+    		}
+    		}
             },
             
            /*russiangame: {
@@ -3917,7 +3919,7 @@
             	           	if (!underground.commands.executable(this.rank, chat)) { return void (0); }
             	           	var gn = chat.message.substring(cmd.length + 1);
             	           	var gni = parseInt(gn);
-            	           		updateUserCurrency(chat.uid, gni)
+            	           		underground.room.cash.updateUserCurrency(chat.uid, gni)
             }
             },
 
