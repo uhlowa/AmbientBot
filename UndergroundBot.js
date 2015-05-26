@@ -372,13 +372,11 @@
 	 		if (args[i] === uid) {
 	 			found = true;
 	 			oldMonies = parseInt(args[i + 1]);
-	 			API.chatLog('User currency updated. New: ' + amt)
-	 			return oldMonies;
+	 			API.chatLog('User currency: ' + oldMonies)
 	 		}
 	 	}
 	 	if (!found) {
 	 		API.chatLog('User not found. Return value 0.');
-	 		return 0;
 	 	}
 	 }
             },
