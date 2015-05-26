@@ -85,8 +85,6 @@
             }
         });
     };
-    
-
 
     var retrieveSettings = function () {
         var settings = JSON.parse(localStorage.getItem("undergroundsettings"));
@@ -343,8 +341,6 @@
                 }
             },
             */
-
-            
             numberG: {
             	currentNumber: 0,
             	difficulty: 1,
@@ -3891,18 +3887,6 @@
             	           		API.sendChat('/me Number Game Difficulty set to: ' + tos + '.'); 
             }
             },
-            
-             /*           gibCommand: {
-            	command: 'gib',
-            	rank: 'mod',
-            	type: 'startsWith',
-            	           functionality: function (chat, cmd) {
-            	           	if (!underground.commands.executable(this.rank, chat)) { return void (0); }
-            	           	var gn = chat.message.substring(cmd.length + 1);
-            	           	var gni = parseInt(gn);
-            	           		underground.room.currencies.updateUserCurrency(chat.uid, gni);
-            }
-            },*/
 
             
            rollCommand: {
