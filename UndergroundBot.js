@@ -1071,9 +1071,7 @@
             if (underground.settings.timeGuard && newMedia.duration > underground.settings.maximumSongLength * 60 && !underground.room.roomevent && obj.dj.id !== underground.settings.approvedDJ) {
                 var name = obj.dj.username;
                 var id = obj.dj.id;
-                API.sendChat('Sorry, ' + name + ', but your song is too long. You\'ve been placed at position 1 in the queue to try another track.');
-                API.moderateForceSkip();
-                underground.userUtilities.moveUser(id, 1, false);
+                API.sendChat('Your song is too long, ' + name + '. Next time, please play a shorter song or ask to be approved beforehand.');
             }
             if (user.ownSong) {
                 API.sendChat(subChat(underground.chat.permissionownsong, {name: user.username}));
