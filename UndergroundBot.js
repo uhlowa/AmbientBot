@@ -297,7 +297,7 @@
             },
             response: {
             	getResponse: function() {
-            		if (arguments[0].indexOf('are you self aware') >= 0) {
+            		if (arguments[0].indexOf('are you self aware') != -1) {
             			API.sendChat('I don\'t know, ' + arguments[1] + ', are you?');
             		}
             	}
@@ -924,7 +924,7 @@
                     }
                 }
             }
-            if (chat.message.indexOf('@Underground Bot') >= 0) {
+            if (chat.message.indexOf('@Underground Bot') != -1) {
             	underground.room.response.getResponse(chat.message.toLower(), chat.un);
             }
             if (underground.chatUtilities.chatFilter(chat)) return void (0);
