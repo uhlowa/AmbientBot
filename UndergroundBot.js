@@ -194,7 +194,7 @@
         	autoraffleT: 60,
         	autonumberG: 60,
             botName: "Underground Bot",
-            monies: " ",
+            monies: [" ", " "],
             language: "english",
             chatLink: "https://rawgit.com/Paradox68/UndergroundBot/master/lang/en.json",
             startupCap: 1, // 1-200
@@ -299,21 +299,18 @@
             	usid: null,
             	amttoadd: 0,
                 updateUserCurrency: function() {
-    		var args = underground.settings.monies.split(' ');
     		var found = false;
-    		var sToR = " ";
-    		for (var i = 0; i < args.length; i++) {
-    			if (args[i] === usid) {
+    		for (var i = 0; i < underground.settings.monies.length; i++) {
+    			if (underground.settings.monies[i] === underground.room.cash.usid) {
     				found = true;
-    				sToR = args[i] + ' ' + args[i+1];
+    				underground.settings.monies[i + 1] = underground.room.cash.amttoadd;
     			}
     		}
-    		if (found && sToR.length > 2) {
-    			underground.settings.monies.replace(sToR, underground.room.cash.usid + " " + underground.room.cash.amttoadd)
+    		if (found) {
     			API.sendChat('User in monies.string changed. Has ' + underground.room.cash.amttoadd + ' UG Creds');
     		} else {
-    			underground.settings.monies = underground.settings.monies + " " + underground.room.cash.usid + " " + underground.room.cash.amttoadd;
-    			API.sendChat('New user added to monies.string');
+    			underground.settings.monies.push(underground.room.cash.usid);
+    			underground.settings.monies.push(underground.room.cash.amttoadd);
     		}
     		}
             },
