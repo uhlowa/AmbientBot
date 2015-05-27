@@ -299,22 +299,18 @@
             	usid: null,
             	amttoadd: 0,
                 updateUserCurrency: function() {
-                	try {
     		var found = false;
     		for (var i = 0; i < underground.settings.monies.length; i++) {
     			if (underground.settings.monies[i] === underground.room.cash.usid) {
     				found = true;
     				underground.settings.monies[i + 1] = underground.room.cash.amttoadd;
+    				API.sendChat('User in monies.string changed. Has ' + underground.room.cash.amttoadd + ' UG Creds');
     			}
     		}
     		if (found) {
-    			API.sendChat('User in monies.string changed. Has ' + underground.room.cash.amttoadd + ' UG Creds');
     		} else {
     			underground.settings.monies.push(underground.room.cash.usid);
     			underground.settings.monies.push(underground.room.cash.amttoadd);
-    		}
-    		} catch (err) {
-    			API.chatLog(err);
     		}
                 }
             },
@@ -1070,14 +1066,12 @@
                 }, 2000);
             }
             var newMedia = obj.media;
-            if (underground.settings.timeGuard && newMedia.duration > underground.settings.maximumSongLength * 60 && !underground.room.roomevent) {
+            if (underground.settings.timeGuard && newMedia.duration > underground.settings.maximumSongLength * 60 && !underground.room.roomevent && obj.dj.id !== underground.settings.approvedDJ) {
                 var name = obj.dj.username;
                 var id = obj.dj.id;
-                if (obj.dj.id !== underground.settings.approvedDJ) {
-                API.sendChat('Sorry, ' + name + ', but your song is too long. You\'ve been placed at position 2 in the queue to try another track.');
+                API.sendChat('Sorry, ' + name + ', but your song is too long. You\'ve been placed at position 1 in the queue to try another track.');
                 API.moderateForceSkip();
-                underground.userUtilities.moveUser(id, 2, false);
-                }
+                underground.userUtilities.moveUser(id, 1, false);
             }
             if (user.ownSong) {
                 API.sendChat(subChat(underground.chat.permissionownsong, {name: user.username}));
