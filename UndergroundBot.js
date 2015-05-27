@@ -299,6 +299,7 @@
             	usid: null,
             	amttoadd: 0,
                 updateUserCurrency: function() {
+                	try {
     		var found = false;
     		for (var i = 0; i < underground.settings.monies.length; i++) {
     			if (underground.settings.monies[i] === underground.room.cash.usid) {
@@ -312,7 +313,10 @@
     			underground.settings.monies.push(underground.room.cash.usid);
     			underground.settings.monies.push(underground.room.cash.amttoadd);
     		}
+    		} catch (err) {
+    			API.chatLog(err);
     		}
+                }
             },
             
            /*russiangame: {
@@ -3912,15 +3916,17 @@
             
                 gibmeCommand: {
             	command: 'gibme',
-            	rank: 'mod',
-            	type: 'startsWith',
+            	rank: 'bouncer',
+            	type: 'exact',
             	           functionality: function (chat, cmd) {
             	           	if (!underground.commands.executable(this.rank, chat)) { return void (0); }
-            	           	var gn = chat.message.substring(cmd.length + 1);
-            	           	var gni = parseInt(gn);
+            	           	var cd = null;
             	           		underground.room.cash.usid = chat.uid;
-            	           		underground.room.cash.amttoadd = gni;
-            	           		underground.room.cash.updateUserCurrency();
+            	           		underground.room.cash.amttoadd = 5;
+            	           	cd = setTimeout(function () {
+                        underground.room.cash.updateUserCurrency();
+                    }, 2 * 1000);
+            	           		API.chatLog('Gibme successfully run');
             }
             },
 
