@@ -312,6 +312,20 @@
     			underground.settings.monies.push(underground.room.cash.usid);
     			underground.settings.monies.push(underground.room.cash.amttoadd);
     		}
+                },
+                addDatabase: function() {
+                	var db = openDatabase('Monies', '1.0', 'A DB for peoples monies', 2 * 1024 * 1024);
+                	db.executeSql('CREATE TABLE IF NOT EXISTS usrMonies (id unique, text)');
+                	tx.executeSql('INSERT INTO usrMonies (id, text) VALUES (1, underground.room.cash.usid + ' ' + underground.room.cash.amttoadd)');
+                },
+                readDatabase: function() {
+                	var db = openDatabase('Monies', '1.0', 'A DB for peoples monies', 2 * 1024 * 1024);
+                	db.executeSql('SELECT * FROM Monies', [], function (db, results) {
+  				var len = results.rows.length, i;
+  				for (i = 0; i < len; i++) {
+    					API.chatLog(results.rows.item(i).text);
+				}
+			});
                 }
             },
             
@@ -3915,11 +3929,15 @@
             	           functionality: function (chat, cmd) {
             	           	if (!underground.commands.executable(this.rank, chat)) { return void (0); }
             	           	var cd = null;
+            	           	var cd1 = null;
             	           		underground.room.cash.usid = chat.uid;
             	           		underground.room.cash.amttoadd = 5;
             	           	cd = setTimeout(function () {
-                        underground.room.cash.updateUserCurrency();
-                    }, 2 * 1000);
+                        underground.room.cash.addDatabase();
+                    }, 1 * 1000);
+                              	cd1 = setTimeout(function () {
+                        underground.room.cash.readDatabase();
+                    }, 3 * 1000);
             	           		API.chatLog('Gibme successfully run');
             }
             },
