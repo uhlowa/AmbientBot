@@ -297,13 +297,13 @@
                 getResponse: function() {
                     var toS = "";
                     if (arguments[0].indexOf('are you self aware') !== -1) {
-                        toS = "I don\'t know, " + arguments[1] + ", are you?");
+                        toS = "I don\'t know, " + arguments[1] + ", are you?";
                     }
                     if (arguments[0].indexOf('fuck you') !== -1) {
-                        toS = "No, fuck you, " + arguments[1] + ".");
+                        toS = "No, fuck you, " + arguments[1] + ".";
                     }
                     if ((arguments[0].indexOf('hello') !== -1) || (arguments[0].indexOf('hey') !== -1) || (arguments[0].indexOf('hi') !== -1) || (arguments[0].indexOf('what\'s up') !== -1) || (arguments[0].indexOf('whats up') !== -1)) {
-                        toS = "Hello, " + arguments[1] + ". I wish I could have a conversation with you, but I am just a robot.");
+                        toS = "Hello, " + arguments[1] + ". I wish I could have a conversation with you, but I am just a robot.";
                     }
                     if (arguments[0].indexOf('hello') !== -1) {
                         toS = "Hello, " + arguments[1] + ". I wish I could have a conversation with you, but I am just a robot.";
