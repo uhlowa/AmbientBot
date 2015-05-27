@@ -302,7 +302,7 @@
             			API.sendChat('I don\'t know, ' + usr + ', are you?');
             		}
             	}
-            }
+            },
             
             
             cash: {
