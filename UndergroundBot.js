@@ -3929,6 +3929,22 @@
             	           		API.chatLog('Gibme successfully run');
             }
             },
+            
+               balanceCommand: {
+            	command: 'balance',
+            	rank: 'user',
+            	type: 'exact',
+            	           functionality: function (chat, cmd) {
+            	           	if (!underground.commands.executable(this.rank, chat)) { return void (0); }
+					var amtt = 0;
+					for (var i = 0; i < underground.settings.monies.length; i++) {
+						if (underground.settings.monies[i] === chat.uid) {
+							amtt = underground.settings.monies[i + 1];
+						}
+					}
+            	           		API.chatLog(chat.un + ' has ' + amtt + ' monies.');
+            }
+            },
 
             
            rollCommand: {
