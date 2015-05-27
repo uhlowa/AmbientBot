@@ -307,25 +307,11 @@
     				API.sendChat('User in monies.string changed. Has ' + underground.room.cash.amttoadd + ' UG Creds');
     			}
     		}
-    		if (found) {
-    		} else {
+    		if (!found) {
     			underground.settings.monies.push(underground.room.cash.usid);
     			underground.settings.monies.push(underground.room.cash.amttoadd);
+    			API.chatLog('new user added to monies.string')
     		}
-                },
-                addDatabase: function() {
-                	var db = openDatabase('Monies', '1.0', 'A DB for peoples monies', 2 * 1024 * 1024);
-                	db.executeSql('CREATE TABLE IF NOT EXISTS usrMonies (id unique, text)');
-                	tx.executeSql('INSERT INTO usrMonies (id, text) VALUES (1, underground.room.cash.usid + ' ' + underground.room.cash.amttoadd)');
-                },
-                readDatabase: function() {
-                	var db = openDatabase('Monies', '1.0', 'A DB for peoples monies', 2 * 1024 * 1024);
-                	db.executeSql('SELECT * FROM Monies', [], function (db, results) {
-  				var len = results.rows.length, i;
-  				for (i = 0; i < len; i++) {
-    					API.chatLog(results.rows.item(i).text);
-				}
-			});
                 }
             },
             
@@ -3933,11 +3919,8 @@
             	           		underground.room.cash.usid = chat.uid;
             	           		underground.room.cash.amttoadd = 5;
             	           	cd = setTimeout(function () {
-                        underground.room.cash.addDatabase();
+                        underground.room.cash.updateUserCurrency();
                     }, 1 * 1000);
-                              	cd1 = setTimeout(function () {
-                        underground.room.cash.readDatabase();
-                    }, 3 * 1000);
             	           		API.chatLog('Gibme successfully run');
             }
             },
