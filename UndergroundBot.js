@@ -295,7 +295,7 @@
             },
             response: {
                 getResponse: function() {
-                    var toS = "";
+                    var toS = " ";
                     if (arguments[0].indexOf('are you self aware') !== -1) {
                         toS = 'I don\'t know, ' + arguments[1] + ', are you?';
                     }
