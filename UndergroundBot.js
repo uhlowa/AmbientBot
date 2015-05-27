@@ -1169,16 +1169,19 @@
                 }
                 if (isMuted) {
                     API.moderateDeleteChat(chat.cid);
+                    API.chatLog('deletion 11');
                     return true;
                 }
                 if (underground.settings.lockdownEnabled) {
                     if (perm === 0) {
                         API.moderateDeleteChat(chat.cid);
+                        API.chatLog('deletion 1');
                         return true;
                     }
                 }
                 if (underground.chatcleaner(chat)) {
                     API.moderateDeleteChat(chat.cid);
+                    API.chatLog('deletion 2');
                     return true;
                 }
                 /**
@@ -1193,11 +1196,13 @@
                  **/
                 if (msg.indexOf('http://adf.ly/') > -1) {
                     API.moderateDeleteChat(chat.cid);
+                    API.chatLog('deletion 3');
                     API.sendChat(subChat(underground.chat.adfly, {name: chat.un}));
                     return true;
                 }
                 if (msg.indexOf('autojoin was not enabled') > 0 || msg.indexOf('AFK message was not enabled') > 0 || msg.indexOf('!afkdisable') > 0 || msg.indexOf('!joindisable') > 0 || msg.indexOf('autojoin disabled') > 0 || msg.indexOf('AFK message disabled') > 0) {
                     API.moderateDeleteChat(chat.cid);
+                    API.chatLog('deletion 4');
                     return true;
                 }
 
@@ -1215,6 +1220,7 @@
                 if ((msg.indexOf(joinedroulette) > -1 || msg.indexOf(leftroulette) > -1) && chat.uid === underground.loggedInID) {
                     setTimeout(function (id) {
                         API.moderateDeleteChat(id);
+                        API.chatLog('deletion 5');
                     }, 2 * 1000, chat.cid);
                     return true;
                 }
@@ -1241,6 +1247,7 @@
                         var u = underground.userUtilities.lookupUser(chat.uid);
                         if (u.lastEta !== null && (Date.now() - u.lastEta) < 1 * 60 * 60 * 1000) {
                             API.moderateDeleteChat(chat.cid);
+                            API.chatLog('deletion 6');
                             return void (0);
                         }
                         else u.lastEta = Date.now();
@@ -1271,6 +1278,7 @@
                 if (executed) {
                     if (underground.settings.cmdDeletion) {
                         API.moderateDeleteChat(chat.cid);
+                        API.chatLog('deletion 7');
                     }
                     underground.room.allcommand = false;
                     setTimeout(function () {
@@ -1860,6 +1868,7 @@
                         var currentchat = $('#chat-messages').children();
                         for (var i = 0; i < currentchat.length; i++) {
                             API.moderateDeleteChat(currentchat[i].getAttribute("data-cid"));
+                            API.chatLog('deletion 8');
                         }
                         return API.sendChat(subChat(underground.chat.chatcleared, {name: chat.un}));
                     }
@@ -3867,6 +3876,7 @@
                             API.sendChat('/me @' + chat.un + ' incorrectly guessed ' + gni + '.');
                             setTimeout(function () {
                                 API.moderateDeleteChat(chat.cid);
+                                API.chatLog('deletion 10');
                             }, 2 * 1000, chat.cid);
                         }
                     }
