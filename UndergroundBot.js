@@ -297,7 +297,7 @@
             },
             response: {
             	getResponse: function() {
-            		if (arguments[0].indexOf('are you self aware') != -1) {
+            		if (arguments[0].indexOf('are you self aware') !== -1) {
             			API.sendChat('I don\'t know, ' + arguments[1] + ', are you?');
             		}
             	}
@@ -924,7 +924,7 @@
                     }
                 }
             }
-            if (chat.message.indexOf('@Underground Bot') != -1) {
+            if (chat.message.indexOf('underground.settings.botName) !== -1) {
             	underground.room.response.getResponse(chat.message.toLower(), chat.un);
             }
             if (underground.chatUtilities.chatFilter(chat)) return void (0);
@@ -2932,7 +2932,7 @@
             		if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
             		if (!underground.commands.executable(this.rank, chat)) return void (0);
             		else {
-            			API.sendChat('The Underground Bot was developed and is operated by Paradox VII');
+            			API.sendChat('The ' + underground.settings.botName +  was developed and is operated by Paradox VII');
             		}
             	}
             },
@@ -3603,7 +3603,7 @@
             	type: 'exact',
             	functionality: function (chat, cmd) {
             	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('The open source code for Underground Bot is available at: https://github.com/Paradox68/UndergroundBot'));
+                    	API.sendChat(subChat('The open source code for ' + underground.settings.botName +  is available at: https://github.com/Paradox68/UndergroundBot'));
             	}
             },
             dance6Command: {
