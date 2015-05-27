@@ -924,7 +924,7 @@
                     }
                 }
             }
-            if (chat.message.indexOf('underground.settings.botName) !== -1) {
+            if (chat.message.indexOf(underground.settings.botName) !== -1) {
             	underground.room.response.getResponse(chat.message.toLower(), chat.un);
             }
             if (underground.chatUtilities.chatFilter(chat)) return void (0);
