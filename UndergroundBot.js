@@ -299,6 +299,19 @@
                 getResponse: function() {
                     if (arguments[0].indexOf('are you self aware') !== -1) {
                         API.sendChat('I don\'t know, ' + arguments[1] + ', are you?');
+                        break;
+                    }
+                    if (arguments[0].indexOf('fuck you') !== -1) {
+                        API.sendChat('No, fuck you, ' + arguments[1] + '.');
+                        break;
+                    }
+                    if ((arguments[0].indexOf('hello') !== -1) || (arguments[0].indexOf('hey') !== -1) || (arguments[0].indexOf('hi') !== -1) || (arguments[0].indexOf('what\'s up') !== -1) || (arguments[0].indexOf('whats up') !== -1)) {
+                        API.sendChat('Hello, ' + arguments[1] + '. I wish I could have a conversation with you, but I am just a robot.');
+                        break;
+                    }
+                    if (arguments[0].indexOf('hello') !== -1) {
+                        API.sendChat('Hello, ' + arguments[1] + '. I wish I could have a conversation with you, but I am just a robot.');
+                        break;
                     }
                 }
             },
@@ -3928,10 +3941,10 @@
                             var len = users.length;
                             for (var i = 0; i < len; ++i){
                                 if (users[i].username == name){
-                                    var id = users[i].id;
+                                    var oid = users[i].id;
                                 }
                             }
-                        underground.room.cash.updateUserCurrency(id, amt);
+                        underground.room.cash.updateUserCurrency(oid, amt);
                         API.snedChat('/me ' + chat.un + ' has given ' + name + ' ' + amt + ' monies.');
                     }
                 },
@@ -3952,10 +3965,10 @@
                             var len = users.length;
                             for (var i = 0; i < len; ++i){
                                 if (users[i].username == name){
-                                    var id = users[i].id;
+                                    var oid = users[i].id;
                                 }
                             }
-                        if (typeof underground.settings.monies[id] !== 'undefined') {
+                        if (typeof underground.settings.monies[oid] !== 'undefined') {
                             API.chatLog(name + ' has a balance of ' + underground.settings.monies[id] + ' monies.');
                         } else {
                             API.chatLog(name + ' has no monies.');
