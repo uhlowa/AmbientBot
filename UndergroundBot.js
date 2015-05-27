@@ -191,8 +191,6 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            autoraffleT: 60,
-            autonumberG: 60,
             botName: "Underground Bot",
             monies: [" ", " "],
             language: "english",
@@ -233,12 +231,12 @@
             ],
             afkpositionCheck: 5,
             afkRankCheck: "ambassador",
-            motdEnabled: true,
+            motdEnabled: false,
             motdInterval: 30,
             motd: "The Underground focuses on bringing you the best new music around. With a fun community and anti-pop culture music, it is easy to find your place here.",
             filterChat: true,
             etaRestriction: false,
-            welcome: true,
+            welcome: false,
             opLink: null,
             rulesLink: null,
             themeLink: null,
@@ -483,15 +481,6 @@
                         underground.room.roulette.endRoulette();
                     }, 60 * 1000);
                     API.sendChat('/me The Raffle is now open. @everyone Type !join to try your luck!');
-                    var usr = "[none]";
-                    var name = "undefined";
-                    for (var i = 0; i < underground.room.users.length; i++) {
-                        if (API.getWaitListPosition(underground.room.users[i].id) == 1) {
-                            usr = undergound.room.users[i].id;
-                        }
-                    }
-                    name = underground.userUtilities.lookupUser(usr);
-                    API.sendChat('@' + name + ' lock your spot at position 1 by typing !lockpos');
                 },
                 endRoulette: function () {
                     underground.room.roulette.rouletteStatus = false;
@@ -1084,7 +1073,7 @@
             if (underground.settings.timeGuard && newMedia.duration > underground.settings.maximumSongLength * 60 && !underground.room.roomevent && obj.dj.id !== underground.settings.approvedDJ) {
                 var name = obj.dj.username;
                 var id = obj.dj.id;
-                API.sendChat('Your song is too long, ' + name + '. Next time, please play a shorter song or ask to be approved beforehand.');
+                API.sendChat('Your song is too long, ' + name + '.');
             }
             if (user.ownSong) {
                 API.sendChat(subChat(underground.chat.permissionownsong, {name: user.username}));
@@ -1427,19 +1416,6 @@
             underground.room.afkInterval = setInterval(function () {
                 underground.roomUtilities.afkCheck()
             }, 10 * 1000);
-            underground.room.autoraffleInterval = setInterval(function () {
-                var d = new Date();
-                var n = d.getMinutes();
-                var mins = parseInt(n);
-                if (mins >= 30) {
-                    underground.settings.autoraffleT = (30 + (59 - mins));
-                } else {
-                    underground.settings.autoraffleT = (29 - mins);
-                }
-                if (!underground.room.roulette.rouletteStatus && mins == 30) {
-                    underground.room.roulette.startRoulette();
-                }
-            }, 60 * 1000);
             underground.room.autodisableInterval = setInterval(function () {
                 underground.room.autodisableFunc();
             }, 60 * 60 * 1000);
@@ -1961,7 +1937,7 @@
 
             cycleCommand: {
                 command: 'cycle',
-                rank: 'manager',
+                rank: 'mod',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -4512,15 +4488,6 @@
                     functionality: function (chat, cmd) {
                         if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                         API.sendChat(subChat('http://i.imgur.com/d61Aszu.webm'));
-                    }
-                },
-                nextraffleCommand: {
-                    command: 'nextraffle',
-                    rank: 'user',
-                    type: 'exact',
-                    functionality: function (chat, cmd) {
-                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                        API.sendChat(subChat('The next Automatic Raffle will be in ' + underground.settings.autoraffleT + ' minutes.'));
                     }
                 },
 
