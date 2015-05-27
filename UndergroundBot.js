@@ -297,19 +297,19 @@
                 getResponse: function() {
                     if (arguments[0].indexOf('are you self aware') !== -1) {
                         API.sendChat('I don\'t know, ' + arguments[1] + ', are you?');
-                        break;
+                        return;
                     }
                     if (arguments[0].indexOf('fuck you') !== -1) {
                         API.sendChat('No, fuck you, ' + arguments[1] + '.');
-                        break;
+                        return;
                     }
                     if ((arguments[0].indexOf('hello') !== -1) || (arguments[0].indexOf('hey') !== -1) || (arguments[0].indexOf('hi') !== -1) || (arguments[0].indexOf('what\'s up') !== -1) || (arguments[0].indexOf('whats up') !== -1)) {
                         API.sendChat('Hello, ' + arguments[1] + '. I wish I could have a conversation with you, but I am just a robot.');
-                        break;
+                        return;
                     }
                     if (arguments[0].indexOf('hello') !== -1) {
                         API.sendChat('Hello, ' + arguments[1] + '. I wish I could have a conversation with you, but I am just a robot.');
-                        break;
+                        return;
                     }
                 }
             },
