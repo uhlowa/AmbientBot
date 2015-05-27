@@ -191,8 +191,8 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-        	autoraffleT: 60,
-        	autonumberG: 60,
+            autoraffleT: 60,
+            autonumberG: 60,
             botName: "Underground Bot",
             monies: [" ", " "],
             language: "english",
@@ -296,139 +296,139 @@
 
             },
             response: {
-            	getResponse: function() {
-            		if (arguments[0].indexOf('are you self aware') !== -1) {
-            			API.sendChat('I don\'t know, ' + arguments[1] + ', are you?');
-            		}
-            	}
+                getResponse: function() {
+                    if (arguments[0].indexOf('are you self aware') !== -1) {
+                        API.sendChat('I don\'t know, ' + arguments[1] + ', are you?');
+                    }
+                }
             },
             cash: {
-            	usid: null,
-            	amttoadd: 0,
+                usid: null,
+                amttoadd: 0,
                 updateUserCurrency: function() {
-    		var found = false;
-    		for (var i = 0; i < underground.settings.monies.length; i++) {
-    			if (underground.settings.monies[i] === underground.room.cash.usid) {
-    				found = true;
-    				underground.settings.monies[i + 1] = underground.room.cash.amttoadd;
-    				API.sendChat('User in monies.string changed. Has ' + underground.room.cash.amttoadd + ' UG Creds');
-    			}
-    		}
-    		if (!found) {
-    			underground.settings.monies.push(underground.room.cash.usid);
-    			underground.settings.monies.push(underground.room.cash.amttoadd);
-    			API.chatLog('new user added to monies.string')
-    		}
+                    var found = false;
+                    for (var i = 0; i < underground.settings.monies.length; i++) {
+                        if (underground.settings.monies[i] === underground.room.cash.usid) {
+                            found = true;
+                            underground.settings.monies[i + 1] = underground.room.cash.amttoadd;
+                            API.sendChat('User in monies.string changed. Has ' + underground.room.cash.amttoadd + ' UG Creds');
+                        }
+                    }
+                    if (!found) {
+                        underground.settings.monies.push(underground.room.cash.usid);
+                        underground.settings.monies.push(underground.room.cash.amttoadd);
+                        API.chatLog('new user added to monies.string')
+                    }
                 }
             },
-            
-           /*russiangame: {
-                RRStatus: false,
-                started: false,
-                participants: [],
-                countdown: null,
-                players: 0,
-                chamber: 0,
-                gun: 0,
-                guncd: null,
-                startRussianGame: function () {
-                    underground.room.russiangame.RRStatus = true;
-                    underground.room.russiangame.chamber = Math.floor(Math.random() * 6 + 1);
-                    underground.room.russiangame.players = 0;
-                    underground.room.russiangame.gun = 0;
-                    underground.room.russiangame.countdown = setTimeout(function () {
-                        underground.room.russiangame.endRussianGame();
-                    }, 300 * 1000);
-                    underground.room.russiangame.guncd = setInterval(function () {
-                        underground.room.russiangame.shoot();
-                    }, 5 * 1000);
-                    API.sendChat('/me Russian Roulette is now active. Type !sit to claim your seat!');
-                },
-                endRussianGame: function () {
-                 	if (underground.room.russiangame.RRStatus) {
-                 underground.room.russiangame.participants = [];
-                    underground.room.russiangame.RRStatus = false;
-			underground.room.russiangame.players = 0;
-			underground.room.russiangame.chamber = 0;
-                    API.sendChat('/me Russian Roulette seating was not filled and the game has timed out.');
-                 	}
-                },
-                shoot: function () {
-                 if (underground.room.russiangame.RRStatus && underground.room.russiangame.players >= 6) {
-                 var ind = underground.room.roulette.participants[underground.room.russiangame.gun]);
-                    var next = underground.room.russiangame.participants[ind];
-                    underground.room.russiangame.started = true;
-                    underground.room.russiangame.gun++;
-		API.sendChat('/me Testing russian roulette.. shot = ' + underground.room.russiangame.gun + ', chamber = ' + underground.room.russiangame.chamber + '.');
-		if (ind == underground.room.chamber) {
-			API.sendChat('ded call');
-			clearInterval(underground.room.russiangame.guncd);
-		}
-			
-		}
-                }
-            },
-            */
+
+            /*russiangame: {
+             RRStatus: false,
+             started: false,
+             participants: [],
+             countdown: null,
+             players: 0,
+             chamber: 0,
+             gun: 0,
+             guncd: null,
+             startRussianGame: function () {
+             underground.room.russiangame.RRStatus = true;
+             underground.room.russiangame.chamber = Math.floor(Math.random() * 6 + 1);
+             underground.room.russiangame.players = 0;
+             underground.room.russiangame.gun = 0;
+             underground.room.russiangame.countdown = setTimeout(function () {
+             underground.room.russiangame.endRussianGame();
+             }, 300 * 1000);
+             underground.room.russiangame.guncd = setInterval(function () {
+             underground.room.russiangame.shoot();
+             }, 5 * 1000);
+             API.sendChat('/me Russian Roulette is now active. Type !sit to claim your seat!');
+             },
+             endRussianGame: function () {
+             if (underground.room.russiangame.RRStatus) {
+             underground.room.russiangame.participants = [];
+             underground.room.russiangame.RRStatus = false;
+             underground.room.russiangame.players = 0;
+             underground.room.russiangame.chamber = 0;
+             API.sendChat('/me Russian Roulette seating was not filled and the game has timed out.');
+             }
+             },
+             shoot: function () {
+             if (underground.room.russiangame.RRStatus && underground.room.russiangame.players >= 6) {
+             var ind = underground.room.roulette.participants[underground.room.russiangame.gun]);
+             var next = underground.room.russiangame.participants[ind];
+             underground.room.russiangame.started = true;
+             underground.room.russiangame.gun++;
+             API.sendChat('/me Testing russian roulette.. shot = ' + underground.room.russiangame.gun + ', chamber = ' + underground.room.russiangame.chamber + '.');
+             if (ind == underground.room.chamber) {
+             API.sendChat('ded call');
+             clearInterval(underground.room.russiangame.guncd);
+             }
+
+             }
+             }
+             },
+             */
             numberG: {
-            	currentNumber: 0,
-            	difficulty: 1,
-            	active: false,
-            	countdown: null,
-            	max: 50,
-            	playNumberGame: function() {
-            		underground.room.numberG.active = true;
-            		underground.room.numberG.countdown = setTimeout(function () {
+                currentNumber: 0,
+                difficulty: 1,
+                active: false,
+                countdown: null,
+                max: 50,
+                playNumberGame: function() {
+                    underground.room.numberG.active = true;
+                    underground.room.numberG.countdown = setTimeout(function () {
                         underground.room.numberG.endNumberGameTime();
                     }, 90 * 1000);
                     if (underground.room.numberG.difficulty == 1) {
-                    	underground.room.numberG.currentNumber = Math.floor((Math.random() * 9) + 1);
-                    	underground.room.numberG.max = 10;
+                        underground.room.numberG.currentNumber = Math.floor((Math.random() * 9) + 1);
+                        underground.room.numberG.max = 10;
                     }
                     if (underground.room.numberG.difficulty == 2) {
-                    	underground.room.numberG.currentNumber = Math.floor((Math.random() * 24) + 1);
-                    	underground.room.numberG.max = 25;
+                        underground.room.numberG.currentNumber = Math.floor((Math.random() * 24) + 1);
+                        underground.room.numberG.max = 25;
                     }
                     if (underground.room.numberG.difficulty == 3) {
-                    	underground.room.numberG.currentNumber = Math.floor((Math.random() * 49) + 1);
-                    	underground.room.numberG.max = 50;
+                        underground.room.numberG.currentNumber = Math.floor((Math.random() * 49) + 1);
+                        underground.room.numberG.max = 50;
                     }
                     API.sendChat('/me I am thinking of a number between 1 and ' + underground.room.numberG.max + '. @everyone Type !guess # to guess what it is!');
-            	},
-            	endNumberGameTime: function() {
-            		if (underground.room.numberG.active) {
-            		underground.room.numberG.active = false;
-            		underground.room.numberG.max = 0;
-            		API.sendChat('/me Nobody has guessed the number I was thinking of correctly. :sleeping: Game over. The number was ' + underground.room.numberG.currentNumber + '.');
-            		underground.room.numberG.currentNumber = 0;
-            		}
-            	},
-            	endNumberGame: function(winnerID) {
-            	
-            		var name = "undefined";
-            		for (var i = 0; i < underground.room.users.length; i++) {
-                if (underground.room.users[i].id === winnerID) {
-                	name = underground.room.users[i].username;
+                },
+                endNumberGameTime: function() {
+                    if (underground.room.numberG.active) {
+                        underground.room.numberG.active = false;
+                        underground.room.numberG.max = 0;
+                        API.sendChat('/me Nobody has guessed the number I was thinking of correctly. :sleeping: Game over. The number was ' + underground.room.numberG.currentNumber + '.');
+                        underground.room.numberG.currentNumber = 0;
+                    }
+                },
+                endNumberGame: function(winnerID) {
 
-            		underground.room.numberG.active = false;
-            		underground.room.numberG.max = 0;
-            		API.sendChat('/me ' + name + ' has won the Number Game. The number was ' + underground.room.numberG.currentNumber + '.');
-            		underground.room.numberG.currentNumber = 0;
-            		                    setTimeout(function () {
-            		                    	if (API.getWaitListPosition(winnerID) > 3) {
-                        underground.userUtilities.moveUser(winnerID, 3, false);
-            		                    	} else {
-            		underground.userUtilities.moveUser(winnerID, 1, false);
-            		                    	}
-                    }, 1 * 1000);
+                    var name = "undefined";
+                    for (var i = 0; i < underground.room.users.length; i++) {
+                        if (underground.room.users[i].id === winnerID) {
+                            name = underground.room.users[i].username;
+
+                            underground.room.numberG.active = false;
+                            underground.room.numberG.max = 0;
+                            API.sendChat('/me ' + name + ' has won the Number Game. The number was ' + underground.room.numberG.currentNumber + '.');
+                            underground.room.numberG.currentNumber = 0;
+                            setTimeout(function () {
+                                if (API.getWaitListPosition(winnerID) > 3) {
+                                    underground.userUtilities.moveUser(winnerID, 3, false);
+                                } else {
+                                    underground.userUtilities.moveUser(winnerID, 1, false);
+                                }
+                            }, 1 * 1000);
+                        }
+                    }
                 }
-            		}
-            	}
             },
-            
-                          dicegame: {
+
+            dicegame: {
                 highestRoll: 0,
-        	highestRollerID: "undefined",
-        	winning: "nobody",
+                highestRollerID: "undefined",
+                winning: "nobody",
                 dgStatus: false,
                 participants: [],
                 countdown: null,
@@ -439,31 +439,31 @@
                     }, 60 * 1000);
                     API.sendChat('/me The Dice Game is now active. @everyone Type !roll and whoever rolls the highest will win!');
                 },
-                                endDiceGame: function () {
+                endDiceGame: function () {
                     underground.room.dicegame.dgStatus = false;
                     var winner = "undefined";
                     var ind = 0;
                     for (var i = 0; i < underground.room.users.length; i++) {
-                    	if (underground.room.users[i].id === underground.room.dicegame.highestRollerID) {
-                    		ind = i;
+                        if (underground.room.users[i].id === underground.room.dicegame.highestRollerID) {
+                            ind = i;
 
-                    underground.room.dicegame.participants = [];
-                    var pos = 1;
-                    if (underground.settings.spotLock !== "none") {
-                    	pos = 2;
+                            underground.room.dicegame.participants = [];
+                            var pos = 1;
+                            if (underground.settings.spotLock !== "none") {
+                                pos = 2;
+                            }
+                            //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
+                            var name = underground.room.users[ind].username;
+                            underground.settings.spotLock = "none";
+                            API.sendChat('/me ' + name + ' has won the Dice Game with a ' + underground.room.dicegame.highestRoll + '. Moving to spot ' + pos + '.');
+                            underground.room.dicegame.highestRoll = 0;
+                            underground.room.dicegame.highestRollerID = "undefined";
+                            setTimeout(function (winner, pos) {
+                                underground.userUtilities.moveUser(underground.room.users[ind].id, pos, false);
+                            }, 1 * 1000, underground.room.users[ind].id, pos);
+                        }
                     }
-                    //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
-                    var name = underground.room.users[ind].username;
-                    underground.settings.spotLock = "none";
-                    API.sendChat('/me ' + name + ' has won the Dice Game with a ' + underground.room.dicegame.highestRoll + '. Moving to spot ' + pos + '.');
-                    underground.room.dicegame.highestRoll = 0;
-                    underground.room.dicegame.highestRollerID = "undefined";
-                    setTimeout(function (winner, pos) {
-                        underground.userUtilities.moveUser(underground.room.users[ind].id, pos, false);
-                    }, 1 * 1000, underground.room.users[ind].id, pos);
                 }
-                    }
-                                }
 
             },
             newBlacklisted: [],
@@ -480,12 +480,12 @@
                     API.sendChat('/me The Raffle is now open. @everyone Type !join to try your luck!');
                     var usr = "[none]";
                     var name = "undefined";
-                   for (var i = 0; i < underground.room.users.length; i++) {
-                   	if (API.getWaitListPosition(underground.room.users[i].id) == 1) {
-                   	usr = undergound.room.users[i].id;
-                   	}
-                   }
-                   name = underground.userUtilities.lookupUser(usr);
+                    for (var i = 0; i < underground.room.users.length; i++) {
+                        if (API.getWaitListPosition(underground.room.users[i].id) == 1) {
+                            usr = undergound.room.users[i].id;
+                        }
+                    }
+                    name = underground.userUtilities.lookupUser(usr);
                     API.sendChat('@' + name + ' lock your spot at position 1 by typing !lockpos');
                 },
                 endRoulette: function () {
@@ -495,7 +495,7 @@
                     underground.room.roulette.participants = [];
                     var pos = 1;
                     if (underground.settings.spotLock !== "none") {
-                    	pos = 2;
+                        pos = 2;
                     }
                     //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
                     var user = underground.userUtilities.lookupUser(winner);
@@ -925,7 +925,7 @@
                 }
             }
             if (chat.message.indexOf(underground.settings.botName) !== -1) {
-            	underground.room.response.getResponse(chat.message.toLower(), chat.un);
+                underground.room.response.getResponse(chat.message.toLower(), chat.un);
             }
             if (underground.chatUtilities.chatFilter(chat)) return void (0);
             if (!underground.chatUtilities.commandCheck(chat))
@@ -1043,8 +1043,8 @@
             underground.room.currentDJID = obj.dj.id;
             underground.settings.spotLock = "none";
             if (underground.room.currentDJID === underground.settings.approvedDJ) {
-            	API.sendChat(subChat('/me :arrow_forward: This Track has been approved.'));
-            	underground.settings.approvedDJ = "[none]";
+                API.sendChat(subChat('/me :arrow_forward: This Track has been approved.'));
+                underground.settings.approvedDJ = "[none]";
             }
 
             var mid = obj.media.format + ':' + obj.media.cid;
@@ -1425,17 +1425,17 @@
                 underground.roomUtilities.afkCheck()
             }, 10 * 1000);
             underground.room.autoraffleInterval = setInterval(function () {
-            	var d = new Date();
-		var n = d.getMinutes();
-		var mins = parseInt(n);
-            	if (mins >= 30) {
-            		underground.settings.autoraffleT = (30 + (59 - mins));
-            	} else {
-            		underground.settings.autoraffleT = (29 - mins);
-            	}
-                        if (!underground.room.roulette.rouletteStatus && mins == 30) {
-                            underground.room.roulette.startRoulette();
-                        }
+                var d = new Date();
+                var n = d.getMinutes();
+                var mins = parseInt(n);
+                if (mins >= 30) {
+                    underground.settings.autoraffleT = (30 + (59 - mins));
+                } else {
+                    underground.settings.autoraffleT = (29 - mins);
+                }
+                if (!underground.room.roulette.rouletteStatus && mins == 30) {
+                    underground.room.roulette.startRoulette();
+                }
             }, 60 * 1000);
             underground.room.autodisableInterval = setInterval(function () {
                 underground.room.autodisableFunc();
@@ -1660,7 +1660,7 @@
                         if (inactivity == durationOnline){
                             API.sendChat(subChat(underground.chat.inactivelonger, {botname: underground.settings.botName, name: chat.un, username: name}));
                         } else {
-                        API.sendChat(subChat(underground.chat.inactivefor, {name: chat.un, username: name, time: time}));
+                            API.sendChat(subChat(underground.chat.inactivefor, {name: chat.un, username: name, time: time}));
                         }
                     }
                 }
@@ -1742,14 +1742,14 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!underground.commands.executable(this.rank, chat)) return void (0);
                     else {
-                            var crowd = API.getUsers();
-                            var msg = chat.message;
-                            var argument = msg.substring(cmd.length + 1);
-                            var randomUser = Math.floor(Math.random() * crowd.length);
-                            var randomBall = Math.floor(Math.random() * underground.chat.balls.length);
-                            var randomSentence = Math.floor(Math.random() * 1);
-                            API.sendChat(subChat(underground.chat.ball, {name: chat.un, botname: underground.settings.botName, question: argument, response: underground.chat.balls[randomBall]}));
-                     }
+                        var crowd = API.getUsers();
+                        var msg = chat.message;
+                        var argument = msg.substring(cmd.length + 1);
+                        var randomUser = Math.floor(Math.random() * crowd.length);
+                        var randomBall = Math.floor(Math.random() * underground.chat.balls.length);
+                        var randomSentence = Math.floor(Math.random() * 1);
+                        API.sendChat(subChat(underground.chat.ball, {name: chat.un, botname: underground.settings.botName, question: argument, response: underground.chat.balls[randomBall]}));
+                    }
                 }
             },
 
@@ -2035,45 +2035,45 @@
             },
 
             /*deletechatCommand: {
-                command: 'deletechat',
-                rank: 'mod',
-                type: 'startsWith',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!underground.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        var msg = chat.message;
-                        if (msg.length === cmd.length) return API.sendChat(subChat(underground.chat.nouserspecified, {name: chat.un}));
-                        var name = msg.substring(cmd.length + 2);
-                        var user = underground.userUtilities.lookupUserName(name);
-                        if (typeof user === 'boolean') return API.sendChat(subChat(underground.chat.invaliduserspecified, {name: chat.un}));
-                        var chats = $('.from');
-                        var message = $('.message');
-                        var emote = $('.emote');
-                        var from = $('.un.clickable');
-                        for (var i = 0; i < chats.length; i++) {
-                            var n = from[i].textContent;
-                            if (name.trim() === n.trim()) {
-                                // var messagecid = $(message)[i].getAttribute('data-cid');
-                                // var emotecid = $(emote)[i].getAttribute('data-cid');
-                                // API.moderateDeleteChat(messagecid);
-                                // try {
-                                //     API.moderateDeleteChat(messagecid);
-                                // }
-                                // finally {
-                                //     API.moderateDeleteChat(emotecid);
-                                // }
-                                if (typeof $(message)[i].getAttribute('data-cid') == "undefined"){
-                                    API.moderateDeleteChat($(emote)[i].getAttribute('data-cid')); // works well with normal messages but not with emotes due to emotes and messages are seperate.
-                                } else {
-                                    API.moderateDeleteChat($(message)[i].getAttribute('data-cid'));
-                                }
-                            }
-                        }
-                        API.sendChat(subChat(underground.chat.deletechat, {name: chat.un, username: name}));
-                    }
-                }
-            },*/
+             command: 'deletechat',
+             rank: 'mod',
+             type: 'startsWith',
+             functionality: function (chat, cmd) {
+             if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+             if (!underground.commands.executable(this.rank, chat)) return void (0);
+             else {
+             var msg = chat.message;
+             if (msg.length === cmd.length) return API.sendChat(subChat(underground.chat.nouserspecified, {name: chat.un}));
+             var name = msg.substring(cmd.length + 2);
+             var user = underground.userUtilities.lookupUserName(name);
+             if (typeof user === 'boolean') return API.sendChat(subChat(underground.chat.invaliduserspecified, {name: chat.un}));
+             var chats = $('.from');
+             var message = $('.message');
+             var emote = $('.emote');
+             var from = $('.un.clickable');
+             for (var i = 0; i < chats.length; i++) {
+             var n = from[i].textContent;
+             if (name.trim() === n.trim()) {
+             // var messagecid = $(message)[i].getAttribute('data-cid');
+             // var emotecid = $(emote)[i].getAttribute('data-cid');
+             // API.moderateDeleteChat(messagecid);
+             // try {
+             //     API.moderateDeleteChat(messagecid);
+             // }
+             // finally {
+             //     API.moderateDeleteChat(emotecid);
+             // }
+             if (typeof $(message)[i].getAttribute('data-cid') == "undefined"){
+             API.moderateDeleteChat($(emote)[i].getAttribute('data-cid')); // works well with normal messages but not with emotes due to emotes and messages are seperate.
+             } else {
+             API.moderateDeleteChat($(message)[i].getAttribute('data-cid'));
+             }
+             }
+             }
+             API.sendChat(subChat(underground.chat.deletechat, {name: chat.un, username: name}));
+             }
+             }
+             },*/
 
             emojiCommand: {
                 command: 'emoji',
@@ -2114,7 +2114,7 @@
                             case 'pt': ch += 'Por favor, fale Inglês.'; break;
                             case 'sk': ch += 'Hovorte po anglicky, prosím.'; break;
                             case 'cs': ch += 'Mluvte prosím anglicky.'; break;
-                            case 'sr': ch += 'Молим Вас, говорите енглески.'; break;                                  
+                            case 'sr': ch += 'Молим Вас, говорите енглески.'; break;
                         }
                         ch += ' English please.';
                         API.sendChat(ch);
@@ -2201,7 +2201,7 @@
                         if (user === false || !user.inRoom) {
                             return API.sendChat(subChat(underground.chat.ghosting, {name1: chat.un, name2: name}));
                         }
-                        else API.sendChat(subChat(underground.chat.notghosting, {name1: chat.un, name2: name}));     
+                        else API.sendChat(subChat(underground.chat.notghosting, {name1: chat.un, name2: name}));
                     }
                 }
             },
@@ -2219,8 +2219,8 @@
                             function get_id(api_key, fixedtag, func)
                             {
                                 $.getJSON(
-                                    "https://tv.giphy.com/v1/gifs/random?", 
-                                    { 
+                                    "https://tv.giphy.com/v1/gifs/random?",
+                                    {
                                         "format": "json",
                                         "api_key": api_key,
                                         "rating": rating,
@@ -2230,7 +2230,7 @@
                                     {
                                         func(response.data.id);
                                     }
-                                    )
+                                )
                             }
                             var api_key = "dc6zaTOxFJmzC"; // public beta key
                             var rating = "PG-13"; // PG 13 gifs
@@ -2249,8 +2249,8 @@
                             function get_random_id(api_key, func)
                             {
                                 $.getJSON(
-                                    "https://tv.giphy.com/v1/gifs/random?", 
-                                    { 
+                                    "https://tv.giphy.com/v1/gifs/random?",
+                                    {
                                         "format": "json",
                                         "api_key": api_key,
                                         "rating": rating
@@ -2259,7 +2259,7 @@
                                     {
                                         func(response.data.id);
                                     }
-                                    )
+                                )
                             }
                             var api_key = "dc6zaTOxFJmzC"; // public beta key
                             var rating = "PG-13"; // PG 13 gifs
@@ -2308,43 +2308,43 @@
                     }
                 }
             },
-            
-              /*                  russianCommand: {
-                command: 'russian',
-                rank: 'mod',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!underground.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        if (!underground.room.russiangame.RRStatus) {
-                            underground.room.russiangame.startRussianGame();
-                        }
-                    }
-                }
-            },
-            /*
-                sitCommand: {
-                command: 'sit',
-                rank: 'user',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    if (!underground.commands.executable(this.rank, chat)) { return void (0); }
-                    if (underground.room.russiangame.players >= 6) { return void (0); }
-                    if (underground.room.russiangame.started) { return void (0); }
-                        if (underground.room.russiangame.rusStatus && underground.room.russiangame.participants.indexOf(chat.uid) < 0) {
-                            underground.room.russiangame.participants.push(chat.uid);
-                            API.sendChat('/me ' + chat.un + ' has claimed his seat in Russian Roulette');
-                            underground.room.russiangame.players += 1;
-                            if (underground.room.russiangame.players == 6) {
-                            	underground.room.russiangame.started = true;
-                            }
-                        }
-                }
-            },*/
 
-		joinCommand: {
+            /*                  russianCommand: {
+             command: 'russian',
+             rank: 'mod',
+             type: 'exact',
+             functionality: function (chat, cmd) {
+             if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+             if (!underground.commands.executable(this.rank, chat)) return void (0);
+             else {
+             if (!underground.room.russiangame.RRStatus) {
+             underground.room.russiangame.startRussianGame();
+             }
+             }
+             }
+             },
+             /*
+             sitCommand: {
+             command: 'sit',
+             rank: 'user',
+             type: 'exact',
+             functionality: function (chat, cmd) {
+             if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+             if (!underground.commands.executable(this.rank, chat)) { return void (0); }
+             if (underground.room.russiangame.players >= 6) { return void (0); }
+             if (underground.room.russiangame.started) { return void (0); }
+             if (underground.room.russiangame.rusStatus && underground.room.russiangame.participants.indexOf(chat.uid) < 0) {
+             underground.room.russiangame.participants.push(chat.uid);
+             API.sendChat('/me ' + chat.un + ' has claimed his seat in Russian Roulette');
+             underground.room.russiangame.players += 1;
+             if (underground.room.russiangame.players == 6) {
+             underground.room.russiangame.started = true;
+             }
+             }
+             }
+             },*/
+
+            joinCommand: {
                 command: 'join',
                 rank: 'user',
                 type: 'exact',
@@ -2359,7 +2359,7 @@
                     }
                 }
             },
-            
+
 
 
             jointimeCommand: {
@@ -2580,61 +2580,61 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!underground.commands.executable(this.rank, chat)) return void (0);
                     else {
-                            var dj = API.getDJ();
-                            var id = dj.id;
-                            var name = dj.username;
-                            var msgSend = '@' + name + ': ';
-                            underground.room.queueable = false;
+                        var dj = API.getDJ();
+                        var id = dj.id;
+                        var name = dj.username;
+                        var msgSend = '@' + name + ': ';
+                        underground.room.queueable = false;
 
-                            if (chat.message.length === cmd.length) {
-                                API.sendChat(subChat(underground.chat.usedlockskip, {name: chat.un}));
-                                underground.roomUtilities.booth.lockBooth();
+                        if (chat.message.length === cmd.length) {
+                            API.sendChat(subChat(underground.chat.usedlockskip, {name: chat.un}));
+                            underground.roomUtilities.booth.lockBooth();
+                            setTimeout(function (id) {
+                                API.moderateForceSkip();
+                                underground.room.skippable = false;
+                                setTimeout(function () {
+                                    underground.room.skippable = true
+                                }, 5 * 1000);
                                 setTimeout(function (id) {
-                                    API.moderateForceSkip();
-                                    underground.room.skippable = false;
+                                    underground.userUtilities.moveUser(id, underground.settings.lockskipPosition, false);
+                                    underground.room.queueable = true;
                                     setTimeout(function () {
-                                        underground.room.skippable = true
-                                    }, 5 * 1000);
-                                    setTimeout(function (id) {
-                                        underground.userUtilities.moveUser(id, underground.settings.lockskipPosition, false);
-                                        underground.room.queueable = true;
-                                        setTimeout(function () {
-                                            underground.roomUtilities.booth.unlockBooth();
-                                        }, 1000);
-                                    }, 1500, id);
-                                }, 1000, id);
-                                return void (0);
+                                        underground.roomUtilities.booth.unlockBooth();
+                                    }, 1000);
+                                }, 1500, id);
+                            }, 1000, id);
+                            return void (0);
+                        }
+                        var validReason = false;
+                        var msg = chat.message;
+                        var reason = msg.substring(cmd.length + 1);
+                        for (var i = 0; i < underground.settings.lockskipReasons.length; i++) {
+                            var r = underground.settings.lockskipReasons[i][0];
+                            if (reason.indexOf(r) !== -1) {
+                                validReason = true;
+                                msgSend += underground.settings.lockskipReasons[i][1];
                             }
-                            var validReason = false;
-                            var msg = chat.message;
-                            var reason = msg.substring(cmd.length + 1);
-                            for (var i = 0; i < underground.settings.lockskipReasons.length; i++) {
-                                var r = underground.settings.lockskipReasons[i][0];
-                                if (reason.indexOf(r) !== -1) {
-                                    validReason = true;
-                                    msgSend += underground.settings.lockskipReasons[i][1];
-                                }
-                            }
-                            if (validReason) {
-                                API.sendChat(subChat(underground.chat.usedlockskip, {name: chat.un}));
-                                underground.roomUtilities.booth.lockBooth();
+                        }
+                        if (validReason) {
+                            API.sendChat(subChat(underground.chat.usedlockskip, {name: chat.un}));
+                            underground.roomUtilities.booth.lockBooth();
+                            setTimeout(function (id) {
+                                API.moderateForceSkip();
+                                underground.room.skippable = false;
+                                API.sendChat(msgSend);
+                                setTimeout(function () {
+                                    underground.room.skippable = true
+                                }, 5 * 1000);
                                 setTimeout(function (id) {
-                                    API.moderateForceSkip();
-                                    underground.room.skippable = false;
-                                    API.sendChat(msgSend);
+                                    underground.userUtilities.moveUser(id, underground.settings.lockskipPosition, false);
+                                    underground.room.queueable = true;
                                     setTimeout(function () {
-                                        underground.room.skippable = true
-                                    }, 5 * 1000);
-                                    setTimeout(function (id) {
-                                        underground.userUtilities.moveUser(id, underground.settings.lockskipPosition, false);
-                                        underground.room.queueable = true;
-                                        setTimeout(function () {
-                                            underground.roomUtilities.booth.unlockBooth();
-                                        }, 1000);
-                                    }, 1500, id);
-                                }, 1000, id);
-                                return void (0);
-                            }
+                                        underground.roomUtilities.booth.unlockBooth();
+                                    }, 1000);
+                                }, 1500, id);
+                            }, 1000, id);
+                            return void (0);
+                        }
                     }
                 }
             },
@@ -2799,30 +2799,30 @@
                         var permFrom = underground.userUtilities.getPermission(chat.uid);
                         var permUser = underground.userUtilities.getPermission(user.id);
                         if (permFrom > permUser) {
-                            
-                             underground.room.mutedUsers.push(user.id);
-                             if (time === null) API.sendChat(subChat(underground.chat.mutednotime, {name: chat.un, username: name}));
-                             else {
-                             API.sendChat(subChat(underground.chat.mutedtime, {name: chat.un, username: name, time: time}));
-                             setTimeout(function (id) {
-                             var muted = underground.room.mutedUsers;
-                             var wasMuted = false;
-                             var indexMuted = -1;
-                             for (var i = 0; i < muted.length; i++) {
-                             if (muted[i] === id) {
-                             indexMuted = i;
-                             wasMuted = true;
-                             }
-                             }
-                             if (indexMuted > -1) {
-                             underground.room.mutedUsers.splice(indexMuted);
-                             var u = underground.userUtilities.lookupUser(id);
-                             var name = u.username;
-                             API.sendChat(subChat(underground.chat.unmuted, {name: chat.un, username: name}));
-                             }
-                             }, time * 60 * 1000, user.id);
-                             }
-                             
+
+                            underground.room.mutedUsers.push(user.id);
+                            if (time === null) API.sendChat(subChat(underground.chat.mutednotime, {name: chat.un, username: name}));
+                            else {
+                                API.sendChat(subChat(underground.chat.mutedtime, {name: chat.un, username: name, time: time}));
+                                setTimeout(function (id) {
+                                    var muted = underground.room.mutedUsers;
+                                    var wasMuted = false;
+                                    var indexMuted = -1;
+                                    for (var i = 0; i < muted.length; i++) {
+                                        if (muted[i] === id) {
+                                            indexMuted = i;
+                                            wasMuted = true;
+                                        }
+                                    }
+                                    if (indexMuted > -1) {
+                                        underground.room.mutedUsers.splice(indexMuted);
+                                        var u = underground.userUtilities.lookupUser(id);
+                                        var name = u.username;
+                                        API.sendChat(subChat(underground.chat.unmuted, {name: chat.un, username: name}));
+                                    }
+                                }, time * 60 * 1000, user.id);
+                            }
+
                             if (time > 45) {
                                 API.sendChat(subChat(underground.chat.mutedmaxtime, {name: chat.un, time: "45"}));
                                 API.moderateMuteUser(user.id, 1, API.MUTE.LONG);
@@ -2887,22 +2887,22 @@
             },
 
             /*refreshCommand: {
-                command: 'refresh',
-                rank: 'manager',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!underground.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        storeToStorage();
-                        underground.disconnectAPI();
-                        setTimeout(function () {
-                            window.location.reload(false);
-                        }, 1000);
+             command: 'refresh',
+             rank: 'manager',
+             type: 'exact',
+             functionality: function (chat, cmd) {
+             if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+             if (!underground.commands.executable(this.rank, chat)) return void (0);
+             else {
+             storeToStorage();
+             underground.disconnectAPI();
+             setTimeout(function () {
+             window.location.reload(false);
+             }, 1000);
 
-                    }
-                }
-            },*/
+             }
+             }
+             },*/
 
             reloadCommand: {
                 command: 'reload',
@@ -2922,19 +2922,19 @@
                     }
                 }
             },
-            
-            
+
+
             madebyCommand: {
-            	command: 'madeby',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            		if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-            		if (!underground.commands.executable(this.rank, chat)) return void (0);
-            		else {
-            			API.sendChat('The ' + underground.settings.botName +  was developed and is operated by Paradox VII');
-            		}
-            	}
+                command: 'madeby',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!underground.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat('The ' + underground.settings.botName +  was developed and is operated by Paradox VII');
+                    }
+                }
             },
 
             removeCommand: {
@@ -3002,9 +3002,9 @@
                     }
                 }
             },
-            
 
-            
+
+
             dicegameCommand: {
                 command: 'dicegame',
                 rank: 'mod',
@@ -3014,9 +3014,9 @@
                     if (!underground.commands.executable(this.rank, chat)) return void (0);
                     else {
                         if (!underground.room.dicegame.dgStatus) {
-                        	underground.room.dicegame.highestRoll = 0;
-                        	underground.room.dicegame.highestRollerID = null;
-                        	underground.room.dicegame.participants = [];
+                            underground.room.dicegame.highestRoll = 0;
+                            underground.room.dicegame.highestRollerID = null;
+                            underground.room.dicegame.participants = [];
                             underground.room.dicegame.startDiceGame();
                         }
                     }
@@ -3031,7 +3031,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!underground.commands.executable(this.rank, chat)) return void (0);
                     else {
-                            return API.sendChat(subChat('Keep it under 7 minutes, if it is over ask for permission. No yellowtext. Only play music that is not mainstream. Trolls will be booted.'));
+                        return API.sendChat(subChat('Keep it under 7 minutes, if it is over ask for permission. No yellowtext. Only play music that is not mainstream. Trolls will be booted.'));
                     }
                 }
             },
@@ -3115,7 +3115,7 @@
                         if (underground.settings.bouncerPlus) msg += 'ON';
                         else msg += 'OFF';
                         msg += '. ';
-												
+
                         msg += underground.chat.blacklist + ': ';
                         if (underground.settings.blacklistEnabled) msg += 'ON';
                         else msg += 'OFF';
@@ -3160,15 +3160,15 @@
                         if (underground.room.autoskip) msg += 'ON';
                         else msg += 'OFF';
                         msg += '. ';
-                        
+
                         var launchT = underground.room.roomstats.launchTime;
                         var durationOnline = Date.now() - launchT;
                         var since = underground.roomUtilities.msToStr(durationOnline);
                         var msg2 = '';
                         msg2 += subChat(underground.chat.activefor, {time: since});
-			API.sendchat(msg2);
+                        API.sendchat(msg2);
                         return API.sendChat(msg);
-               
+
                     }
                 }
             },
@@ -3219,7 +3219,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!underground.commands.executable(this.rank, chat)) return void (0);
                     else {
-                            API.sendChat(subChat('Theme: \n Share your favorite deep, dark, trippy, chill or unknown tracks. Producers are welcome too, and you will find loads of OC being played. If it SOUNDS mainstream, dont play it.'));
+                        API.sendChat(subChat('Theme: \n Share your favorite deep, dark, trippy, chill or unknown tracks. Producers are welcome too, and you will find loads of OC being played. If it SOUNDS mainstream, dont play it.'));
                     }
                 }
             },
@@ -3256,13 +3256,13 @@
                         var temp = underground.settings.blacklistEnabled;
                         underground.settings.blacklistEnabled = !temp;
                         if (underground.settings.blacklistEnabled) {
-                          return API.sendChat(subChat(underground.chat.toggleon, {name: chat.un, 'function': underground.chat.blacklist}));
+                            return API.sendChat(subChat(underground.chat.toggleon, {name: chat.un, 'function': underground.chat.blacklist}));
                         }
                         else return API.sendChat(subChat(underground.chat.toggleoff, {name: chat.un, 'function': underground.chat.blacklist}));
                     }
                 }
             },
-						
+
             togglemotdCommand: {
                 command: 'togglemotd',
                 rank: 'bouncer',
@@ -3364,15 +3364,15 @@
                     else {
                         var msg = chat.message;
                         var permFrom = underground.userUtilities.getPermission(chat.uid);
-                        
-                         if (msg.indexOf('@') === -1 && msg.indexOf('all') !== -1) {
+
+                        if (msg.indexOf('@') === -1 && msg.indexOf('all') !== -1) {
                             if (permFrom > 2) {
                                 underground.room.mutedUsers = [];
                                 return API.sendChat(subChat(underground.chat.unmutedeveryone, {name: chat.un}));
                             }
                             else return API.sendChat(subChat(underground.chat.unmuteeveryonerank, {name: chat.un}));
                         }
-                         
+
                         var from = chat.un;
                         var name = msg.substr(cmd.length + 2);
 
@@ -3382,20 +3382,20 @@
 
                         var permUser = underground.userUtilities.getPermission(user.id);
                         if (permFrom > permUser) {
-                            
-                             var muted = underground.room.mutedUsers;
-                             var wasMuted = false;
-                             var indexMuted = -1;
-                             for (var i = 0; i < muted.length; i++) {
-                             if (muted[i] === user.id) {
-                             indexMuted = i;
-                             wasMuted = true;
-                             }
-                             }
-                             if (!wasMuted) return API.sendChat(subChat(underground.chat.notmuted, {name: chat.un}));
-                             underground.room.mutedUsers.splice(indexMuted);
-                             API.sendChat(subChat(underground.chat.unmuted, {name: chat.un, username: name}));
-                             
+
+                            var muted = underground.room.mutedUsers;
+                            var wasMuted = false;
+                            var indexMuted = -1;
+                            for (var i = 0; i < muted.length; i++) {
+                                if (muted[i] === user.id) {
+                                    indexMuted = i;
+                                    wasMuted = true;
+                                }
+                            }
+                            if (!wasMuted) return API.sendChat(subChat(underground.chat.notmuted, {name: chat.un}));
+                            underground.room.mutedUsers.splice(indexMuted);
+                            API.sendChat(subChat(underground.chat.unmuted, {name: chat.un, username: name}));
+
                             try {
                                 API.moderateUnmuteUser(user.id);
                                 API.sendChat(subChat(underground.chat.unmuted, {name: chat.un, username: name}));
@@ -3521,1087 +3521,1087 @@
                     }
                 }
             },
-            
+
             helloCommand: {
-            	command: ['hello', 'hi', 'hey'],
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-            	         API.sendChat(subChat('http://i.imgur.com/C4rnIsb.gif'));
-            	}
+                command: ['hello', 'hi', 'hey'],
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    API.sendChat(subChat('http://i.imgur.com/C4rnIsb.gif'));
+                }
             },
-            
-            
-            
-	    dance1Command: {
-            	command: 'dance',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/ZDawAwF.webm'));
-            	}
+
+
+
+            dance1Command: {
+                command: 'dance',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    API.sendChat(subChat('http://i.imgur.com/ZDawAwF.webm'));
+                }
             },
             drop1Command: {
-            	command: 'drop',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/TUUwcEC.gif'));
-            	}
+                command: 'drop',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    API.sendChat(subChat('http://i.imgur.com/TUUwcEC.gif'));
+                }
             },
             drop2Command: {
-            	command: 'drop1',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/ELEO7nP.gif'));
-            	}
+                command: 'drop1',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    API.sendChat(subChat('http://i.imgur.com/ELEO7nP.gif'));
+                }
             },
             dance2Command: {
-            	command: 'dance1',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/H9nADqS.gif'));
-            	}
+                command: 'dance1',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    API.sendChat(subChat('http://i.imgur.com/H9nADqS.gif'));
+                }
             },
             dance3Command: {
-            	command: 'dance2',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/t71qeT1.gif'));
-            	}
+                command: 'dance2',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    API.sendChat(subChat('http://i.imgur.com/t71qeT1.gif'));
+                }
             },
             dance4Command: {
-            	command: 'dance3',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/TqezZCP.gif'));
-            	}
+                command: 'dance3',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    API.sendChat(subChat('http://i.imgur.com/TqezZCP.gif'));
+                }
             },
             dance5Command: {
-            	command: 'dance4',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/XnCeorl.gif'));
-            	}
+                command: 'dance4',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    API.sendChat(subChat('http://i.imgur.com/XnCeorl.gif'));
+                }
             },
-                sourceCommand: {
-            	command: 'source',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('The open source code for ' + underground.settings.botName +  is available at: https://github.com/Paradox68/UndergroundBot'));
-            	}
-            },
-            dance6Command: {
-            	command: 'dance5',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/IUoOZDo.gif'));
-            	}
-            },
-            dance7Command: {
-            	command: 'dance6',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/jKfD4m3.gif'));
-            	}
-            },
-            dance8Command: {
-            	command: 'dance7',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/pIxt2H0.gif'));
-            	}
-            },
-            dance9Command: {
-            	command: 'dance8',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/YieC5Ls.gif'));
-            	}
-            },
-            dance10Command: {
-            	command: 'dance9',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/cKT7CNU.gif'));
-            	}
-            },
-            dance11Command: {
-            	command: 'dance10',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/6vfolCh.gif'));
-            	}
-            },
-            dance12Command: {
-            	command: 'dance11',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/pQLee14.gif'));
-            	}
-            },
-            dance13Command: {
-            	command: 'dance12',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/sCGlr4m.gif'));
-            	}
-            },
-            dance14Command: {
-            	command: 'dance13',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/Q7T2K8o.gif'));
-            	}
-            },
-            faggot1Command: {
-            	command: 'faggot',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/QJNr8sP.jpg'));
-            	}
-            },
-            faggot2Command: {
-            	command: 'faggot1',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/9We2dVP.gif'));
-            	}
-            },
-            faggot3Command: {
-            	command: 'faggot2',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/JSZQTpU.gif'));
-            	}
-            },
-            faggot4Command: {
-            	command: 'faggot3',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/HfQ3gRA.gif'));
-            	}
-            },
-            faggot5Command: {
-            	command: 'faggot4',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/uFLW7YK.gif'));
-            	}
-            },
-            faggot6Command: {
-            	command: 'faggot5',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/hbAtPOA.gif'));
-            	}
-            },
-            faggot7Command: {
-            	command: 'faggot6',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/g9rZoWs.gif'));
-            	}
-            },
-            
+            sourceCommand: {
+                command: 'source',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                    API.sendChat(subChat('The open source code for ' + underground.settings.botName +  is available at: https://github.com/Paradox68/UndergroundBot'));
+                        }
+                },
+                dance6Command: {
+                    command: 'dance5',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/IUoOZDo.gif'));
+                    }
+                },
+                dance7Command: {
+                    command: 'dance6',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/jKfD4m3.gif'));
+                    }
+                },
+                dance8Command: {
+                    command: 'dance7',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/pIxt2H0.gif'));
+                    }
+                },
+                dance9Command: {
+                    command: 'dance8',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/YieC5Ls.gif'));
+                    }
+                },
+                dance10Command: {
+                    command: 'dance9',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/cKT7CNU.gif'));
+                    }
+                },
+                dance11Command: {
+                    command: 'dance10',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/6vfolCh.gif'));
+                    }
+                },
+                dance12Command: {
+                    command: 'dance11',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/pQLee14.gif'));
+                    }
+                },
+                dance13Command: {
+                    command: 'dance12',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/sCGlr4m.gif'));
+                    }
+                },
+                dance14Command: {
+                    command: 'dance13',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/Q7T2K8o.gif'));
+                    }
+                },
+                faggot1Command: {
+                    command: 'faggot',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/QJNr8sP.jpg'));
+                    }
+                },
+                faggot2Command: {
+                    command: 'faggot1',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/9We2dVP.gif'));
+                    }
+                },
+                faggot3Command: {
+                    command: 'faggot2',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/JSZQTpU.gif'));
+                    }
+                },
+                faggot4Command: {
+                    command: 'faggot3',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/HfQ3gRA.gif'));
+                    }
+                },
+                faggot5Command: {
+                    command: 'faggot4',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/uFLW7YK.gif'));
+                    }
+                },
+                faggot6Command: {
+                    command: 'faggot5',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/hbAtPOA.gif'));
+                    }
+                },
+                faggot7Command: {
+                    command: 'faggot6',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/g9rZoWs.gif'));
+                    }
+                },
+
                 regret1Command: {
-            	command: 'regret',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/WvvxQTk.gif'));
-            	}
-            },
-              fuckyou1Command: {
-            	command: 'fuckyou',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/1eh3dg1.gif'));
-            	}
-            },
-            fuckyou2Command: {
-            	command: 'fuckyou1',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/Oh8h3Pt.gif'));
-            	}
-            },
-            fuckyou3Command: {
-            	command: 'fuckyou2',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/NH7LYM9.gif'));
-            	}
-            },
-            fuckyou4Command: {
-            	command: 'fuckyou3',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/NtdtELQ.gif'));
-            	}
-            },
-            fuckyou5Command: {
-            	command: 'fuckyou4',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/qE3MNo5.gif'));
-            	}
-            },
-            fuckyou6Command: {
-            	command: 'fuckyou5',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/AyObzfk.webm'));
-            	}
-            },
-            fuckyou7Command: {
-            	command: 'fuckyou6',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/jCUu9nY.webm'));
-            	}
-            },
-            fuckyou8Command: {
-            	command: 'fuckyou7',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/WR4g4S7.gif'));
-            	}
-            },
-            fuckyou9Command: {
-            	command: 'fuckyou8',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/ntV8Vvg.gif'));
-            	}
-            },
-            fuckyou10Command: {
-            	command: 'fuckyou9',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/btXKV0w.webm'));
-            	}
-            },
-            fuckyou11Command: {
-            	command: 'fuckyou10',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/wlTqw2a.gif'));
-            	}
-            },
-            lockposCommand: {
-            	command: 'lockpos',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-            		if (API.getWaitListPosition(id) == 1) {
-            			if (underground.settings.spotLock === "none") {
-            			API.sendChat('/me ' + chat.un + ' has locked their spot at position 1 in the queue!');
-            			underground.settings.spotLock = chat.un;
-            			}
-            		}
-            	}
-            },
-          guessCommand: {
-            	command: 'guess',
-            	rank: 'user',
-            	type: 'startsWith',
-            	           functionality: function (chat, cmd) {
-            	           	if (chat.message.length < 7) { return void (0); }
-            	           	if (!underground.room.numberG.active) { return void (0); }
-            	           	var gn = chat.message.substring(cmd.length + 1);
-            	           	var gni = parseInt(gn);
-            	           	if (gni === underground.room.numberG.currentNumber || gn === underground.room.numberG.currentNumber.toString()) {
-            	           		underground.room.numberG.endNumberGame(chat.uid);
-            	           	} else {
-            	           		API.sendChat('/me @' + chat.un + ' incorrectly guessed ' + gni + '.');
-            	           		setTimeout(function () {
-                        		API.moderateDeleteChat(chat.cid);
-                    			}, 2 * 1000, chat.cid);
-            	           	}
-            }
-            },
-            
-            
-            diffCommand: {
-            	command: 'diff',
-            	rank: 'mod',
-            	type: 'startsWith',
-            	           functionality: function (chat, cmd) {
-            	           	if (!underground.commands.executable(this.rank, chat)) { return void (0); }
-            	           	if (chat.message.length < 6) { return void (0); }
-            	           	var gn = chat.message.substring(cmd.length + 1);
-            	           	var gni = parseInt(gn);
-            	           		underground.room.numberG.difficulty = gni;
-            	           		var tos = "undefined";
-            	           		if (gni === 1) {
-            	           			tos = "easy";
-            	           		}
-            	           		if (gni === 2) {
-            	           			tos = "medium";
-            	           		}
-            	           		if (gni === 3) {
-            	           			tos = "hard";
-            	           		}
-            	           		API.sendChat('/me Number Game Difficulty set to: ' + tos + '.'); 
-            }
-            },
-            
+                    command: 'regret',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/WvvxQTk.gif'));
+                    }
+                },
+                fuckyou1Command: {
+                    command: 'fuckyou',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/1eh3dg1.gif'));
+                    }
+                },
+                fuckyou2Command: {
+                    command: 'fuckyou1',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/Oh8h3Pt.gif'));
+                    }
+                },
+                fuckyou3Command: {
+                    command: 'fuckyou2',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/NH7LYM9.gif'));
+                    }
+                },
+                fuckyou4Command: {
+                    command: 'fuckyou3',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/NtdtELQ.gif'));
+                    }
+                },
+                fuckyou5Command: {
+                    command: 'fuckyou4',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/qE3MNo5.gif'));
+                    }
+                },
+                fuckyou6Command: {
+                    command: 'fuckyou5',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/AyObzfk.webm'));
+                    }
+                },
+                fuckyou7Command: {
+                    command: 'fuckyou6',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/jCUu9nY.webm'));
+                    }
+                },
+                fuckyou8Command: {
+                    command: 'fuckyou7',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/WR4g4S7.gif'));
+                    }
+                },
+                fuckyou9Command: {
+                    command: 'fuckyou8',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/ntV8Vvg.gif'));
+                    }
+                },
+                fuckyou10Command: {
+                    command: 'fuckyou9',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/btXKV0w.webm'));
+                    }
+                },
+                fuckyou11Command: {
+                    command: 'fuckyou10',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/wlTqw2a.gif'));
+                    }
+                },
+                lockposCommand: {
+                    command: 'lockpos',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        if (API.getWaitListPosition(id) == 1) {
+                            if (underground.settings.spotLock === "none") {
+                                API.sendChat('/me ' + chat.un + ' has locked their spot at position 1 in the queue!');
+                                underground.settings.spotLock = chat.un;
+                            }
+                        }
+                    }
+                },
+                guessCommand: {
+                    command: 'guess',
+                    rank: 'user',
+                    type: 'startsWith',
+                    functionality: function (chat, cmd) {
+                        if (chat.message.length < 7) { return void (0); }
+                        if (!underground.room.numberG.active) { return void (0); }
+                        var gn = chat.message.substring(cmd.length + 1);
+                        var gni = parseInt(gn);
+                        if (gni === underground.room.numberG.currentNumber || gn === underground.room.numberG.currentNumber.toString()) {
+                            underground.room.numberG.endNumberGame(chat.uid);
+                        } else {
+                            API.sendChat('/me @' + chat.un + ' incorrectly guessed ' + gni + '.');
+                            setTimeout(function () {
+                                API.moderateDeleteChat(chat.cid);
+                            }, 2 * 1000, chat.cid);
+                        }
+                    }
+                },
+
+
+                diffCommand: {
+                    command: 'diff',
+                    rank: 'mod',
+                    type: 'startsWith',
+                    functionality: function (chat, cmd) {
+                        if (!underground.commands.executable(this.rank, chat)) { return void (0); }
+                        if (chat.message.length < 6) { return void (0); }
+                        var gn = chat.message.substring(cmd.length + 1);
+                        var gni = parseInt(gn);
+                        underground.room.numberG.difficulty = gni;
+                        var tos = "undefined";
+                        if (gni === 1) {
+                            tos = "easy";
+                        }
+                        if (gni === 2) {
+                            tos = "medium";
+                        }
+                        if (gni === 3) {
+                            tos = "hard";
+                        }
+                        API.sendChat('/me Number Game Difficulty set to: ' + tos + '.');
+                    }
+                },
+
                 gibmeCommand: {
-            	command: 'gibme',
-            	rank: 'bouncer',
-            	type: 'exact',
-            	           functionality: function (chat, cmd) {
-            	           	if (!underground.commands.executable(this.rank, chat)) { return void (0); }
-            	           	var cd = null;
-            	           	var cd1 = null;
-            	           		underground.room.cash.usid = chat.uid;
-            	           		underground.room.cash.amttoadd = 5;
-            	           	cd = setTimeout(function () {
-                        underground.room.cash.updateUserCurrency();
-                    }, 1 * 1000);
-            	           		API.chatLog('Gibme successfully run');
-            }
-            },
-            
-               balanceCommand: {
-            	command: 'balance',
-            	rank: 'user',
-            	type: 'exact',
-            	           functionality: function (chat, cmd) {
-            	           	if (!underground.commands.executable(this.rank, chat)) { return void (0); }
-					var amtt = 0;
-					for (var i = 0; i < underground.settings.monies.length; i++) {
-						if (underground.settings.monies[i] === chat.uid) {
-							amtt = underground.settings.monies[i + 1];
-						}
-					}
-            	           		API.chatLog(chat.un + ' has ' + amtt + ' monies.');
-            }
-            },
+                    command: 'gibme',
+                    rank: 'bouncer',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (!underground.commands.executable(this.rank, chat)) { return void (0); }
+                        var cd = null;
+                        var cd1 = null;
+                        underground.room.cash.usid = chat.uid;
+                        underground.room.cash.amttoadd = 5;
+                        cd = setTimeout(function () {
+                            underground.room.cash.updateUserCurrency();
+                        }, 1 * 1000);
+                        API.chatLog('Gibme successfully run');
+                    }
+                },
 
-            
-           rollCommand: {
-            	command: 'roll',
-            	rank: 'user',
-            	type: 'exact',
-            	countdown: null,
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-            	    if (!underground.room.dicegame.dgStatus) { return void (0); }
-            	    if (underground.room.dicegame.participants.indexOf(chat.uid) >= 0) { return void (0); }
-            	    var num = Math.floor((Math.random() * 999) + 1);
-            	    var nts = num.toString();
- 
-                            underground.room.dicegame.participants.push(chat.uid);
-            	    	if (num > underground.room.dicegame.highestRoll) {
-            	    			underground.room.dicegame.highestRollerID = "undefined";
-            	    			underground.room.dicegame.highestRoll = 0;
-            	    			underground.room.dicegame.winning = "nobody";
-            	    			this.countdown = setTimeout(function () {
-            	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + ' and is now winning the Dice Game');
-            	    		underground.room.dicegame.highestRoll = num;
-            	    		underground.room.dicegame.winning = chat.un;
-            	    		underground.room.dicegame.highestRollerID = chat.uid;
-                    }, 300);
+                balanceCommand: {
+                    command: 'balance',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (!underground.commands.executable(this.rank, chat)) { return void (0); }
+                        var amtt = 0;
+                        for (var i = 0; i < underground.settings.monies.length; i++) {
+                            if (underground.settings.monies[i] === chat.uid) {
+                                amtt = underground.settings.monies[i + 1];
+                            }
+                        }
+                        API.chatLog(chat.un + ' has ' + amtt + ' monies.');
+                    }
+                },
 
-            	    	} else {
-            	    		API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
-            	    	}
-            	}
-            	},
 
-            jamesCommand: {
-            	command: 'james',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/BvApgZl.gif'));
-            	}
-            },
-            bugdjCommand: {
-            	command: 'bug',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/vYEOrkT.png'));
-            	}
-            },
-            penisCommand: {
-            	command: 'penis',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/c4BWZyz.webm'));
-            	}
-            },
-            idgafCommand: {
-            	command: 'idgaf',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/tZ1Gvzy.gif'));
-            	}
-            },
-           allowitCommand: {
-            	command: 'allowit',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/EI6OEYh.gif'));
-            	}
-            },
-               refresh1Command: {
-            	command: 'refresh',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/MWnOXM6.gif'));
-            	}
-            },
-               fuckthis1Command: {
-            	command: 'fuckthis',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/GMEMmZj.webm'));
-            	}
-            },
-            shutup1Command: {
-            	command: 'shutup',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/u1dIcAN.webm'));
-            	}
-            },
-            hilarious1Command: {
-            	command: 'hilarious',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/ZgFcDJE.webm'));
-            	}
-            },
-            gloryhole1Command: {
-            	command: 'gloryhole',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/tdqZwhp.webm'));
-            	}
-            },
+                rollCommand: {
+                    command: 'roll',
+                    rank: 'user',
+                    type: 'exact',
+                    countdown: null,
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        if (!underground.room.dicegame.dgStatus) { return void (0); }
+                        if (underground.room.dicegame.participants.indexOf(chat.uid) >= 0) { return void (0); }
+                        var num = Math.floor((Math.random() * 999) + 1);
+                        var nts = num.toString();
 
-            bad1Command: {
-            	command: 'bad',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/WUOLKkl.webm'));
-            	}
-            },
-            bad2Command: {
-            	command: 'bad1',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/5GG2m93.webm'));
-            	}
-            },
-            bad3Command: {
-            	command: 'bad2',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/Tw5MCuB.gif'));
-            	}
-            },
-            bad4Command: {
-            	command: 'bad3',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/81PvIBS.webm'));
-            	}
-            },
-            bad5Command: {
-            	command: 'bad4',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/New6lgb.gif'));
-            	}
-            },
-            feelbad1Command: {
-            	command: 'feelbad',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/L8SLyYp.gif'));
-            	}
-            },
-            clap1Command: {
-            	command: 'clap',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/ljp2oIK.webm'));
-            	}
-            },
-            clap2Command: {
-            	command: 'clap1',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/EewRcj5.webm'));
-            	}
-            },
-            brofist1Command: {
-            	command: 'brofist',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/lIpVeN0.gif'));
-            	}
-            },
-            hangyourself1Command: {
-            	command: 'hangyourself',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/e2KTFEV.jpg'));
-            	}
-            },
-            laugh1Command: {
-            	command: 'laugh',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/JJXmxnr.jpg'));
-            	}
-            },
-            laugh2Command: {
-            	command: 'laugh1',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/LUU1tI9.jpg'));
-            	}
-            },
-            laugh3Command: {
-            	command: 'laugh2',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/qwhQw6r.gif'));
-            	}
-            },
-            flirtCommand: {
-            	command: 'flirt',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/ty5bFLl.jpg'));
-            	}
-            },
-            flirt1Command: {
-            	command: 'flirt1',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/7JJDWkJ.jpg'));
-            	}
-            },
-            flirt2Command: {
-            	command: 'flirt2',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/HACLrUx.jpg'));
-            	}
-            },
-            flirt3Command: {
-            	command: 'flirt3',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/Kj8M8Np.jpg'));
-            	}
-            },
-            flirt4Command: {
-            	command: 'flirt4',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/io03xZl.jpg'));
-            	}
-            },
-            flirt5Command: {
-            	command: 'flirt5',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/52f3kZC.jpg'));
-            	}
-            },
-            flirt6Command: {
-            	command: 'flirt6',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/jql0uF9.jpg'));
-            	}
-            },
-            flirt7Command: {
-            	command: 'flirt7',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/ZKiNUqy.jpg'));
-            	}
-            },
-            sad1Command: {
-            	command: 'sad',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/B9DaCjz.webm'));
-            	}
-            },
-            djdoge1Command: {
-            	command: 'djdoge',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/N6Mb74t.jpg'));
-            	}
-            },
-            rodge1Command: {
-            	command: 'rodge',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/YTThds9.jpg'));
-            	}
-            },
-            noregrets1Command: {
-            	command: 'noregrets',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/rbFPzbB.webm'));
-            	}
-            },
-            thefuck1Command: {
-            	command: 'thefuck',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/nIbnCPv.gif'));
-            	}
-            },
-            good1Command: {
-            	command: 'good',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/FhBFNSO.gif'));
-            	}
-            },
-            no1Command: {
-            	command: 'no',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/5dXFx43.gif'));
-            	}
-            },
-            why1Command: {
-            	command: 'why',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/w4E0ICB.webm'));
-            	}
-            },
-            why2Command: {
-            	command: 'why1',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/vi7Nc9o.webm'));
-            	}
-            },
-            wiggleCommand: {
-            	command: 'wiggle',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/sYDxFZe.gif'));
-            	}
-            },
-            playNumberCommand: {
-            	command: 'playnumber',
-            	rank: 'mod',
-            	type: 'exact',
-            	    functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-            	    if (!underground.commands.executable(this.rank, chat)) { return void (0); }
-            	    underground.room.numberG.playNumberGame();
-            	    }
-            },
-            wiggle1Command: {
-            	command: 'wiggle1',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/ba2vGxM.gif'));
-            	}
-            },
-            wiggle2Command: {
-            	command: 'wiggle2',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/2QewkCH.gif'));
-            	}
-            },
-            wiggle3Command: {
-            	command: 'wiggle3',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/OEpvOZg.gif'));
-            	}
-            },
-            brohug1Command: {
-            	command: 'brohug',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/yvIbI7U.gif'));
-            	}
-            },
-            
-            approveCommand: {
-                command: 'approve',
-                rank: 'bouncer',
-                type: 'startsWith',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!underground.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        var msg = chat.message;
-                        var name;
-                        if (msg.length === cmd.length) name = chat.un;
+                        underground.room.dicegame.participants.push(chat.uid);
+                        if (num > underground.room.dicegame.highestRoll) {
+                            underground.room.dicegame.highestRollerID = "undefined";
+                            underground.room.dicegame.highestRoll = 0;
+                            underground.room.dicegame.winning = "nobody";
+                            this.countdown = setTimeout(function () {
+                                API.sendChat('/me ' + chat.un + ' has rolled ' + nts + ' and is now winning the Dice Game');
+                                underground.room.dicegame.highestRoll = num;
+                                underground.room.dicegame.winning = chat.un;
+                                underground.room.dicegame.highestRollerID = chat.uid;
+                            }, 300);
+
+                        } else {
+                            API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
+                        }
+                    }
+                },
+
+                jamesCommand: {
+                    command: 'james',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/BvApgZl.gif'));
+                    }
+                },
+                bugdjCommand: {
+                    command: 'bug',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/vYEOrkT.png'));
+                    }
+                },
+                penisCommand: {
+                    command: 'penis',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/c4BWZyz.webm'));
+                    }
+                },
+                idgafCommand: {
+                    command: 'idgaf',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/tZ1Gvzy.gif'));
+                    }
+                },
+                allowitCommand: {
+                    command: 'allowit',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/EI6OEYh.gif'));
+                    }
+                },
+                refresh1Command: {
+                    command: 'refresh',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/MWnOXM6.gif'));
+                    }
+                },
+                fuckthis1Command: {
+                    command: 'fuckthis',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/GMEMmZj.webm'));
+                    }
+                },
+                shutup1Command: {
+                    command: 'shutup',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/u1dIcAN.webm'));
+                    }
+                },
+                hilarious1Command: {
+                    command: 'hilarious',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/ZgFcDJE.webm'));
+                    }
+                },
+                gloryhole1Command: {
+                    command: 'gloryhole',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/tdqZwhp.webm'));
+                    }
+                },
+
+                bad1Command: {
+                    command: 'bad',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/WUOLKkl.webm'));
+                    }
+                },
+                bad2Command: {
+                    command: 'bad1',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/5GG2m93.webm'));
+                    }
+                },
+                bad3Command: {
+                    command: 'bad2',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/Tw5MCuB.gif'));
+                    }
+                },
+                bad4Command: {
+                    command: 'bad3',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/81PvIBS.webm'));
+                    }
+                },
+                bad5Command: {
+                    command: 'bad4',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/New6lgb.gif'));
+                    }
+                },
+                feelbad1Command: {
+                    command: 'feelbad',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/L8SLyYp.gif'));
+                    }
+                },
+                clap1Command: {
+                    command: 'clap',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/ljp2oIK.webm'));
+                    }
+                },
+                clap2Command: {
+                    command: 'clap1',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/EewRcj5.webm'));
+                    }
+                },
+                brofist1Command: {
+                    command: 'brofist',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/lIpVeN0.gif'));
+                    }
+                },
+                hangyourself1Command: {
+                    command: 'hangyourself',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/e2KTFEV.jpg'));
+                    }
+                },
+                laugh1Command: {
+                    command: 'laugh',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/JJXmxnr.jpg'));
+                    }
+                },
+                laugh2Command: {
+                    command: 'laugh1',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/LUU1tI9.jpg'));
+                    }
+                },
+                laugh3Command: {
+                    command: 'laugh2',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/qwhQw6r.gif'));
+                    }
+                },
+                flirtCommand: {
+                    command: 'flirt',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/ty5bFLl.jpg'));
+                    }
+                },
+                flirt1Command: {
+                    command: 'flirt1',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/7JJDWkJ.jpg'));
+                    }
+                },
+                flirt2Command: {
+                    command: 'flirt2',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/HACLrUx.jpg'));
+                    }
+                },
+                flirt3Command: {
+                    command: 'flirt3',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/Kj8M8Np.jpg'));
+                    }
+                },
+                flirt4Command: {
+                    command: 'flirt4',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/io03xZl.jpg'));
+                    }
+                },
+                flirt5Command: {
+                    command: 'flirt5',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/52f3kZC.jpg'));
+                    }
+                },
+                flirt6Command: {
+                    command: 'flirt6',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/jql0uF9.jpg'));
+                    }
+                },
+                flirt7Command: {
+                    command: 'flirt7',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/ZKiNUqy.jpg'));
+                    }
+                },
+                sad1Command: {
+                    command: 'sad',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/B9DaCjz.webm'));
+                    }
+                },
+                djdoge1Command: {
+                    command: 'djdoge',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/N6Mb74t.jpg'));
+                    }
+                },
+                rodge1Command: {
+                    command: 'rodge',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/YTThds9.jpg'));
+                    }
+                },
+                noregrets1Command: {
+                    command: 'noregrets',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/rbFPzbB.webm'));
+                    }
+                },
+                thefuck1Command: {
+                    command: 'thefuck',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/nIbnCPv.gif'));
+                    }
+                },
+                good1Command: {
+                    command: 'good',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/FhBFNSO.gif'));
+                    }
+                },
+                no1Command: {
+                    command: 'no',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/5dXFx43.gif'));
+                    }
+                },
+                why1Command: {
+                    command: 'why',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/w4E0ICB.webm'));
+                    }
+                },
+                why2Command: {
+                    command: 'why1',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/vi7Nc9o.webm'));
+                    }
+                },
+                wiggleCommand: {
+                    command: 'wiggle',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/sYDxFZe.gif'));
+                    }
+                },
+                playNumberCommand: {
+                    command: 'playnumber',
+                    rank: 'mod',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        if (!underground.commands.executable(this.rank, chat)) { return void (0); }
+                        underground.room.numberG.playNumberGame();
+                    }
+                },
+                wiggle1Command: {
+                    command: 'wiggle1',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/ba2vGxM.gif'));
+                    }
+                },
+                wiggle2Command: {
+                    command: 'wiggle2',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/2QewkCH.gif'));
+                    }
+                },
+                wiggle3Command: {
+                    command: 'wiggle3',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/OEpvOZg.gif'));
+                    }
+                },
+                brohug1Command: {
+                    command: 'brohug',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/yvIbI7U.gif'));
+                    }
+                },
+
+                approveCommand: {
+                    command: 'approve',
+                    rank: 'bouncer',
+                    type: 'startsWith',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                        if (!underground.commands.executable(this.rank, chat)) return void (0);
                         else {
-                            name = msg.substr(cmd.length + 2);
-                        }
-                        users = API.getUsers();
-                        var len = users.length;
-                        for (var i = 0; i < len; ++i){
-                            if (users[i].username == name){
-                                var otherid = users[i].id;
+                            var msg = chat.message;
+                            var name;
+                            if (msg.length === cmd.length) name = chat.un;
+                            else {
+                                name = msg.substr(cmd.length + 2);
+                            }
+                            users = API.getUsers();
+                            var len = users.length;
+                            for (var i = 0; i < len; ++i){
+                                if (users[i].username == name){
+                                    var otherid = users[i].id;
 
 
-                                API.sendChat(subChat('/me ' + name + '\'s next Track has been approved!'));
-                                underground.settings.approvedDJ = otherid;
+                                    API.sendChat(subChat('/me ' + name + '\'s next Track has been approved!'));
+                                    underground.settings.approvedDJ = otherid;
+                                }
                             }
                         }
                     }
-                }
-            },
+                },
 
-                        opinionCommand: {
-                command: 'opinion',
-                rank: 'bouncer',
-                type: 'startsWith',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!underground.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        var msg = chat.message;
-                        var name;
-                        if (msg.length === cmd.length) name = chat.un;
+                opinionCommand: {
+                    command: 'opinion',
+                    rank: 'bouncer',
+                    type: 'startsWith',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                        if (!underground.commands.executable(this.rank, chat)) return void (0);
                         else {
-                            name = msg.substr(cmd.length + 2);
-                        }
-                        users = API.getUsers();
-                        var len = users.length;
-                        for (var i = 0; i < len; ++i){
-                            if (users[i].username == name){
-                                var id = users[i].id;
+                            var msg = chat.message;
+                            var name;
+                            if (msg.length === cmd.length) name = chat.un;
+                            else {
+                                name = msg.substr(cmd.length + 2);
+                            }
+                            users = API.getUsers();
+                            var len = users.length;
+                            for (var i = 0; i < len; ++i){
+                                if (users[i].username == name){
+                                    var id = users[i].id;
 
 
-                                API.sendChat(subChat('/me ' + name + '\'s opinion value set to: Absolute Fucking 0.'));
+                                    API.sendChat(subChat('/me ' + name + '\'s opinion value set to: Absolute Fucking 0.'));
+                                }
                             }
                         }
                     }
-                }
-            },
-                                    staffonCommand: {
-                command: 'staffon',
-                rank: 'user',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!underground.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        var msg = chat.message;
-                var id = chat.uid;
-                var sOnline = 0;
-                        users = API.getUsers();
-                        var len = users.length;
-                        for (var i = 0; i < len; ++i){
-                            if (underground.userUtilities.getPermission(users[i].id) > 1){
-                                sOnline += 1;
-                            }
-                        }
-
-
-                                API.sendChat(subChat("/me Currently there are " + sOnline + " staff members online."));
-                    }
-                }
-            },
-            bye1Command: {
-            	command: 'bye',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('http://i.imgur.com/d61Aszu.webm'));
-            	}
-            },
-            nextraffleCommand: {
-            	command: 'nextraffle',
-            	rank: 'user',
-            	type: 'exact',
-            	functionality: function (chat, cmd) {
-            	    if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                    	API.sendChat(subChat('The next Automatic Raffle will be in ' + underground.settings.autoraffleT + ' minutes.'));
-            	}
-            },
-            
-
-
-            whoisCommand: {
-                command: 'whois',
-                rank: 'bouncer',
-                type: 'startsWith',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!underground.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        var msg = chat.message;
-                        var name;
-                        if (msg.length === cmd.length) name = chat.un;
+                },
+                staffonCommand: {
+                    command: 'staffon',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                        if (!underground.commands.executable(this.rank, chat)) return void (0);
                         else {
-                            name = msg.substr(cmd.length + 2);
-                        }
-                        users = API.getUsers();
-                        var len = users.length;
-                        for (var i = 0; i < len; ++i){
-                            if (users[i].username == name){
-                                var id = users[i].id;
-                                var avatar = API.getUser(id).avatarID;
-                                var level = API.getUser(id).level;
-                                var rawjoined = API.getUser(id).joined;
-                                var joined = rawjoined.substr(0, 10);
-                                var rawlang = API.getUser(id).language;
-                                if (rawlang == "en"){
-                                    var language = "English";
-                                } else if (rawlang == "bg"){
-                                    var language = "Bulgarian";
-                                } else if (rawlang == "cs"){
-                                    var language = "Czech";
-                                } else if (rawlang == "fi"){
-                                    var language = "Finnish"
-                                } else if (rawlang == "fr"){
-                                    var language = "French"
-                                } else if (rawlang == "pt"){
-                                    var language = "Portuguese"
-                                } else if (rawlang == "zh"){
-                                    var language = "Chinese"
-                                } else if (rawlang == "sk"){
-                                    var language = "Slovak"
-                                } else if (rawlang == "nl"){
-                                    var language = "Dutch"
-                                } else if (rawlang == "ms"){
-                                    var language = "Malay"
+                            var msg = chat.message;
+                            var id = chat.uid;
+                            var sOnline = 0;
+                            users = API.getUsers();
+                            var len = users.length;
+                            for (var i = 0; i < len; ++i){
+                                if (underground.userUtilities.getPermission(users[i].id) > 1){
+                                    sOnline += 1;
                                 }
-                                var rawstatus = API.getUser(id).status;
-                                if (rawstatus == "0"){
-                                    var status = "Available";
-                                } else if (rawstatus == "1"){
-                                    var status = "Away";
-                                } else if (rawstatus == "2"){
-                                    var status = "Working";
-                                } else if (rawstatus == "3"){
-                                    var status = "Gaming"
-                                }
-                                var rawrank = API.getUser(id).role;
-                                if (rawrank == "0"){
-                                    var rank = "User";
-                                } else if (rawrank == "1"){
-                                    var rank = "Resident DJ";
-                                } else if (rawrank == "2"){
-                                    var rank = "Bouncer";
-                                } else if (rawrank == "3"){
-                                    var rank = "Manager"
-                                } else if (rawrank == "4"){
-                                    var rank = "Co-Host"
-                                } else if (rawrank == "5"){
-                                    var rank = "Host"
-                                } else if (rawrank == "7"){
-                                    var rank = "Brand Ambassador"
-                                } else if (rawrank == "10"){
-                                    var rank = "Admin"
-                                }
-                                var slug = API.getUser(id).slug;
-                                if (typeof slug !== 'undefined') {
-                                    var profile = ", Profile: http://plug.dj/@/" + slug;
-                                } else {
-                                    var profile = "";
-                                }
+                            }
 
-                                API.sendChat(subChat(underground.chat.whois, {name1: chat.un, name2: name, id: id, avatar: avatar, profile: profile, language: language, level: level, status: status, joined: joined, rank: rank}));
+
+                            API.sendChat(subChat("/me Currently there are " + sOnline + " staff members online."));
+                        }
+                    }
+                },
+                bye1Command: {
+                    command: 'bye',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/d61Aszu.webm'));
+                    }
+                },
+                nextraffleCommand: {
+                    command: 'nextraffle',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('The next Automatic Raffle will be in ' + underground.settings.autoraffleT + ' minutes.'));
+                    }
+                },
+
+
+
+                whoisCommand: {
+                    command: 'whois',
+                    rank: 'bouncer',
+                    type: 'startsWith',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                        if (!underground.commands.executable(this.rank, chat)) return void (0);
+                        else {
+                            var msg = chat.message;
+                            var name;
+                            if (msg.length === cmd.length) name = chat.un;
+                            else {
+                                name = msg.substr(cmd.length + 2);
+                            }
+                            users = API.getUsers();
+                            var len = users.length;
+                            for (var i = 0; i < len; ++i){
+                                if (users[i].username == name){
+                                    var id = users[i].id;
+                                    var avatar = API.getUser(id).avatarID;
+                                    var level = API.getUser(id).level;
+                                    var rawjoined = API.getUser(id).joined;
+                                    var joined = rawjoined.substr(0, 10);
+                                    var rawlang = API.getUser(id).language;
+                                    if (rawlang == "en"){
+                                        var language = "English";
+                                    } else if (rawlang == "bg"){
+                                        var language = "Bulgarian";
+                                    } else if (rawlang == "cs"){
+                                        var language = "Czech";
+                                    } else if (rawlang == "fi"){
+                                        var language = "Finnish"
+                                    } else if (rawlang == "fr"){
+                                        var language = "French"
+                                    } else if (rawlang == "pt"){
+                                        var language = "Portuguese"
+                                    } else if (rawlang == "zh"){
+                                        var language = "Chinese"
+                                    } else if (rawlang == "sk"){
+                                        var language = "Slovak"
+                                    } else if (rawlang == "nl"){
+                                        var language = "Dutch"
+                                    } else if (rawlang == "ms"){
+                                        var language = "Malay"
+                                    }
+                                    var rawstatus = API.getUser(id).status;
+                                    if (rawstatus == "0"){
+                                        var status = "Available";
+                                    } else if (rawstatus == "1"){
+                                        var status = "Away";
+                                    } else if (rawstatus == "2"){
+                                        var status = "Working";
+                                    } else if (rawstatus == "3"){
+                                        var status = "Gaming"
+                                    }
+                                    var rawrank = API.getUser(id).role;
+                                    if (rawrank == "0"){
+                                        var rank = "User";
+                                    } else if (rawrank == "1"){
+                                        var rank = "Resident DJ";
+                                    } else if (rawrank == "2"){
+                                        var rank = "Bouncer";
+                                    } else if (rawrank == "3"){
+                                        var rank = "Manager"
+                                    } else if (rawrank == "4"){
+                                        var rank = "Co-Host"
+                                    } else if (rawrank == "5"){
+                                        var rank = "Host"
+                                    } else if (rawrank == "7"){
+                                        var rank = "Brand Ambassador"
+                                    } else if (rawrank == "10"){
+                                        var rank = "Admin"
+                                    }
+                                    var slug = API.getUser(id).slug;
+                                    if (typeof slug !== 'undefined') {
+                                        var profile = ", Profile: http://plug.dj/@/" + slug;
+                                    } else {
+                                        var profile = "";
+                                    }
+
+                                    API.sendChat(subChat(underground.chat.whois, {name1: chat.un, name2: name, id: id, avatar: avatar, profile: profile, language: language, level: level, status: status, joined: joined, rank: rank}));
+                                }
                             }
                         }
                     }
-                }
-            },
+                },
 
-            youtubeCommand: {
-                command: 'youtube',
-                rank: 'user',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!underground.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        if (typeof underground.settings.youtubeLink === "string")
-                            API.sendChat(subChat(underground.chat.youtube, {name: chat.un, link: underground.settings.youtubeLink}));
+                youtubeCommand: {
+                    command: 'youtube',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                        if (!underground.commands.executable(this.rank, chat)) return void (0);
+                        else {
+                            if (typeof underground.settings.youtubeLink === "string")
+                                API.sendChat(subChat(underground.chat.youtube, {name: chat.un, link: underground.settings.youtubeLink}));
+                        }
                     }
                 }
             }
-        }
-    };
+        };
 
     loadChat(underground.startup);
 }).call(this);
