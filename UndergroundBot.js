@@ -494,7 +494,11 @@
                     var user = underground.userUtilities.lookupUser(winner);
                     var name = user.username;
                     underground.settings.spotLock = "none";
+                    if (name !== "undefined") {
                     API.sendChat(subChat(underground.chat.winnerpicked, {name: name, position: pos}));
+                    } else {
+                    	API.sendChat('The raffle has ended without a winner.');
+                    }
                     setTimeout(function (winner, pos) {
                         underground.userUtilities.moveUser(winner, pos, false);
                     }, 1 * 1000, winner, pos);
