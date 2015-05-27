@@ -245,7 +245,7 @@
             website: "http://www.the-underground.info/",
             intervalMessages: [],
             messageInterval: 5,
-            songstats: true,
+            songstats: false,
             commandLiteral: "!",
             blacklists: {
                 NSFW: "https://rawgit.com/Paradox68/UndergroundBot/master/nsfw.json",
@@ -308,6 +308,9 @@
                     }
                     if (arguments[0].indexOf('how are you') !== -1) {
                         toS = 'I am neutral, @' + arguments[1] + '. Robots do not suffer the hinderances of human emotion, thus I feel neither well nor unwell..';
+                    }
+                    if (arguments[0].indexOf('love me') !== -1) {
+                        toS = 'If a bot were capable of love, I would love you the most of all the pahetic flesh bags, ' + arguments[1] + '.';
                     }
                     countdown = setTimeout(function () {
                     if (toS.length > 2) {
