@@ -307,6 +307,7 @@
                 amttoadd: 0,
                 updateUserCurrency: function(theuid,theamt) {
                     underground.settings.monies[theuid] += theamt;
+                    console.log(underground.settings.monies);
                 }
             },
 
