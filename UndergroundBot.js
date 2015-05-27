@@ -1029,10 +1029,10 @@
             if (typeof lastplay === 'undefined') return;
             if (underground.settings.songstats) {
                 if (typeof underground.chat.songstatistics === "undefined") {
-                    API.sendChat("/me :sound: Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": \n:thumbsup: " + lastplay.score.positive + " Woots, :heart: " + lastplay.score.grabs + " Grabs, :thumbsdown: " + lastplay.score.negative + " Mehs.")
+                    API.sendChat("/me :arrow_forward: Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": \n:arrow_up: " + lastplay.score.positive + ", :repeat: " + lastplay.score.grabs + ", :arrow_down: " + lastplay.score.negative + ".");
                 }
                 else {
-                    API.sendChat(subChat("/me :sound: Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": \n:thumbsup: " + lastplay.score.positive + " Woots, :heart: " + lastplay.score.grabs + " Grabs, :thumbsdown: " + lastplay.score.negative + " Mehs."))
+                    API.sendChat(subChat("/me :arrow_forward: Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": \n:arrow_up: " + lastplay.score.positive + ", :repeat: " + lastplay.score.grabs + ", :arrow_down: " + lastplay.score.negative + "."));
                 }
             }
             underground.room.roomstats.totalWoots += lastplay.score.positive;
