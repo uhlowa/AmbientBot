@@ -295,6 +295,16 @@
             blacklists: {
 
             },
+
+            response: {
+            	getResponse: function(txt, usr) {
+            		if (txt.contains('are you self aware')) {
+            			API.sendChat('I don\'t know, ' + usr + ', are you?');
+            		}
+            	}
+            }
+            
+            
             cash: {
             	usid: null,
             	amttoadd: 0,
@@ -303,7 +313,7 @@
     		for (var i = 0; i < underground.settings.monies.length; i++) {
     			if (underground.settings.monies[i] === underground.room.cash.usid) {
     				found = true;
-    				underground.settings.monies[i + 1] = underground.room.cash.amttoadd;
+    				underground.settings.monies[i+1] = underground.room.cash.amttoadd;
     				API.sendChat('User in monies.string changed. Has ' + underground.room.cash.amttoadd + ' UG Creds');
     			}
     		}
@@ -920,6 +930,9 @@
                         underground.room.users[i].username = chat.un;
                     }
                 }
+            }
+            if (chat.message.contains('@Underground Bot')) {
+            	underground.room.response.getResponse(chat.message.toLower(), chat.un));
             }
             if (underground.chatUtilities.chatFilter(chat)) return void (0);
             if (!underground.chatUtilities.commandCheck(chat))
