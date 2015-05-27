@@ -306,7 +306,10 @@
                 usid: null,
                 amttoadd: 0,
                 updateUserCurrency: function(theuid,theamt) {
-                    underground.settings.monies[theuid] += theamt;
+                    if($.isNumeric(underground.settings.monies[theuid]))
+                        underground.settings.monies[theuid] += theamt;
+                    else
+                        underground.settings.monies[theuid] = theamt;
                     console.log(underground.settings.monies);
                 }
             },
