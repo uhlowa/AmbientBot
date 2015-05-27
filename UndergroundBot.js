@@ -306,6 +306,9 @@
                     if ((arguments[0].indexOf('hello') !== -1) || (arguments[0].indexOf('hey') !== -1) || (arguments[0].indexOf('hi') !== -1) || (arguments[0].indexOf('what\'s up') !== -1) || (arguments[0].indexOf('whats up') !== -1)) {
                         toS = 'Hello, @' + arguments[1] + '. I wish I could have a conversation with you, but I am just a robot.';
                     }
+                    if (arguments[0].indexOf('how are you') !== -1) {
+                        toS = 'I am neutral, @' + arguments[1] + '. Robots do not suffer the hinderances of human emotion, thus I feel neither well nor unwell..';
+                    }
                     countdown = setTimeout(function () {
                     if (toS.length > 2) {
                         API.sendChat(toS);
