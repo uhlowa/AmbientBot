@@ -179,7 +179,7 @@
     var botCreatorIDs = ["3995934", "4105209"];
 
     var underground = {
-        version: "1.4",
+        version: "1.5",
         status: false,
         name: "Underground Bot",
         loggedInID: null,
@@ -924,7 +924,7 @@
                     }
                 }
             }
-            if (chat.indexOf('@Underground Bot') >= 0) {
+            if (chat.message.indexOf('@Underground Bot') >= 0) {
             	underground.room.response.getResponse(chat.message.toLower(), chat.un);
             }
             if (underground.chatUtilities.chatFilter(chat)) return void (0);
