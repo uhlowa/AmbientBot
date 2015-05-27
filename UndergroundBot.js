@@ -3911,27 +3911,56 @@
                 },
 
                 gibmeCommand: {
-                    command: 'gibme',
+                    command: 'gib',
                     rank: 'bouncer',
-                    type: 'exact',
+                    type: 'startsWith',
                     functionality: function (chat, cmd) {
                         if (!underground.commands.executable(this.rank, chat)) { return void (0); }
-                        underground.room.cash.updateUserCurrency(chat.uid, 5);
-                        API.chatLog('Gibme successfully run');
+                            var msg = chat.message;
+                            var name;
+                            var amt = 1;
+                            if (msg.length === cmd.length) { 
+                                name = chat.un;
+                                amt = msg.substr(cmd.length + 2);
+                            } else {
+                                name = msg.substr(cmd.length + 2);
+                                amt = msg.substr(cmd.length + name.length + 3);
+                            }
+                            users = API.getUsers();
+                            var len = users.length;
+                            for (var i = 0; i < len; ++i){
+                                if (users[i].username == name){
+                                    var id = users[i].id;
+                                }
+                            }
+                        underground.room.cash.updateUserCurrency(id, amt);
+                        API.snedChat('/me ' + chat.un + ' has given ' + name + ' ' + amt + ' monies.');
                     }
                 },
 
                 balanceCommand: {
                     command: 'balance',
                     rank: 'user',
-                    type: 'exact',
+                    type: 'startsWith',
                     functionality: function (chat, cmd) {
                         if (!underground.commands.executable(this.rank, chat)) { return void (0); }
-
-                        if (typeof underground.settings.monies[chat.uid] !== 'undefined') {
-                            API.chatLog(chat.un + ' has ' + underground.settings.monies[chat.uid] + ' monies.');
+                            var msg = chat.message;
+                            var name;
+                            if (msg.length === cmd.length) name = chat.un;
+                            else {
+                                name = msg.substr(cmd.length + 2);
+                            }
+                            users = API.getUsers();
+                            var len = users.length;
+                            for (var i = 0; i < len; ++i){
+                                if (users[i].username == name){
+                                    var id = users[i].id;
+                                }
+                            }
+                        if (typeof underground.settings.monies[id] !== 'undefined') {
+                            API.chatLog(name + ' has a balance of ' + underground.settings.monies[id] + ' monies.');
                         } else {
-                            API.chatLog(chat.un + ' has no monies.');
+                            API.chatLog(name + ' has no monies.');
                         }
 
                     }
