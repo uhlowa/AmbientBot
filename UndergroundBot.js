@@ -295,21 +295,21 @@
             },
             response: {
                 getResponse: function() {
+                    var toS = "";
                     if (arguments[0].indexOf('are you self aware') !== -1) {
-                        API.sendChat('I don\'t know, ' + arguments[1] + ', are you?');
-                        return;
+                        toS = "I don\'t know, " + arguments[1] + ", are you?");
                     }
                     if (arguments[0].indexOf('fuck you') !== -1) {
-                        API.sendChat('No, fuck you, ' + arguments[1] + '.');
-                        return;
+                        toS = "No, fuck you, " + arguments[1] + ".");
                     }
                     if ((arguments[0].indexOf('hello') !== -1) || (arguments[0].indexOf('hey') !== -1) || (arguments[0].indexOf('hi') !== -1) || (arguments[0].indexOf('what\'s up') !== -1) || (arguments[0].indexOf('whats up') !== -1)) {
-                        API.sendChat('Hello, ' + arguments[1] + '. I wish I could have a conversation with you, but I am just a robot.');
-                        return;
+                        toS = "Hello, " + arguments[1] + ". I wish I could have a conversation with you, but I am just a robot.");
                     }
                     if (arguments[0].indexOf('hello') !== -1) {
-                        API.sendChat('Hello, ' + arguments[1] + '. I wish I could have a conversation with you, but I am just a robot.');
-                        return;
+                        toS = "Hello, " + arguments[1] + ". I wish I could have a conversation with you, but I am just a robot.";
+                    }
+                    if (toS.length > 2) {
+                        API.sendChat(toS);
                     }
                 }
             },
