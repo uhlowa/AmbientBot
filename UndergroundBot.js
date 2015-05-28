@@ -989,6 +989,7 @@
                     if (obj.vote === 1) {
                         underground.room.users[i].votes.woot++;
                         underground.room.cash.updateUserCurrency(obj.dj.id, 1);
+                        //add currency
                     }
                     else {
                         underground.room.users[i].votes.meh++;
