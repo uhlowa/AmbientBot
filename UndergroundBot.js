@@ -27,6 +27,7 @@
     var storeToStorage = function () {
         localStorage.setItem("undergroundsettings", JSON.stringify(underground.settings));
         localStorage.setItem("undergroundRoom", JSON.stringify(underground.room));
+        localStorage.setItem("monies", JSON.stringify(underground.settings.monies));
         var undergroundStorageInfo = {
             time: Date.now(),
             stored: true,
@@ -101,6 +102,7 @@
         else {
             var settings = JSON.parse(localStorage.getItem("undergroundsettings"));
             var room = JSON.parse(localStorage.getItem("undergroundRoom"));
+            var nmonies = JSON.parse(localStorage.getItem("monies"));
             var elapsed = Date.now() - JSON.parse(info).time;
             if ((elapsed < 1 * 60 * 60 * 1000)) {
                 API.chatLog(underground.chat.retrievingdata);
@@ -116,14 +118,14 @@
                 underground.room.messages = room.messages;
                 underground.room.queue = room.queue;
                 underground.room.newBlacklisted = room.newBlacklisted;
-                underground.settings.monies = settings.monies;
+                underground.settings.monies = nmonies;
                 API.chatLog(underground.chat.datarestored);
             }
         }
         var json_sett = null;
         var roominfo = document.getElementById("room-settings");
         info = roominfo.textContent;
-        var ref_bot = "@iScape Bot=";
+        var ref_bot = "@Underground Bot=";
         var ind_ref = info.indexOf(ref_bot);
         if (ind_ref > 0) {
             var link = info.substring(ind_ref + ref_bot.length, info.length);
