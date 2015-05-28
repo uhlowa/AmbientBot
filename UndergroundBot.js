@@ -4354,7 +4354,7 @@
                         if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                         var num = 0;
                         if (chat.message.length !== cmd.length) {
-                        num = chat.message.substr(cmd.length);
+                        num = chat.message.substr(4);
                         }
                         switch(num) {
                             case 0:
