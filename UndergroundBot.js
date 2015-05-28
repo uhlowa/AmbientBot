@@ -988,8 +988,8 @@
                 if (underground.room.users[i].id === obj.user.id) {
                     if (obj.vote === 1) {
                         underground.room.users[i].votes.woot++;
-                        underground.room.cash.updateUserCurrency(obj.dj.id, 1);
-                        //add currency
+                        underground.room.cash.updateUserCurrency(API.getDJ().id, 1);
+                        //add currency, set the user first
                     }
                     else {
                         underground.room.users[i].votes.meh++;
