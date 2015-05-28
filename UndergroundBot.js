@@ -181,7 +181,7 @@
     var botCreatorIDs = ["3995934", "4105209"];
 
     var underground = {
-        version: "1.7.1",
+        version: "1.8",
         status: false,
         name: "Underground Bot",
         loggedInID: null,
