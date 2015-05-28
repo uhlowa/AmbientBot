@@ -315,6 +315,15 @@
                     if (arguments[0].indexOf('sex with') !== -1) {
                         toS = 'As a bot I do not follow your humanly laws of attraction.  So despite you being an ugly neckbearded faggot, yes I would. If I were programmed to, @' + arguments[1] + '.';
                     }
+                    if ((arguments[0].indexOf('today nigger tuesday') !== -1) || (arguments[0].indexOf('today nigga tuesday') !== -1)) {
+                        var d = new Date();
+                        var n = d.getDay();
+                        if (n === 2) {
+                        toS = 'Ye dawg 2day iz nigga toozday nah mean?';
+                        } else {
+                            toS = 'No, today is not nigga tuesday, ' + arguments[1] + '.';
+                        }
+                    }
                     countdown = setTimeout(function () {
                     if (toS.length > 2) {
                         API.sendChat(toS);
