@@ -321,7 +321,7 @@
                         if (n === 2) {
                         toS = 'Ye dawg 2day iz nigga toozday nah mean?';
                         } else {
-                            toS = 'No, today is not nigga tuesday, ' + arguments[1] + '.';
+                            toS = 'No, today is not nigga tuesday, @' + arguments[1] + '.';
                         }
                     }
                     countdown = setTimeout(function () {
