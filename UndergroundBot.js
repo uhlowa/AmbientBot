@@ -181,7 +181,7 @@
     var botCreatorIDs = ["3995934", "4105209"];
 
     var underground = {
-        version: "1.8",
+        version: "1.8.1",
         status: false,
         name: "Underground Bot",
         loggedInID: null,
@@ -195,7 +195,6 @@
         settings: {
             botName: "Underground Bot",
             monies: [" ", " "],
-            eightball: 0,
             language: "english",
             chatLink: "https://rawgit.com/Paradox68/UndergroundBot/master/lang/en.json",
             startupCap: 1, // 1-200
@@ -939,10 +938,10 @@
                     }
                 }
             }
-            if (chat.message.indexOf(underground.settings.botName) !== -1 && underground.settings.eightball === 0) {
+            if (chat.message.indexOf(underground.settings.botName) !== -1) {
+                if (chat.un.indexOf(underground.settings.botName) === -1) {
                 underground.room.response.getResponse(chat.message.toLowerCase(), chat.un);
-            } else {
-                underground.settings.eightball = 0;
+                }
             }
             if (underground.chatUtilities.chatFilter(chat)) return void (0);
             if (!underground.chatUtilities.commandCheck(chat))
@@ -1760,7 +1759,6 @@
                         var randomUser = Math.floor(Math.random() * crowd.length);
                         var randomBall = Math.floor(Math.random() * underground.chat.balls.length);
                         var randomSentence = Math.floor(Math.random() * 1);
-                        underground.settings.eightball = 1;
                         API.sendChat(subChat(underground.chat.ball, {name: chat.un, botname: underground.settings.botName, question: argument, response: underground.chat.balls[randomBall]}));
                     }
                 }
