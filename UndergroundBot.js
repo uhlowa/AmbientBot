@@ -43,9 +43,12 @@
             console.log("There is a chat text missing.");
             return "[Error] No text message found.";
         }
+        if (chat =!== null) {
         var lit = '%%';
         for (var prop in obj) {
             chat = chat.replace(lit + prop.toUpperCase() + lit, obj[prop]);
+        }
+        return chat;
         }
         return chat;
     };
@@ -686,6 +689,38 @@
                 return msg;
             }
         },
+                    joindclookup: function (id) {
+                var user = underground.userUtilities.lookupUser(id);
+                if (typeof user === 'boolean') return null;
+                var name = user.username;
+                if (user.lastDC.time === null) return null;
+                var dc = user.lastDC.time;
+                var pos = user.lastDC.position;
+                if (pos === null) return underground.chat.noposition;
+                var timeDc = Date.now() - dc;
+                var validDC = false;
+                if (underground.settings.maximumDc * 60 * 1000 > timeDc) {
+                    validDC = true;
+                }
+                var time = underground.roomUtilities.msToStr(timeDc);
+                if (!validDC) return null;
+                var songsPassed = underground.room.roomstats.songCount - user.lastDC.songCount;
+                var afksRemoved = 0;
+                var afkList = underground.room.afkList;
+                for (var i = 0; i < afkList.length; i++) {
+                    var timeAfk = afkList[i][1];
+                    var posAfk = afkList[i][2];
+                    if (dc < timeAfk && posAfk < pos) {
+                        afksRemoved++;
+                    }
+                }
+                var newPosition = user.lastDC.position - songsPassed - afksRemoved;
+                if (newPosition <= 0) newPosition = 1;
+                var msg = subChat(underground.chat.valid, {name: underground.userUtilities.getUser(user).username, time: time, position: newPosition});
+                underground.userUtilities.moveUser(user.id, newPosition, true);
+                return msg;
+            }
+        },
 
         roomUtilities: {
             rankToNumber: function (rankString) {
@@ -988,9 +1023,8 @@
                     }, 1 * 1000, user);
 
             }
-            if (underground.userUtilities.dclookup(user.id).indexOf('did not disconnect during my time here') === -1) {
-            var toChat = underground.userUtilities.dclookup(user.id);
-            API.sendChat(toChat);
+            if (user.lastDC.time !== null) {
+            var toChat = underground.userUtilities.joindclookup(user.id);
             }
         },
         eventUserleave: function (user) {
