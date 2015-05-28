@@ -986,6 +986,11 @@
                     setTimeout(function (user) {
                         API.sendChat(subChat('/me Welcome to The Underground, @' + user.username + '. Enjoy your stay.'));
                     }, 1 * 1000, user);
+
+            }
+            if (underground.userUtilities.dclookup(user.id).indexOf('did not disconnect during my time here') === -1) {
+            var toChat = underground.userUtilities.dclookup(user.id);
+            API.sendChat(toChat);
             }
         },
         eventUserleave: function (user) {
