@@ -200,7 +200,7 @@
             approvedDJ: "[None]",
             startupVolume: 0, // 0-100
             startupEmoji: true, // true or false
-            cmdDeletion: false,
+            cmdDeletion: true,
             maximumAfk: 120,
             afkRemoval: true,
             maximumDc: 60,
@@ -449,7 +449,7 @@
                     underground.room.dicegame.countdown = setTimeout(function () {
                         underground.room.dicegame.endDiceGame();
                     }, 60 * 1000);
-                    API.sendChat('/me The Dice Game is now active. @everyone Type !roll and whoever rolls the highest will win!');
+                    API.sendChat('/me The Dice Game is now active. @everyone Type !roll and whoever rolls the highest will win! Use !buyroll to purchase an extra roll for 50 UGold.');
                 },
                 endDiceGame: function () {
                     underground.room.dicegame.dgStatus = false;
@@ -988,6 +988,7 @@
                 if (underground.room.users[i].id === obj.user.id) {
                     if (obj.vote === 1) {
                         underground.room.users[i].votes.woot++;
+                        underground.room.cash.updateUserCurrency(obj.dj.id), 1);
                     }
                     else {
                         underground.room.users[i].votes.meh++;
@@ -3932,41 +3933,22 @@
                                 name = msg.substr(cmd.length + 2);
                                 amt = msg.substr(cmd.length + name.length + 3);
                             }
-                            users = API.getUsers();
-                            var len = users.length;
-                            for (var i = 0; i < len; ++i){
-                                if (users[i].username == name){
-                                    var oid = users[i].id;
-                                }
-                            }
-                        underground.room.cash.updateUserCurrency(oid, amt);
-                        API.snedChat('/me ' + chat.un + ' has given ' + name + ' ' + amt + ' monies.');
+                        var user = underground.userUtilities.lookupUserName(name);
+                        underground.room.cash.updateUserCurrency(user.id, amt);
+                        API.sendChat('/me ' + chat.un + ' has given ' + name + ' ' + amt + ' monies.');
                     }
                 },
 
                 balanceCommand: {
                     command: 'balance',
                     rank: 'user',
-                    type: 'startsWith',
+                    type: 'exact',
                     functionality: function (chat, cmd) {
                         if (!underground.commands.executable(this.rank, chat)) { return void (0); }
-                            var msg = chat.message;
-                            var name;
-                            if (msg.length === cmd.length) name = chat.un;
-                            else {
-                                name = msg.substr(cmd.length + 2);
-                            }
-                            users = API.getUsers();
-                            var len = users.length;
-                            for (var i = 0; i < len; ++i){
-                                if (users[i].username == name){
-                                    var oid = users[i].id;
-                                }
-                            }
-                        if (typeof underground.settings.monies[oid] !== 'undefined') {
-                            API.chatLog(name + ' has a balance of ' + underground.settings.monies[id] + ' monies.');
+                        if (typeof underground.settings.monies[chat.uid] !== 'undefined') {
+                            API.sendChat(chat.un + ' has a balance of ' + underground.settings.monies[chat.uid] + ' UGold.');
                         } else {
-                            API.chatLog(name + ' has no monies.');
+                            API.sendChat(chat.un + ' has no UGold.');
                         }
 
                     }
