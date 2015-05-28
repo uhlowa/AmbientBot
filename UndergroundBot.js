@@ -4352,7 +4352,7 @@
                     type: 'exact',
                     functionality: function (chat, cmd) {
                         if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                        var num = Math.floor((Math.random() * 35) + 1)
+                        var num = Math.floor((Math.random() * 35) + 1);
                         switch(num) {
                             case 35:
                                 API.sendChat('http://i.imgur.com/kJDwe7D.jpg');
