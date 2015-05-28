@@ -3917,10 +3917,61 @@
                         API.sendChat('/me Number Game Difficulty set to: ' + tos + '.');
                     }
                 },
+                
+                buyrollCommand: {
+                    command: 'buyroll',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (!underground.commands.executable(this.rank, chat)) { return void (9); }
+                        if (!underground.room.dicegame.dgStatus) { return void (0); }
+                        var myGold = 0;
+                        if (typeof underground.settings.monies[chat.uid] !== 'undefined') {
+                            myGold = underground.settings.monies[chat.uid];
+                        }
+                  if (underground.room.dicegame.participants.indexOf(chat.uid) >= 0) {
+                        if (myGold >= 50) {
+                        var num = Math.floor((Math.random() * 999) + 1);
+                        var nts = num.toString();
+                        underground.room.cash.updateUserCurrency(chat.uid, -50);
+                        if (num > underground.room.dicegame.highestRoll) {
+                            underground.room.dicegame.highestRollerID = "undefined";
+                            underground.room.dicegame.highestRoll = 0;
+                            underground.room.dicegame.winning = "nobody";
+                            this.countdown = setTimeout(function () {
+                                API.sendChat('/me ' + chat.un + ' bought a roll and got ' + nts + ' and is now winning the Dice Game');
+                                underground.room.dicegame.highestRoll = num;
+                                underground.room.dicegame.winning = chat.un;
+                                underground.room.dicegame.highestRollerID = chat.uid;
+                            }, 300);
+
+                        } else {
+                            API.sendChat('/me ' + chat.un + ' bought a roll and got ' + nts + '.');
+                        }
+                            }
+                        } else {
+                        underground.room.dicegame.participants.push(chat.uid);
+                        if (num > underground.room.dicegame.highestRoll) {
+                            underground.room.dicegame.highestRollerID = "undefined";
+                            underground.room.dicegame.highestRoll = 0;
+                            underground.room.dicegame.winning = "nobody";
+                            this.countdown = setTimeout(function () {
+                                API.sendChat('/me ' + chat.un + ' has rolled ' + nts + ' and is now winning the Dice Game');
+                                underground.room.dicegame.highestRoll = num;
+                                underground.room.dicegame.winning = chat.un;
+                                underground.room.dicegame.highestRollerID = chat.uid;
+                            }, 300);
+
+                        } else {
+                            API.sendChat('/me ' + chat.un + ' has rolled ' + nts + '.');
+                        }
+                        }
+                    }
+                },
 
                 gibmeCommand: {
                     command: 'gib',
-                    rank: 'bouncer',
+                    rank: 'manager',
                     type: 'startsWith',
                     functionality: function (chat, cmd) {
                         if (!underground.commands.executable(this.rank, chat)) { return void (0); }
@@ -3936,7 +3987,7 @@
                             }
                         var user = underground.userUtilities.lookupUserName(name);
                         underground.room.cash.updateUserCurrency(user.id, amt);
-                        API.sendChat('/me ' + chat.un + ' has given ' + name + ' ' + amt + ' monies.');
+                        API.sendChat('/me ' + chat.un + ' has given ' + name + ' ' + amt + ' UGold.');
                     }
                 },
 
@@ -3949,7 +4000,7 @@
                         if (typeof underground.settings.monies[chat.uid] !== 'undefined') {
                             API.sendChat(chat.un + ' has a balance of ' + underground.settings.monies[chat.uid] + ' UGold.');
                         } else {
-                            API.sendChat(chat.un + ' has no UGold.');
+                            API.sendChat('/me @' + chat.un + ' has no UGold.');
                         }
 
                     }
