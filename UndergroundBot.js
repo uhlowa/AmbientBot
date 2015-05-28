@@ -4346,6 +4346,125 @@
                         API.sendChat(subChat('http://i.imgur.com/5dXFx43.gif'));
                     }
                 },
+                ass1Command: {
+                    command: 'ass',
+                    rank: 'user',
+                    type: 'startsWith',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        var num = 0;
+                        if (chat.message.length !== cmd.length) {
+                        num = chat.message.substr(cmd.length);
+                        }
+                        switch(num) {
+                            case 0:
+                                API.sendChat('http://i.imgur.com/kJDwe7D.jpg');
+                            break;
+                            case 1:
+                                API.sendChat('http://i.imgur.com/C0hQUXf.jpg');
+                            break;
+                            case 2:
+                                API.sendChat('http://i.imgur.com/TQdOc87.jpg');
+                            break;
+                            case 3:
+                                API.sendChat('http://i.imgur.com/YySt3Oi.jpg');
+                            break;
+                            case 4:
+                                API.sendChat('http://i.imgur.com/cpesDuB.jpg');
+                            break;
+                            case 5:
+                                API.sendChat('http://i.imgur.com/GGEdvFR.jpg');
+                            break;
+                            case 6:
+                                API.sendChat('http://i.imgur.com/hWgIgEJ.jpg');
+                            break;
+                            case 7:
+                                API.sendChat('http://i.imgur.com/SuC8xyv.jpg');
+                            break;
+                            case 8:
+                                API.sendChat('http://i.imgur.com/Fdu7OWW.jpg');
+                            break;
+                            case 9:
+                                API.sendChat('http://i.imgur.com/NJNXHlX.jpg');
+                            break;
+                            case 10:
+                                API.sendChat('http://i.imgur.com/lwxbqjg.jpg');
+                            break;
+                            case 11:
+                                API.sendChat('http://i.imgur.com/6Npu788.jpg');
+                            break;
+                            case 12:
+                                API.sendChat('http://i.imgur.com/HUWVZUz.jpg');
+                            break;
+                            case 13:
+                                API.sendChat('http://i.imgur.com/q6TZtS9.jpg');
+                            break;
+                            case 14:
+                                API.sendChat('http://i.imgur.com/DQXNpxI.jpg');
+                            break;
+                            case 15:
+                                API.sendChat('http://i.imgur.com/LEk3rzl.jpg');
+                            break;
+                            case 16:
+                                API.sendChat('http://i.imgur.com/JaGObVr.jpg');
+                            break;
+                            case 17:
+                                API.sendChat('http://i.imgur.com/FqywGye.png');
+                            break;
+                            case 18:
+                                API.sendChat('http://i.imgur.com/7qv645s.jpg');
+                            break;
+                            case 19:
+                                API.sendChat('http://i.imgur.com/KVgjfsc.jpg');
+                            break;
+                            case 20:
+                                API.sendChat('http://i.imgur.com/g4SZU3R.jpg');
+                            break;
+                            case 21:
+                                API.sendChat('http://i.imgur.com/nXgDkMG.jpg');
+                            break;
+                            case 22:
+                                API.sendChat('http://i.imgur.com/3dqD28t.jpg');
+                            break;
+                            case 23:
+                                API.sendChat('http://i.imgur.com/4dlD6Hh.jpg');
+                            break;
+                            case 24:
+                                API.sendChat('http://i.imgur.com/EDzWIWQ.jpg');
+                            break;
+                            case 25:
+                                API.sendChat('http://i.imgur.com/WIsu2vb.jpg');
+                            break;
+                            case 26:
+                                API.sendChat('http://i.imgur.com/mVDvT1r.jpg');
+                            break;
+                            case 27:
+                                API.sendChat('http://i.imgur.com/cQIf8aP.jpg');
+                            break;
+                            case 28:
+                                API.sendChat('http://i.imgur.com/H2CyKnG.jpg');
+                            break;
+                            case 29:
+                                API.sendChat('http://i.imgur.com/BQHnTiQ.jpg');
+                            break;
+                            case 30:
+                                API.sendChat('http://i.imgur.com/xF7eaRg.jpg');
+                            break;
+                            case 31:
+                                API.sendChat('http://i.imgur.com/XzGlUZR.jpg');
+                            break;
+                            case 32:
+                                API.sendChat('http://i.imgur.com/s4bg9bv.jpg');
+                            break;
+                            case 33:
+                                API.sendChat('http://i.imgur.com/R85yyC8.jpg');
+                            break;
+                            case 34:
+                                API.sendChat('http://i.imgur.com/cD9Rugy.jpg');
+                            break;
+                        }
+                    }
+                },
                 why1Command: {
                     command: 'why',
                     rank: 'user',
