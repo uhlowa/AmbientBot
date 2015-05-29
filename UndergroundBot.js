@@ -241,7 +241,7 @@
             motd: "The Underground focuses on bringing you the best new music around. With a fun community and anti-pop culture music, it is easy to find your place here.",
             filterChat: true,
             etaRestriction: false,
-            welcome: false,
+            welcome: true,
             opLink: null,
             rulesLink: null,
             themeLink: null,
