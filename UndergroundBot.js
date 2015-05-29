@@ -43,7 +43,7 @@
             console.log("There is a chat text missing.");
             return "[Error] No text message found.";
         }
-        if (chat =!== null) {
+        if (chat !== null) {
         var lit = '%%';
         for (var prop in obj) {
             chat = chat.replace(lit + prop.toUpperCase() + lit, obj[prop]);
