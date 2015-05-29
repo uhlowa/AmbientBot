@@ -687,7 +687,7 @@
                 var msg = subChat(underground.chat.valid, {name: underground.userUtilities.getUser(user).username, time: time, position: newPosition});
                 underground.userUtilities.moveUser(user.id, newPosition, true);
                 return msg;
-            }
+            },
                     joindclookup: function (id) {
                 var user = underground.userUtilities.lookupUser(id);
                 if (typeof user === 'boolean') return null;
