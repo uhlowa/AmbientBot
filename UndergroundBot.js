@@ -715,7 +715,7 @@
                 }
                 var newPosition = user.lastDC.position - songsPassed - afksRemoved;
                 if (newPosition <= 0) newPosition = 1;
-                var msg = "Oh, it looks like you disconnected while you were in the DJ queue, @" + name + ". I\'ll move you back to where you were!");
+                var msg = "Oh, it looks like you disconnected while you were in the DJ queue, @" + name + ". I\'ll move you back to where you were!";
                 underground.userUtilities.moveUser(user.id, newPosition, true);
                 return msg;
             }
