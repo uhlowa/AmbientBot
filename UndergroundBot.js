@@ -714,11 +714,12 @@
                         afksRemoved++;
                     }
                 }
+                if (msg.length > 2) {
                 var newPosition = user.lastDC.position - songsPassed - afksRemoved;
                 if (newPosition <= 0) newPosition = 1;
                 msg = "Oh, it looks like you disconnected while you were in the DJ queue, @" + name + ". I\'ll move you back to where you were!";
                 underground.userUtilities.moveUser(user.id, newPosition, true);
-                if (msg.length > 2) {
+
                 API.sendChat(msg);
                 }
             }
