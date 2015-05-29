@@ -1022,8 +1022,9 @@
                     }, 1 * 1000, user);
 
             }
-            if (user.lastDC.time !== null) {
             var toChat = underground.userUtilities.joindclookup(user.id);
+            if (toChat.indexOf('did not disconnect during my time here') === -1) {
+                underground.userUtilities.joindclookup(user.id);
             }
         },
         eventUserleave: function (user) {
