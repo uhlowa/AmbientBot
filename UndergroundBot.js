@@ -690,9 +690,9 @@
             },
                     joindclookup: function (id) {
                 var user = underground.userUtilities.lookupUser(id);
-                if (typeof user === 'boolean') return null;
+                if (typeof user === 'boolean') return underground.chat.usernotfound;
                 var name = user.username;
-                if (user.lastDC.time === null) return null;
+                if (user.lastDC.time === null) return subChat(underground.chat.notdisconnected, {name: name});
                 var dc = user.lastDC.time;
                 var pos = user.lastDC.position;
                 if (pos === null) return underground.chat.noposition;
@@ -702,7 +702,7 @@
                     validDC = true;
                 }
                 var time = underground.roomUtilities.msToStr(timeDc);
-                if (!validDC) return null;
+                if (!validDC) return (subChat(underground.chat.toolongago, {name: underground.userUtilities.getUser(user).username, time: time}));
                 var songsPassed = underground.room.roomstats.songCount - user.lastDC.songCount;
                 var afksRemoved = 0;
                 var afkList = underground.room.afkList;
@@ -715,7 +715,7 @@
                 }
                 var newPosition = user.lastDC.position - songsPassed - afksRemoved;
                 if (newPosition <= 0) newPosition = 1;
-                var msg = subChat(underground.chat.valid, {name: underground.userUtilities.getUser(user).username, time: time, position: newPosition});
+                var msg = "Oh, it looks like you disconnected while you were in the DJ queue, @" + name + ". I\'ll move you back to where you were!");
                 underground.userUtilities.moveUser(user.id, newPosition, true);
                 return msg;
             }
