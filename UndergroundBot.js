@@ -1026,7 +1026,6 @@
 
             }
                 underground.userUtilities.joindclookup(user.id);
-            }
         },
         eventUserleave: function (user) {
             for (var i = 0; i < underground.room.users.length; i++) {
