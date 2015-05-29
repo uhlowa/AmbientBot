@@ -690,19 +690,20 @@
             },
                     joindclookup: function (id) {
                 var user = underground.userUtilities.lookupUser(id);
-                if (typeof user === 'boolean') return underground.chat.usernotfound;
+                var msg = " ";
+                if (typeof user === 'boolean') msg = " ";
                 var name = user.username;
-                if (user.lastDC.time === null) return subChat(underground.chat.notdisconnected, {name: name});
+                if (user.lastDC.time === null) msg = " ";
                 var dc = user.lastDC.time;
                 var pos = user.lastDC.position;
-                if (pos === null) return underground.chat.noposition;
+                if (pos === null) msg = " ";
                 var timeDc = Date.now() - dc;
                 var validDC = false;
                 if (underground.settings.maximumDc * 60 * 1000 > timeDc) {
                     validDC = true;
                 }
                 var time = underground.roomUtilities.msToStr(timeDc);
-                if (!validDC) return (subChat(underground.chat.toolongago, {name: underground.userUtilities.getUser(user).username, time: time}));
+                if (!validDC) msg = " ";
                 var songsPassed = underground.room.roomstats.songCount - user.lastDC.songCount;
                 var afksRemoved = 0;
                 var afkList = underground.room.afkList;
@@ -715,9 +716,11 @@
                 }
                 var newPosition = user.lastDC.position - songsPassed - afksRemoved;
                 if (newPosition <= 0) newPosition = 1;
-                var msg = "Oh, it looks like you disconnected while you were in the DJ queue, @" + name + ". I\'ll move you back to where you were!";
+                msg = "Oh, it looks like you disconnected while you were in the DJ queue, @" + name + ". I\'ll move you back to where you were!";
                 underground.userUtilities.moveUser(user.id, newPosition, true);
-                return msg;
+                if (msg.length > 2) {
+                API.sendChat(msg);
+                }
             }
         },
 
@@ -1022,8 +1025,6 @@
                     }, 1 * 1000, user);
 
             }
-            var toChat = underground.userUtilities.joindclookup(user.id);
-            if (toChat.indexOf('did not disconnect during my time here') === -1) {
                 underground.userUtilities.joindclookup(user.id);
             }
         },
