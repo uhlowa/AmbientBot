@@ -688,7 +688,6 @@
                 underground.userUtilities.moveUser(user.id, newPosition, true);
                 return msg;
             }
-        },
                     joindclookup: function (id) {
                 var user = underground.userUtilities.lookupUser(id);
                 if (typeof user === 'boolean') return null;
