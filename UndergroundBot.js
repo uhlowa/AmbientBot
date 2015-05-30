@@ -298,6 +298,42 @@
             blacklists: {
 
             },
+            spree: {
+                killingspree: 0,
+                tmrreset = null,
+                    checkSpree: function() {
+                        var ks = underground.room.killingspree;
+                        if (ks === 5) {
+                            API.sendChat('/me KILLING SPREE')
+                        }
+                        if (ks === 10) {
+                            API.sendChat('/me KILLING FRENZY')
+                        }
+                        if (ks === 15) {
+                            API.sendChat('/me RUNNING RIOT')
+                        }
+                        if (ks === 20) {
+                            API.sendChat('/me RAMPAGE')
+                        }
+                        if (ks === 25) {
+                            API.sendChat('/me UNTOUCHABLE')
+                        }
+                        if (ks === 30) {
+                            API.sendChat('/me INVINCIBLE')
+                        }
+                        if (ks === 35) {
+                            API.sendChat('/me INCONVEIVABLE')
+                        }
+                        if (ks === 40) {
+                            API.sendChat('/me UNFRIGGINBELIEVABLE')
+                        }
+                    underground.room.spree.tmrreset = setTimeout(function () {
+                        if (underground.room.killingspree > 0) {
+                    underground.room.killingspree--;
+                        }
+                    }, 60000 * 30);
+                    }
+            },
             response: {
                 getResponse: function() {
                     var toS = " ";
@@ -867,6 +903,8 @@
                                                 songCount: 0
                                             };
                                             API.moderateRemoveDJ(id);
+                                            underground.room.spree.killingSpree++;
+                                            underground.room.spree.checkSpree();
                                             API.sendChat(subChat(underground.chat.afkremove, {name: name, time: time, position: pos, maximumafk: underground.settings.maximumAfk}));
                                         }
                                         user.afkWarningCount = 0;
