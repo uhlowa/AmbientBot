@@ -302,7 +302,7 @@
                 killingspree: 0,
                 tmrreset: null,
                     checkSpree: function() {
-                        var ks = underground.room.killingspree;
+                        var ks = underground.room.killingspree;//fucking code wont update
                         if (ks === 5) {
                             API.sendChat('/me KILLING SPREE')
                         }
