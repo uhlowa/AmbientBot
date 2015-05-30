@@ -361,7 +361,7 @@
                         toS = 'Baby don\'t hurt me.';
                     }
                     if (arguments[0].indexOf('don\'t hurt me') !== -1 || arguments[0].indexOf('dont hurt me') !== -1) {
-                        toS = 'Baby don\'t hurt me.';
+                        toS = 'No more!';
                     }
                     if ((arguments[0].indexOf('today nigger tuesday') !== -1) || (arguments[0].indexOf('today nigga tuesday') !== -1)) {
                         var d = new Date();
