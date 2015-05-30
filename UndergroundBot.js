@@ -351,7 +351,7 @@
                         toS = 'I am neutral, @' + arguments[1] + '. Robots do not suffer the hinderances of human emotion, thus I feel neither well nor unwell..';
                     }
                     if (arguments[0].indexOf('love me') !== -1) {
-                        toS = 'If a bot were capable of love, I would love you the most of all the pahetic flesh bags, @' + arguments[1] + '.';
+                        toS = 'If a bot were capable of love, I would love you the most of all the pathetic flesh bags, @' + arguments[1] + '.';
                     }
                     if (arguments[0].indexOf('sex with') !== -1) {
                         toS = 'As a bot I do not follow your humanly laws of attraction.  So despite you being an ugly neckbearded faggot, yes I would. If I were programmed to, @' + arguments[1] + '.';
