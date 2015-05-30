@@ -357,6 +357,12 @@
                     if (arguments[0].indexOf('sex with') !== -1) {
                         toS = 'As a bot I do not follow your humanly laws of attraction.  So despite you being an ugly neckbearded faggot, yes I would. If I were programmed to, @' + arguments[1] + '.';
                     }
+                    if (arguments[0].indexOf('what is love') !== -1) {
+                        toS = 'Baby don\'t hurt me.';
+                    }
+                    if (arguments[0].indexOf('don\'t hurt me') !== -1 || arguments[0].indexOf('dont hurt me') !== -1) {
+                        toS = 'Baby don\'t hurt me.';
+                    }
                     if ((arguments[0].indexOf('today nigger tuesday') !== -1) || (arguments[0].indexOf('today nigga tuesday') !== -1)) {
                         var d = new Date();
                         var n = d.getDay();
