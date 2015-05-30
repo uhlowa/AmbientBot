@@ -2994,24 +2994,6 @@
              }
              },*/
 
-            reloadCommand: {
-                command: 'reload',
-                rank: 'bouncer',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!underground.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        API.sendChat(underground.chat.reload);
-                        storeToStorage();
-                        underground.disconnectAPI();
-                        kill();
-                        setTimeout(function () {
-                            $.getScript(underground.scriptLink);
-                        }, 2000);
-                    }
-                }
-            },
 
 
             madebyCommand: {
