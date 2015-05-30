@@ -300,7 +300,7 @@
             },
             spree: {
                 killingspree: 0,
-                tmrreset = null,
+                tmrreset: null,
                     checkSpree: function() {
                         var ks = underground.room.killingspree;
                         if (ks === 5) {
