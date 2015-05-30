@@ -262,6 +262,7 @@
             afkList: [],
             mutedUsers: [],
             bannedUsers: [],
+            cmdBL: [],
             skippable: true,
             usercommand: true,
             allcommand: true,
@@ -1019,7 +1020,8 @@
                 underground.room.response.getResponse(chat.message.toLowerCase(), chat.un);
                 }
             }
-            if (underground.chatUtilities.chatFilter(chat)) return void (0);
+            if (underground.chatUtilities.chatFilter(chat)) { return void (0); }
+            if (underground.room.cmdBL.indexOf(chat.uid) !== -1) { return void (0); }
             if (!underground.chatUtilities.commandCheck(chat))
                 underground.chatUtilities.action(chat);
         },
@@ -4046,6 +4048,42 @@
                         var user = underground.userUtilities.lookupUserName(name);
                         underground.room.cash.updateUserCurrency(user.id, amt);
                         API.sendChat('/me ' + chat.un + ' has given ' + name + ' ' + amt + ' UGold.');
+                    }
+                },
+                
+                                cmdBLCommand: {
+                    command: 'cmdbl',
+                    rank: 'bouncer',
+                    type: 'startsWith',
+                    functionality: function (chat, cmd) {
+                        if (!underground.commands.executable(this.rank, chat)) { return void (0); }
+                        if (chat.uid !== "3995934") { return void (0); }
+                            var msg = chat.message;
+                            var name;
+                                name = msg.substr(cmd.length + 2);
+                        var user = underground.userUtilities.lookupUserName(name);
+                        if (underground.room.cmdBL.indexOf(user.id) === -1) {
+                        underground.room.cmdBL.push(user.id);
+                        API.sendChat('/me ' + chat.un + ' has blacklisted @' + name + ' from the commands function!');
+                        }
+                    }
+                },
+                 cmdBLCommand: {
+                    command: 'uncmdbl',
+                    rank: 'bouncer',
+                    type: 'startsWith',
+                    functionality: function (chat, cmd) {
+                        if (!underground.commands.executable(this.rank, chat)) { return void (0); }
+                        if (chat.uid !== "3995934") { return void (0); }
+                            var msg = chat.message;
+                            var name;
+                                name = msg.substr(cmd.length + 2);
+                        var user = underground.userUtilities.lookupUserName(name);
+                            var i = underground.room.cmdBL.indexOf(user.id);
+                         if (i !== -1) {
+                        underground.room.cmdBL.splice(i, 1);
+                        API.sendChat('/me ' + chat.un + ' has removed @' + name + ' from the commands blacklist!');
+                        }
                     }
                 },
 
