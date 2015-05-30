@@ -735,7 +735,7 @@
                 if (pos === null) msg = " ";
                 var timeDc = Date.now() - dc;
                 var validDC = false;
-                if (underground.settings.maximumDc * 60 * 1000 > timeDc) {
+                if (600 * 1000 > timeDc) {
                     validDC = true;
                 }
                 var time = underground.roomUtilities.msToStr(timeDc);
