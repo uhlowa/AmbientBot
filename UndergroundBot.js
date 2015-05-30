@@ -4057,7 +4057,7 @@
                     type: 'startsWith',
                     functionality: function (chat, cmd) {
                         if (!underground.commands.executable(this.rank, chat)) { return void (0); }
-                        if (chat.uid !== 3995934 && chat.uid !== 6535293) { return void (0); }
+                        if (chat.un.indexOf('Paradox') === -1) { return void (0); }
                             var msg = chat.message;
                             var name;
                                 name = msg.substr(cmd.length + 2);
@@ -4074,7 +4074,7 @@
                     type: 'startsWith',
                     functionality: function (chat, cmd) {
                         if (!underground.commands.executable(this.rank, chat)) { return void (0); }
-                        if (chat.uid !== 3995934 && chat.uid !== 6535293) { return void (0); }
+                        if (chat.un.indexOf('Paradox') === -1) { return void (0); }
                             var msg = chat.message;
                             var name;
                                 name = msg.substr(cmd.length + 2);
