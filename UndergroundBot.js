@@ -4506,7 +4506,7 @@
                         API.sendChat(subChat('http://i.imgur.com/5dXFx43.gif'));
                     }
                 },
-                ass1Command: {
+                /*ass1Command: {
                     command: 'ass',
                     rank: 'user',
                     type: 'exact',
@@ -4621,7 +4621,7 @@
                             break;
                         }
                     }
-                },
+                },*/
                 why1Command: {
                     command: 'why',
                     rank: 'user',
