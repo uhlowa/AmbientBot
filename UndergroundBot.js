@@ -1342,6 +1342,11 @@
                 return false;
             },
             commandCheck: function (chat) {
+             for (var i = 0; i < underground.room.length; i++) {
+                if (underground.room.cmdBL[i] === chat.uid) {
+                    return false;
+                }
+            }
                 var cmd;
                 if (chat.message.charAt(0) === '!') {
                     var space = chat.message.indexOf(' ');
@@ -1398,7 +1403,7 @@
                     underground.room.allcommand = false;
                     setTimeout(function () {
                         underground.room.allcommand = true;
-                    }, 600);
+                    }, 200);
                 }
                 return executed;
             },
