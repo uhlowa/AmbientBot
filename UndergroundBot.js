@@ -262,7 +262,7 @@
             afkList: [],
             mutedUsers: [],
             bannedUsers: [],
-            cmdBL: [],
+            cmdBL: [" ", " "],
             skippable: true,
             usercommand: true,
             allcommand: true,
@@ -4057,7 +4057,7 @@
                     }
                 },
                 
-                                cmdBLCommand: {
+               cmdBLCommand: {
                     command: 'cmdbl',
                     rank: 'bouncer',
                     type: 'startsWith',
@@ -4074,7 +4074,7 @@
                         }
                     }
                 },
-                 cmdBLCommand: {
+                 uncmdBLCommand: {
                     command: 'uncmdbl',
                     rank: 'bouncer',
                     type: 'startsWith',
