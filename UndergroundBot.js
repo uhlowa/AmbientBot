@@ -184,7 +184,7 @@
     var botCreatorIDs = ["3995934", "4105209"];
 
     var underground = {
-        version: "1.8.10",
+        version: "1.8.11",
         status: false,
         name: "Underground Bot",
         loggedInID: null,
@@ -1027,7 +1027,16 @@
                 }
             }
             if (underground.chatUtilities.chatFilter(chat)) { return void (0); }
-            if (underground.room.cmdBL.indexOf(chat.uid) !== -1) { return void (0); }
+            var found = "no";
+            for (var i = 0; i < underground.room.length; i++) {
+                if (underground.room.cmdBL[i].indexOf(chat.uid.toString()) !== -1) {
+                    found = "yes";
+                }
+            }
+            if (found === "yes") {
+                return void (0);
+            }
+
             if (!underground.chatUtilities.commandCheck(chat))
                 underground.chatUtilities.action(chat);
         },
@@ -4068,10 +4077,8 @@
                             var name;
                                 name = msg.substr(cmd.length + 2);
                         var user = underground.userUtilities.lookupUserName(name);
-                        if (underground.room.cmdBL.indexOf(user.id) === -1) {
                         underground.room.cmdBL.push(user.id);
                         API.sendChat('/me ' + chat.un + ' has blacklisted @' + name + ' from the commands function!');
-                        }
                     }
                 },
                  uncmdBLCommand: {
@@ -4085,11 +4092,12 @@
                             var name;
                                 name = msg.substr(cmd.length + 2);
                         var user = underground.userUtilities.lookupUserName(name);
-                            var i = underground.room.cmdBL.indexOf(user.id);
-                         if (i !== -1) {
-                        underground.room.cmdBL.splice(i, 1);
+                         for (var i = 0; i < underground.room.cmdBL; i++) {
+                             if (underground.room.cmdBL[i].indexOf(user.id.toString()) !== -1) {
+                                                         underground.room.cmdBL.splice(i, 1);
                         API.sendChat('/me ' + chat.un + ' has removed @' + name + ' from the commands blacklist!');
-                        }
+                             }
+                         }
                     }
                 },
 
