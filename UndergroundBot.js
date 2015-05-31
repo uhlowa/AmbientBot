@@ -889,14 +889,14 @@
                                         user.afkWarningCount = 3;
                                         user.afkCountdown = setTimeout(function (userToChange) {
                                             userToChange.afkWarningCount = 1;
-                                        }, 90 * 1000, user);
+                                        }, 240 * 1000, user);
                                     }
                                     else if (warncount === 1) {
                                         API.sendChat(subChat(underground.chat.warning2, {name: name}));
                                         user.afkWarningCount = 3;
                                         user.afkCountdown = setTimeout(function (userToChange) {
                                             userToChange.afkWarningCount = 2;
-                                        }, 30 * 1000, user);
+                                        }, 60 * 1000, user);
                                     }
                                     else if (warncount === 2) {
                                         var pos = API.getWaitListPosition(id);
