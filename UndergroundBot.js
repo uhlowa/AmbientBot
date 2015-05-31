@@ -332,7 +332,7 @@
                         if (underground.room.killingspree > 0) {
                     underground.room.killingspree--;
                         }
-                    }, 60000 * 30);
+                    }, 3600000);
                     }
             },
             response: {
