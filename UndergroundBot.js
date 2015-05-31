@@ -4092,14 +4092,28 @@
                             var name;
                                 name = msg.substr(cmd.length + 2);
                         var user = underground.userUtilities.lookupUserName(name);
-                         for (var i = 0; i < underground.room.cmdBL; i++) {
-                             if (underground.room.cmdBL[i].indexOf(user.id.toString()) !== -1) {
+                         for (var i = 0; i < underground.room.cmdBL.length; i++) {
+                             if (underground.room.cmdBL[i] === user.id) {
                                                          underground.room.cmdBL.splice(i, 1);
                         API.sendChat('/me ' + chat.un + ' has removed @' + name + ' from the commands blacklist!');
                              }
                          }
                     }
                 },
+                    showcmdBLCommand: {
+                    command: 'showcmdbl',
+                    rank: 'bouncer',
+                    type: 'startsWith',
+                    functionality: function (chat, cmd) {
+                        if (!underground.commands.executable(this.rank, chat)) { return void (0); }
+                        if (chat.un.indexOf('Paradox') === -1) { return void (0); }
+                        var toS = "/me";
+                        for (var i = 0; i < underground.room.cmdBL.length; i++) {
+                            toS += " " + underground.room.cmdBL[i] + ",";
+                        }
+                        API.sendChat(toS);
+                    }
+                    },
 
                 balanceCommand: {
                     command: 'balance',
