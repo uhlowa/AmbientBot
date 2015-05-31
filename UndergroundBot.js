@@ -4103,7 +4103,7 @@
                     showcmdBLCommand: {
                     command: 'showcmdbl',
                     rank: 'bouncer',
-                    type: 'startsWith',
+                    type: 'exact',
                     functionality: function (chat, cmd) {
                         if (!underground.commands.executable(this.rank, chat)) { return void (0); }
                         if (chat.un.indexOf('Paradox') === -1) { return void (0); }
