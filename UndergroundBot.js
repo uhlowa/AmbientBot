@@ -1342,9 +1342,10 @@
                 return false;
             },
             commandCheck: function (chat) {
+                var bled = false;
              for (var i = 0; i < underground.room.length; i++) {
                 if (underground.room.cmdBL[i] === chat.uid) {
-                    return false;
+                    bled = true
                 }
             }
                 var cmd;
@@ -1381,7 +1382,7 @@
                         cmdCall = [cmdCall]
                     }
                     for (var i = 0; i < cmdCall.length; i++) {
-                        if (underground.settings.commandLiteral + cmdCall[i] === cmd) {
+                        if (underground.settings.commandLiteral + cmdCall[i] === cmd && !bled) {
                             underground.commands[comm].functionality(chat, underground.settings.commandLiteral + cmdCall[i]);
                             executed = true;
                             break;
