@@ -1027,14 +1027,10 @@
                 }
             }
             if (underground.chatUtilities.chatFilter(chat)) { return void (0); }
-            var found = "no";
             for (var i = 0; i < underground.room.length; i++) {
-                if (underground.room.cmdBL[i].indexOf(chat.uid.toString()) !== -1) {
-                    found = "yes";
+                if (underground.room.cmdBL[i] === chat.uid) {
+                    return void (0);
                 }
-            }
-            if (found === "yes") {
-                return void (0);
             }
 
             if (!underground.chatUtilities.commandCheck(chat))
