@@ -1505,9 +1505,27 @@
                     }, 1000);
                 }
             };
+            
+            var autoCAFK = function(){
+                var d = new Date();
+                var n = d.getHours();
+                if (n === 24 && underground.settings.afkRemoval) {
+                    underground.settings.afkRemoval = !underground.settings.afkRemoval;
+                    clearInterval(underground.room.afkInterval);
+                    API.sendChat('/me AFK Removal has been automatically disabled as it is midnight (EST)');
+                }
+                if (n === 8 && !underground.settings.afkRemoval){
+                    underground.settings.afkRemoval = !underground.settings.afkRemoval;
+                    underground.room.afkInterval = setInterval(function () {
+                                underground.roomUtilities.afkCheck()
+                            }, 2 * 1000);
+                    API.sendChat('/me AFK Removal has been automatically enabled as it is 8AM (EST)');
+                }
+            }
 
             Check = setInterval(function(){ detect() }, 100);
-
+            var cafkr;
+            cafkr = setInterval(function(){ autoCAFK() }, 60000);
             retrieveSettings();
             retrieveFromStorage();
             window.bot = underground;
