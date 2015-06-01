@@ -184,7 +184,7 @@
     var botCreatorIDs = ["3995934", "4105209"];
 
     var underground = {
-        version: "1.8.14",
+        version: "1.8.15",
         status: false,
         name: "Underground Bot",
         loggedInID: null,
@@ -1521,7 +1521,7 @@
                             }, 2 * 1000);
                     API.sendChat('/me AFK Removal has been automatically enabled as it is 8AM (EST)');
                 }
-            }
+            };
 
             Check = setInterval(function(){ detect() }, 100);
             var cafkr;
