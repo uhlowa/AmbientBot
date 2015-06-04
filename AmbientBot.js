@@ -184,7 +184,7 @@
     var botCreatorIDs = ["3995934", "4105209"];
 
     var ambient = {
-        version: "1.0",
+        version: "1.0.1",
         status: false,
         name: "AmbientBot",
         loggedInID: null,
@@ -363,14 +363,17 @@
                     if (arguments[0].indexOf('don\'t hurt me') !== -1 || arguments[0].indexOf('dont hurt me') !== -1) {
                         toS = 'No more!';
                     }
-                    if ((arguments[0].indexOf('today nigger tuesday') !== -1) || (arguments[0].indexOf('today nigga tuesday') !== -1)) {
-                        var d = new Date();
-                        var n = d.getDay();
-                        if (n === 2) {
-                        toS = 'Ye dawg 2day iz nigga toozday nah mean?';
-                        } else {
-                            toS = 'No, today is not nigga tuesday, @' + arguments[1] + '.';
-                        }
+                    if (arguments[0].indexOf('never gonna give you up') !== -1) {
+                        toS = 'Never gonna let you down.';
+                    }
+                    if (arguments[0].indexOf('never gonna run around') !== -1) {
+                        toS = 'And desert you.';
+                    }
+                    if (arguments[0].indexOf('never gonna make you cry') !== -1) {
+                        toS = 'Never gonna say goodbye.';
+                    }
+                    if (arguments[0].indexOf('never gonna tell a lie') !== -1) {
+                        toS = 'And hurt you.';
                     }
                     countdown = setTimeout(function () {
                     if (toS.length > 2) {
@@ -4494,7 +4497,7 @@
                     type: 'exact',
                     functionality: function (chat, cmd) {
                         if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
-                        API.sendChat(subChat('http://i.imgur.com/rbFPzbB.webm'));
+                        API.sendChat(subChat('http://i.imgur.com/T7TN3WY.gif'));
                     }
                 },
                 thefuck1Command: {
