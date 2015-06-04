@@ -506,7 +506,7 @@
                     ambient.room.dicegame.countdown = setTimeout(function () {
                         ambient.room.dicegame.endDiceGame();
                     }, 60 * 1000);
-                    API.sendChat('/me The Dice Game is now active. @everyone Type !roll and whoever rolls the highest will win! Use !buyroll to purchase an extra roll for 50 UGold.');
+                    API.sendChat('/me The Dice Game is now active. @everyone Type !roll and whoever rolls the highest will win! Use !buyroll to purchase an extra roll for 50 ChillCoins.');
                 },
                 endDiceGame: function () {
                     ambient.room.dicegame.dgStatus = false;
@@ -4082,7 +4082,7 @@
                             }
                         var user = ambient.userUtilities.lookupUserName(name);
                         ambient.room.cash.updateUserCurrency(user.id, amt);
-                        API.sendChat('/me ' + chat.un + ' has given ' + name + ' ' + amt + ' UGold.');
+                        API.sendChat('/me ' + chat.un + ' has given ' + name + ' ' + amt + ' ChillCoins.');
                     }
                 },
                 
@@ -4142,9 +4142,9 @@
                     functionality: function (chat, cmd) {
                         if (!ambient.commands.executable(this.rank, chat)) { return void (0); }
                         if (typeof ambient.settings.monies[chat.uid] !== 'undefined') {
-                            API.sendChat(chat.un + ' has a balance of ' + ambient.settings.monies[chat.uid] + ' UGold.');
+                            API.sendChat(chat.un + ' has a balance of ' + ambient.settings.monies[chat.uid] + ' ChillCoins.');
                         } else {
-                            API.sendChat('/me @' + chat.un + ' has no UGold.');
+                            API.sendChat('/me @' + chat.un + ' has no ChillCoins.');
                         }
 
                     }
