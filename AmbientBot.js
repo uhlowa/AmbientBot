@@ -238,7 +238,7 @@
             afkRankCheck: "ambassador",
             motdEnabled: false,
             motdInterval: 30,
-            motd: "The ambient focuses on bringing you the best new music around. With a fun community and anti-pop culture music, it is easy to find your place here.",
+            motd: "The Ambient Chill Room focuses on bringing you the best new music around. With a fun community and anti-pop culture music, it is easy to find your place here.",
             filterChat: true,
             etaRestriction: false,
             welcome: true,
@@ -1069,11 +1069,11 @@
             if (ambient.settings.welcome && greet) {
                 welcomeback ?
                     setTimeout(function (user) {
-                        API.sendChat(subChat('/me Welcome back to The ambient, @' + user.username + '.'));
+                        API.sendChat(subChat('/me Welcome back to The Ambient Chill Room, @' + user.username + '.'));
                     }, 1 * 1000, user)
                     :
                     setTimeout(function (user) {
-                        API.sendChat(subChat('/me Welcome to The ambient, @' + user.username + '. Enjoy your stay.'));
+                        API.sendChat(subChat('/me Welcome to The Ambient Chill Room, @' + user.username + '. Enjoy your stay.'));
                     }, 1 * 1000, user);
 
             }
