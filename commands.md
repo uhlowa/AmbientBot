@@ -28,6 +28,8 @@ Images
 |!feelbad |
 |!clap - !clap1 |
 |!brofist |
+|!broshake |
+|!brohug |
 |!hangyourself |
 |!laugh - !laugh2 |
 |!flirt - !flirt7 |
@@ -40,7 +42,6 @@ Images
 |!no |
 |!why - !why1 |
 |!wiggle - !wiggle3 |
-|!brohug |
 |!bye |
 
 
