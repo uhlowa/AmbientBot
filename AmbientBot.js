@@ -27,7 +27,7 @@
     var storeToStorage = function () {
         localStorage.setItem("ambientsettings", JSON.stringify(ambient.settings));
         localStorage.setItem("ambientRoom", JSON.stringify(ambient.room));
-        localStorage.setItem("monies", JSON.stringify(ambient.settings.monies));
+        localStorage.setItem("monies", ambient.settings.monies);
         var ambientStorageInfo = {
             time: Date.now(),
             stored: true,
