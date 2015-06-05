@@ -4716,6 +4716,15 @@
                         API.sendChat(subChat('http://i.imgur.com/yvIbI7U.gif'));
                     }
                 },
+                broshake1Command: {
+                    command: 'broshake',
+                    rank: 'user',
+                    type: 'exact',
+                    functionality: function (chat, cmd) {
+                        if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
+                        API.sendChat(subChat('http://i.imgur.com/6Jz01NY.gif'));
+                    }
+                },
 
                 approveCommand: {
                     command: 'approve',
