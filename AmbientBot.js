@@ -180,13 +180,13 @@
     };
 
     var botCreator = "Connor (Paradox)";
-    var botMaintainer = "AmbientBot"
+    var botMaintainer = "DreamBot"
     var botCreatorIDs = ["3995934", "4105209"];
 
     var ambient = {
         version: "1.0.2",
         status: false,
-        name: "AmbientBot",
+        name: "DreamBot",
         loggedInID: null,
         scriptLink: "https://rawgit.com/Paradox68/AmbientBot/master/AmbientBot.js",
         cmdLink: "http://git.io/245Ppg",
@@ -238,7 +238,7 @@
             afkRankCheck: "ambassador",
             motdEnabled: false,
             motdInterval: 30,
-            motd: "The Ambient Chill Room focuses on bringing you the best new music around. With a fun community and anti-pop culture music, it is easy to find your place here.",
+            motd: "The DreamBot Room focuses on bringing you the best new music around. With a fun community and anti-pop culture music, it is easy to find your place here.",
             filterChat: true,
             etaRestriction: false,
             welcome: true,
@@ -1072,11 +1072,11 @@
             if (ambient.settings.welcome && greet) {
                 welcomeback ?
                     setTimeout(function (user) {
-                        API.sendChat(subChat('/me Welcome back to The Ambient Chill Room, @' + user.username + '.'));
+                        API.sendChat(subChat('/me Welcome back to Dream Bot Room, @' + user.username + '.'));
                     }, 1 * 1000, user)
                     :
                     setTimeout(function (user) {
-                        API.sendChat(subChat('/me Welcome to The Ambient Chill Room, @' + user.username + '. Enjoy your stay.'));
+                        API.sendChat(subChat('/me Welcome to The Dream Bot Room, @' + user.username + '. Enjoy your stay.'));
                     }, 1 * 1000, user);
 
             }
@@ -2405,7 +2405,7 @@
                     if (!ambient.commands.executable(this.rank, chat)) return void (0);
                     else {
                         var link = "(Updated link coming soon)";
-                        API.sendChat(subChat(ambient.chat.starterhelp, {link: link}));
+                        API.sendChat("Click the bar at bottom to create a playlist and pull songs from the Youtube search bar it's all pretty self explanatory. When you have a song(s) on your playlist, Click to DJ and you'll be put in line to play the first song on your selected playlist. Commands for the bot are all listed here: https://github.com/Paradox68/AmbientBot/blob/master/commands.md"));
                     }
                 }
             },
