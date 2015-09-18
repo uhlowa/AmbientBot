@@ -128,7 +128,7 @@
         var json_sett = null;
         var roominfo = document.getElementById("room-settings");
         info = roominfo.textContent;
-        var ref_bot = "@AmbientBot=";
+        var ref_bot = "@DreamBot=";
         var ind_ref = info.indexOf(ref_bot);
         if (ind_ref > 0) {
             var link = info.substring(ind_ref + ref_bot.length, info.length);
@@ -184,7 +184,7 @@
     var botCreatorIDs = ["3995934", "4105209"];
 
     var ambient = {
-        version: "1.0.2",
+        version: "1.0",
         status: false,
         name: "DreamBot",
         loggedInID: null,
@@ -196,7 +196,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "AmbientBot",
+            botName: "DreamBot",
             monies: [" ", " "],
             language: "english",
             chatLink: "https://rawgit.com/Paradox68/AmbientBot/master/lang/en.json",
