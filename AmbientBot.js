@@ -4793,7 +4793,7 @@
                             }
 
 
-                            API.sendChat(subChat("/me Currently there are " + sOnline + " staff members online."));
+                            API.sendChat(subChat("/me Currently there are " + sOnline + " staff members online.."));
                         }
                     }
                 },
