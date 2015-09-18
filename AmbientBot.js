@@ -1402,7 +1402,6 @@
                 if (executed) {
                     if (ambient.settings.cmdDeletion) {
                         API.moderateDeleteChat(chat.cid);
-                        API.chatLog('deletion 7');
                     }
                     ambient.room.allcommand = false;
                     setTimeout(function () {
