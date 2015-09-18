@@ -2405,7 +2405,7 @@
                     if (!ambient.commands.executable(this.rank, chat)) return void (0);
                     else {
                         var link = "(Updated link coming soon)";
-                        API.sendChat("Click the bar at bottom to create a playlist and pull songs from the Youtube search bar it's all pretty self explanatory. When you have a song(s) on your playlist, Click to DJ and you'll be put in line to play the first song on your selected playlist. Commands for the bot are all listed here: https://github.com/Paradox68/AmbientBot/blob/master/commands.md"));
+                        API.sendChat('Click the bar at bottom to create a playlist and pull songs from the Youtube search bar it\'s all pretty self explanatory. When you have a song(s) on your playlist, Click to DJ and you\'ll be put in line to play the first song on your selected playlist. Commands for the bot are all listed here: https://github.com/Paradox68/AmbientBot/blob/master/commands.md');
                     }
                 }
             },
