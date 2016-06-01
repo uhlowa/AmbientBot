@@ -128,7 +128,7 @@
         var json_sett = null;
         var roominfo = document.getElementById("room-settings");
         info = roominfo.textContent;
-        var ref_bot = "@DreamBot=";
+        var ref_bot = "@AmbientBot=";
         var ind_ref = info.indexOf(ref_bot);
         if (ind_ref > 0) {
             var link = info.substring(ind_ref + ref_bot.length, info.length);
@@ -180,13 +180,13 @@
     };
 
     var botCreator = "Connor (Paradox)";
-    var botMaintainer = "DreamBot"
+    var botMaintainer = "AmbientBot"
     var botCreatorIDs = ["3995934", "4105209"];
 
     var ambient = {
         version: "1.0",
         status: false,
-        name: "DreamBot",
+        name: "AmbientBot",
         loggedInID: null,
         scriptLink: "https://rawgit.com/Paradox68/AmbientBot/master/AmbientBot.js",
         cmdLink: "http://git.io/245Ppg",
@@ -196,7 +196,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "DreamBot",
+            botName: "AmbientBot",
             monies: [" ", " "],
             language: "english",
             chatLink: "https://rawgit.com/Paradox68/AmbientBot/master/lang/en.json",
@@ -238,7 +238,7 @@
             afkRankCheck: "ambassador",
             motdEnabled: false,
             motdInterval: 30,
-            motd: "The DreamBot Room focuses on bringing you the best new music around. With a fun community and anti-pop culture music, it is easy to find your place here.",
+            motd: "The Ambient Room focuses on bringing you the best new music around. With a fun community and anti-pop culture music, it is easy to find your place here.",
             filterChat: true,
             etaRestriction: false,
             welcome: true,
