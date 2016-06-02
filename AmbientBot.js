@@ -509,7 +509,7 @@
                     ambient.room.dicegame.countdown = setTimeout(function () {
                         ambient.room.dicegame.endDiceGame();
                     }, 60 * 1000);
-                    API.sendChat('/me The Dice Game is now active. @everyone Type !roll and whoever rolls the highest will win! Use !buyroll to purchase an extra roll for 50 ChillCoins.');
+                    API.sendChat('/me The Dice Game is now active. @everyone Type !roll and whoever rolls the highest will win! Use !buyroll to purchase an extra roll for 50 AmbientTokens.');
                 },
                 endDiceGame: function () {
                     ambient.room.dicegame.dgStatus = false;
@@ -3610,7 +3610,7 @@
                 }
             },
 
-            helloCommand: {
+    /*        helloCommand: {
                 command: ['hello', 'hi', 'hey'],
                 rank: 'user',
                 type: 'exact',
@@ -3946,7 +3946,7 @@
                         if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                         API.sendChat(subChat('http://i.imgur.com/wlTqw2a.gif'));
                     }
-                },
+                },*/
                 lockposCommand: {
                     command: 'lockpos',
                     rank: 'user',
@@ -4076,7 +4076,7 @@
                             }
                         var user = ambient.userUtilities.lookupUserName(name);
                         ambient.room.cash.updateUserCurrency(user.id, amt);
-                        API.sendChat('/me ' + chat.un + ' has given ' + name + ' ' + amt + ' ChillCoins.');
+                        API.sendChat('/me ' + chat.un + ' has given ' + name + ' ' + amt + ' AmbientTokens.');
                     }
                 },
                 
@@ -4136,9 +4136,9 @@
                     functionality: function (chat, cmd) {
                         if (!ambient.commands.executable(this.rank, chat)) { return void (0); }
                         if (typeof ambient.settings.monies[chat.uid] !== 'undefined') {
-                            API.sendChat(chat.un + ' has a balance of ' + ambient.settings.monies[chat.uid] + ' ChillCoins.');
+                            API.sendChat(chat.un + ' has a balance of ' + ambient.settings.monies[chat.uid] + ' AmbientTokens.');
                         } else {
-                            API.sendChat('/me @' + chat.un + ' has no ChillCoins.');
+                            API.sendChat('/me @' + chat.un + ' has no AmbientTokens.');
                         }
 
                     }
