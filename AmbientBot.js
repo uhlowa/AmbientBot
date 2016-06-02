@@ -1653,13 +1653,10 @@
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!ambient.commands.executable(this.rank, chat)) return void (0); 
-                    else {
+                    else
                         API.sendChat(subChat(ambient.version));
-                    }
                 }
             },
-                }
-            }
 
             activeCommand: {
                 command: 'active',
