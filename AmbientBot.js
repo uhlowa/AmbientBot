@@ -1142,12 +1142,12 @@
             if (ambient.settings.songstats) {
                 if (typeof ambient.chat.songstatistics === "undefined") {
                     API.sendChat("/me :arrow_forward: Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": \n:arrow_up: " + lastplay.score.positive + ", :repeat: " + lastplay.score.grabs + ", :arrow_down: " + lastplay.score.negative + ".");
-                    ambient.room.cash.updateUserCurrency(ambient.room.currentDJID, lastplay.score.positive + ambient.settings.monies[ambient.room.currentDJID]);
+                    ambient.room.cash.updateUserCurrency(ambient.room.currentDJID, 1 + lastplay.score.positive);
                     
                 }
                 else {
                     API.sendChat(subChat("/me :arrow_forward: Last Track: \n" + lastplay.media.author + " - " + lastplay.media.title + ": \n:arrow_up: " + lastplay.score.positive + ", :repeat: " + lastplay.score.grabs + ", :arrow_down: " + lastplay.score.negative + "."));
-                 ambient.room.cash.updateUserCurrency(ambient.room.currentDJID, lastplay.score.positive + ambient.settings.monies[ambient.room.currentDJID]);
+                 ambient.room.cash.updateUserCurrency(ambient.room.currentDJID, 1 + lastplay.score.positive);
                     
                 }
             }
