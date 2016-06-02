@@ -184,7 +184,7 @@
     var botCreatorIDs = ["3995934", "4105209"];
 
     var ambient = {
-        version: "1.0",
+        version: "1.0.1",
         status: false,
         name: "AmbientBot",
         loggedInID: null,
