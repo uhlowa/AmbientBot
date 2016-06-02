@@ -205,7 +205,7 @@
             approvedDJ: "[None]",
             startupVolume: 0, // 0-100
             startupEmoji: true, // true or false
-            cmdDeletion: true,
+            cmdDeletion: false,
             maximumAfk: 120,
             afkRemoval: true,
             maximumDc: 60,
@@ -250,7 +250,7 @@
             website: "http://www.the-ambient.info/",
             intervalMessages: [],
             messageInterval: 5,
-            songstats: false,
+            songstats: true,
             commandLiteral: "!",
             blacklists: {
                 NSFW: "https://rawgit.com/Paradox68/AmbientBot/master/nsfw.json",
@@ -1072,11 +1072,11 @@
             if (ambient.settings.welcome && greet) {
                 welcomeback ?
                     setTimeout(function (user) {
-                        API.sendChat(subChat('/me Welcome back to Dream Bot Room, @' + user.username + '.'));
+                        API.sendChat(subChat('/me Welcome back to The Ambient Chill Music Room, @' + user.username + '.'));
                     }, 1 * 1000, user)
                     :
                     setTimeout(function (user) {
-                        API.sendChat(subChat('/me Welcome to The Dream Bot Room, @' + user.username + '. Enjoy your stay.'));
+                        API.sendChat(subChat('/me Welcome to The Ambient Chill Music Room, @' + user.username + '. Enjoy your stay.'));
                     }, 1 * 1000, user);
 
             }
