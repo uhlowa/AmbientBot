@@ -1072,11 +1072,11 @@
             if (ambient.settings.welcome && greet) {
                 welcomeback ?
                     setTimeout(function (user) {
-                        API.sendChat(subChat('/me Welcome back to The Ambient Chill Music Room, @' + user.username + '.'));
+                        //API.sendChat(subChat('/me Welcome back to The Ambient Chill Music Room, @' + user.username + '.'));
                     }, 1 * 1000, user)
                     :
                     setTimeout(function (user) {
-                        API.sendChat(subChat('/me Welcome to The Ambient Chill Music Room, @' + user.username + '. Enjoy your stay.'));
+                       // API.sendChat(subChat('/me Welcome to The Ambient Chill Music Room, @' + user.username + '. Enjoy your stay.'));
                     }, 1 * 1000, user);
 
             }
