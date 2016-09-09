@@ -128,7 +128,7 @@
         var json_sett = null;
         var roominfo = document.getElementById("room-settings");
         info = roominfo.textContent;
-        var ref_bot = "@AmbientBot v2";
+        var ref_bot = "@Paradox VII";
         var ind_ref = info.indexOf(ref_bot);
         if (ind_ref > 0) {
             var link = info.substring(ind_ref + ref_bot.length, info.length);
@@ -180,13 +180,13 @@
     };
 
     var botCreator = "Connor (Paradox)";
-    var botMaintainer = "AmbientBot v2"
+    var botMaintainer = "Paradox VII"
     var botCreatorIDs = ["3995934", "4105209"];
 
     var ambient = {
         version: "1.0.1",
         status: false,
-        name: "@AmbientBot v2",
+        name: "@Paradox VII",
         loggedInID: null,
         scriptLink: "https://rawgit.com/Paradox68/AmbientBot/master/AmbientBot.js",
         cmdLink: "http://git.io/245Ppg",
@@ -196,7 +196,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "AmbientBot v2",
+            botName: "Paradox VII",
             monies: [" ", " "],
             language: "english",
             chatLink: "https://rawgit.com/Paradox68/AmbientBot/master/lang/en.json",
@@ -251,7 +251,7 @@
             intervalMessages: [],
             messageInterval: 5,
             songstats: true,
-            commandLiteral: "!",
+            commandLiteral: "$",
             blacklists: {
                 NSFW: "https://rawgit.com/Paradox68/AmbientBot/master/nsfw.json",
                 OP: "https://rawgit.com/Paradox68/AmbientBot/master/op.json"
@@ -3625,7 +3625,7 @@
                 }
             },
 
-    /*        helloCommand: {
+          helloCommand: {
                 command: ['hello', 'hi', 'hey'],
                 rank: 'user',
                 type: 'exact',
@@ -3961,7 +3961,7 @@
                         if (this.type === 'exact' && chat.message.length !== cmd.length) { return void (0); }
                         API.sendChat(subChat('http://i.imgur.com/wlTqw2a.gif'));
                     }
-                },*/
+                },
                 lockposCommand: {
                     command: 'lockpos',
                     rank: 'user',
