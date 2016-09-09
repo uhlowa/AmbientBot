@@ -237,11 +237,11 @@
             afkpositionCheck: 5,
             afkRankCheck: "ambassador",
             motdEnabled: false,
-            motdInterval: 30,
-            motd: "The Ambient Room focuses on bringing you the best new music around. With a fun community and anti-pop culture music, it is easy to find your place here.",
+            motdInterval: 30000,
+            motd: "We love pie."
             filterChat: true,
             etaRestriction: false,
-            welcome: true,
+            welcome: false,
             opLink: null,
             rulesLink: null,
             themeLink: null,
@@ -250,7 +250,7 @@
             website: "http://www.the-ambient.info/",
             intervalMessages: [],
             messageInterval: 5,
-            songstats: true,
+            songstats: false,
             commandLiteral: "$",
             blacklists: {
                 NSFW: "https://rawgit.com/Paradox68/AmbientBot/master/nsfw.json",
@@ -3177,7 +3177,7 @@
 
             songstatsCommand: {
                 command: 'songstats',
-                rank: 'bouncer',
+                rank: 'mod',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
