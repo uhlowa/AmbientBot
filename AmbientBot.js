@@ -238,7 +238,7 @@
             afkRankCheck: "ambassador",
             motdEnabled: false,
             motdInterval: 30000,
-            motd: "We love pie."
+            motd: "We love pie.",
             filterChat: true,
             etaRestriction: false,
             welcome: false,
