@@ -186,7 +186,7 @@
     var ambient = {
         version: "1.0.1",
         status: false,
-        name: "@Paradox VII",
+        name: "@Underground Bot",
         loggedInID: null,
         scriptLink: "https://rawgit.com/Paradox68/AmbientBot/master/AmbientBot.js",
         cmdLink: "http://git.io/245Ppg",
@@ -196,7 +196,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "Paradox VII",
+            botName: "Underground Bot",
             monies: [" ", " "],
             language: "english",
             chatLink: "https://rawgit.com/Paradox68/AmbientBot/master/lang/en.json",
