@@ -195,7 +195,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "Bass Music Bot",
+            botName: "BMNBot",
             monies: [" ", " "],
             language: "english",
             chatLink: "https://rawgit.com/Paradox68/AmbientBot/master/lang/en.json",
