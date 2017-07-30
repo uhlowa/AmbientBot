@@ -1,7 +1,7 @@
-Underground Bot
+Ambient Bot
 ========
 
-The official Chat bot for The Underground room on plug.dj
+The official Chat bot for The Ambient Chill room on plug.dj
 
 [Visit our Plug.dj room](http://plug.dj/the-underground)
 ---------------------------------------------------------------------
