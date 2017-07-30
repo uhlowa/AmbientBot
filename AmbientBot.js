@@ -186,7 +186,6 @@
     var ambient = {
         version: "1.0.1",
         status: false,
-        name: "@Underground Bot",
         loggedInID: null,
         scriptLink: "https://rawgit.com/Paradox68/AmbientBot/master/AmbientBot.js",
         cmdLink: "http://git.io/245Ppg",
@@ -196,7 +195,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "Underground Bot",
+            botName: "Bass Music Bot",
             monies: [" ", " "],
             language: "english",
             chatLink: "https://rawgit.com/Paradox68/AmbientBot/master/lang/en.json",
