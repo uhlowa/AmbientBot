@@ -126,8 +126,7 @@
             }
         }
         var json_sett = null;
-        var roominfo = document.getElementById("room-settings");
-        info = roominfo.textContent;
+        var info = _.find(require.s.contexts._.defined, (m) => m && m.attributes && 'hostID' in m.attributes).get('long_description');
         var ref_bot = "@Paradox VII";
         var ind_ref = info.indexOf(ref_bot);
         if (ind_ref > 0) {
